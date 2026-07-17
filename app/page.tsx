@@ -17,7 +17,7 @@ export default function Home() {
       </div>
 
       {/* Content wrapper */}
-      <div className="flex flex-col items-center px-12 pt-6 md:pt-10 lg:pt-12 pb-8 md:pb-16 lg:pb-20 gap-12 w-full">
+      <div className="flex flex-col items-center px-12 pt-2 md:pt-4 lg:pt-6 pb-8 md:pb-16 lg:pb-20 gap-12 w-full">
         
         {/* Text content wrapper - standard width (max-w-3xl) */}
         <div className="max-w-3xl w-full text-left flex flex-col gap-12 text-2xl">
