@@ -2,64 +2,252 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <div className="flex flex-col flex-1 items-center bg-zinc-50 font-mono dark:bg-black px-12 py-8 md:px-24 md:py-16 lg:px-32 lg:py-20">
+
+      {/* Header Image */}
+      <div className="w-full max-w-3xl mb-0">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
+          src="https://my-blog-tan-tau.vercel.app/banners/Post1.svg"
+          alt="So...Here I Am on the Internet"
+          width={900}
+          height={506}
+          className="w-full h-[480px] object-cover rounded-lg"
           priority
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+      </div>
+
+      <div className="max-w-2xl w-full text-left flex flex-col gap-12 mt-12">
+        
+        {/* Intro */}
+        <div>
+          <h1 className="text-4xl font-bold text-zinc-900 dark:text-zinc-50 mb-8">
+            Hi, this is Pynthamil!
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="mt-4 text-lg text-zinc-600 dark:text-zinc-400 text-justify">
+            I am a curious being who loves bringing the crazy ideas existing in my mind into reality through the sheer power of code.
           </p>
+          <div className="mt-6 flex gap-4">
+            <a
+              href="https://github.com/pynthamil"
+              className="text-blue-600 hover:underline dark:text-blue-400"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              /GitHub
+            </a>
+            <a
+              href="https://linkedin.com/in/pynthamil"
+              className="text-blue-600 hover:underline dark:text-blue-400"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              /LinkedIn
+            </a>
+            <a
+              href="https://leetcode.com/u/HashKnight/"
+              className="text-blue-600 hover:underline dark:text-blue-400"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              /LeetCode
+            </a>
+            <a
+              href="https://twitter.com/pynthamil"
+              className="text-blue-600 hover:underline dark:text-blue-400"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              /Twitter
+            </a>
+            <a
+              href="https://my-blog-tan-tau.vercel.app"
+              className="text-blue-600 hover:underline dark:text-blue-400"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              /blog
+            </a>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+
+        {/* Section: Who am I */}
+        <section id="about" className="scroll-mt-24">
+          <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">
+            who am i and what do i do for a living?
+          </h2>
+          <p className="text-sm text-zinc-500 dark:text-zinc-400 italic mb-4">
+            a little less mystery about me
+          </p>
+          <ul className="plus-list space-y-2 text-zinc-700 dark:text-zinc-300">
+            <li>My name is Pynthamil Pavendan!</li>
+            <li>I'm a student developer who enjoys turning ideas into things people can actually use</li>
+            <li>I like building interfaces that feel simple, fast, and intentional</li>
+            <li>I spend most of my time working with modern web technologies, experimenting with interaction design, and refining the small details that make products feel polished</li>
+            <li>I'm especially interested in how design and engineering come together to create experiences that feel effortless</li>
+            <li>Currently focused on building projects that are useful, visually clean, and quietly memorable</li>
+          </ul>
+        </section>
+
+        {/* Section: Outside of screens */}
+        <section>
+          <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">
+            things i enjoy outside of screens
+          </h2>
+          <p className="text-sm text-zinc-500 dark:text-zinc-400 italic mb-4">
+            when the laptop finally closes
+          </p>
+          <ul className="plus-list space-y-2 text-zinc-700 dark:text-zinc-300">
+            <li>I love reading books, watching movies, writing, and drawing</li>
+            <li>I'm very curious so I love to constantly explore new things</li>
+            <li>I don't believe the saying "curiosity kills the cat" — haha</li>
+          </ul>
+        </section>
+
+        {/* Section: Fun facts */}
+        <section>
+          <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">
+            fun facts about me
+          </h2>
+          <p className="text-sm text-zinc-500 dark:text-zinc-400 italic mb-4">
+            the lore drops
+          </p>
+          <ul className="plus-list space-y-2 text-zinc-700 dark:text-zinc-300">
+            <li>music taste: a bit of everything → if it sounds good, I'm listening</li>
+            <li>I love singing and dancing like nobody's watching (because usually nobody is)</li>
+            <li>introvert… who also loves to yap when the topic is interesting</li>
+            <li>personality type: INTJ</li>
+            <li>I enjoy challenging myself just for the plot</li>
+            <li>currently in my 3rd year of college, about to enter my final year — slightly terrifying & slightly exciting</li>
+          </ul>
+        </section>
+
+        {/* Section: Projects */}
+        <section id="projects" className="scroll-mt-24">
+          <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">
+            selected projects
+          </h2>
+          <p className="text-sm text-zinc-500 dark:text-zinc-400 italic mb-4">
+            turning caffeine into code
+          </p>
+          <ul className="plus-list space-y-3 text-zinc-700 dark:text-zinc-300">
+            <li>
+              <strong>Project Alpha</strong> — A minimal, fast, and intentional web application built with modern tech.
+              <a href="#" className="ml-2 text-blue-600 hover:underline dark:text-blue-400 text-sm">View →</a>
+            </li>
+            <li>
+              <strong>Project Beta</strong> — An experimental interface exploring effortless design and user interactions.
+              <a href="#" className="ml-2 text-blue-600 hover:underline dark:text-blue-400 text-sm">View →</a>
+            </li>
+            <li>
+              <strong>Project Gamma</strong> — A tool that solves a very specific problem I had at 2:17 am.
+              <a href="#" className="ml-2 text-blue-600 hover:underline dark:text-blue-400 text-sm">View →</a>
+            </li>
+          </ul>
+        </section>
+
+        {/* Section: About my blog */}
+        <section>
+          <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">
+            about my blog
+          </h2>
+          <p className="text-sm text-zinc-500 dark:text-zinc-400 italic mb-4">
+            my brain leaving sticky notes for itself
+          </p>
+          <ul className="plus-list space-y-2 text-zinc-700 dark:text-zinc-300">
+            <li>I write about things I'm learning, things I'm building, and things I randomly become obsessed with at 2:17 am</li>
+            <li>sometimes it's about tech, sometimes design, sometimes a thought that refuses to leave me alone until I write it down</li>
+            <li>it's less "expert advice" and more "let me see if this idea makes sense outside my head"</li>
+            <li>mostly curiosity. occasionally clarity. always slightly unhinged but in a productive way</li>
+          </ul>
+        </section>
+
+        {/* Section: Latest Blog Posts */}
+        <section id="blog" className="scroll-mt-24">
+          <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">
+            latest posts
+          </h2>
+          <p className="text-sm text-zinc-500 dark:text-zinc-400 italic mb-6">
+            from the digital notebook
+          </p>
+          <div className="flex flex-col gap-8">
+            {/* Post 1 */}
+            <a href="https://my-blog-tan-tau.vercel.app/posts/my-first-post" target="_blank" rel="noopener noreferrer" className="group flex flex-col sm:flex-row gap-4 sm:items-center">
+              <div className="w-full sm:w-64 shrink-0">
+                <Image src="https://my-blog-tan-tau.vercel.app/banners/Post1.svg" alt="So...Here I Am on the Internet" width={400} height={300} className="w-full aspect-video object-cover rounded-lg group-hover:opacity-80 transition-opacity" />
+              </div>
+              <div>
+                <h3 className="font-bold text-lg text-zinc-900 dark:text-zinc-50 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  So...Here I Am on the Internet
+                </h3>
+                <p className="text-sm text-zinc-600 dark:text-zinc-400 mt-1 line-clamp-2">
+                  a little about me, what I enjoy, and why I started this blog
+                </p>
+                <p className="text-sm font-medium text-blue-600 dark:text-blue-400 mt-2">Read post →</p>
+              </div>
+            </a>
+            
+            {/* Post 2 */}
+            <a href="https://my-blog-tan-tau.vercel.app/posts/readme-aesthetic" target="_blank" rel="noopener noreferrer" className="group flex flex-col sm:flex-row gap-4 sm:items-center">
+              <div className="w-full sm:w-64 shrink-0">
+                <Image src="https://my-blog-tan-tau.vercel.app/banners/post2.svg" alt="readme, but make it aesthetic ✨" width={400} height={300} className="w-full aspect-video object-cover rounded-lg group-hover:opacity-80 transition-opacity" />
+              </div>
+              <div>
+                <h3 className="font-bold text-lg text-zinc-900 dark:text-zinc-50 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  readme, but make it aesthetic ✨
+                </h3>
+                <p className="text-sm text-zinc-600 dark:text-zinc-400 mt-1 line-clamp-2">
+                  not everything has to be loud to be meaningful.
+                </p>
+                <p className="text-sm font-medium text-blue-600 dark:text-blue-400 mt-2">Read post →</p>
+              </div>
+            </a>
+
+            {/* Post 3 */}
+            <a href="https://my-blog-tan-tau.vercel.app/posts/git-commit-go" target="_blank" rel="noopener noreferrer" className="group flex flex-col sm:flex-row gap-4 sm:items-center">
+              <div className="w-full sm:w-64 shrink-0">
+                <Image src="https://my-blog-tan-tau.vercel.app/banners/post5.svg" alt="Git Commit Go" width={400} height={300} className="w-full aspect-video object-cover rounded-lg group-hover:opacity-80 transition-opacity" />
+              </div>
+              <div>
+                <h3 className="font-bold text-lg text-zinc-900 dark:text-zinc-50 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  Git Commit Go
+                </h3>
+                <p className="text-sm text-zinc-600 dark:text-zinc-400 mt-1 line-clamp-2">
+                  A quick guide on how to interact with GitHub programmatically using their REST API.
+                </p>
+                <p className="text-sm font-medium text-blue-600 dark:text-blue-400 mt-2">Read post →</p>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        {/* Section: Currently learning */}
+        <section>
+          <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">
+            what i am currently learning
+          </h2>
+          <p className="text-sm text-zinc-500 dark:text-zinc-400 italic mb-4">
+            learning, unlearning, relearning
+          </p>
+          <ul className="plus-list space-y-2 text-zinc-700 dark:text-zinc-300">
+            <li>currently learning how to make things feel simple without making them boring</li>
+            <li>exploring better ways to structure code, design cleaner interfaces, and build products that feel intentional from the first click</li>
+            <li>trying to understand why some digital experiences feel effortless while others feel confusing, even when they do the same thing</li>
+            <li>also learning to be okay with not knowing everything yet and building anyway</li>
+          </ul>
+        </section>
+
+        {/* Footer */}
+        <footer id="contact" className="mt-12 pt-8 border-t border-zinc-200 dark:border-zinc-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-zinc-500 dark:text-zinc-400 scroll-mt-24">
+          <p>© {new Date().getFullYear()} Pynthamil Pavendan</p>
+          <div className="flex items-center gap-2" title="Page views">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+            <span>1,234 views</span>
+          </div>
+        </footer>
+      </div>
     </div>
   );
 }
