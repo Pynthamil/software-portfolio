@@ -4,20 +4,21 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <div className="flex flex-col w-full">
-      {/* Content wrapper */}
-      <div className="flex flex-col items-center px-12 pt-6 md:pt-10 lg:pt-12 pb-8 md:pb-16 lg:pb-20 mt-12 gap-12 w-full">
-        
-        {/* Header Image - Slightly wider wrapper (max-w-3xl) */}
-        <div className="max-w-3xl w-full h-[500px] relative rounded-lg overflow-hidden">
-          <Image
-            src="https://my-blog-tan-tau.vercel.app/banners/Post1.svg"
-            alt="So...Here I Am on the Internet"
-            fill
-            className="object-cover rounded-lg"
-            priority
-          />
-        </div>
+      {/* Header Image - Fullview */}
+      <div className="w-full h-[700px] md:h-[850px] lg:h-[1000px] relative overflow-hidden">
+        <Image
+          src="/img2.svg"
+          alt="Header Background Banner"
+          fill
+          sizes="100vw"
+          className="object-cover"
+          priority
+        />
+      </div>
 
+      {/* Content wrapper */}
+      <div className="flex flex-col items-center px-12 pt-6 md:pt-10 lg:pt-12 pb-8 md:pb-16 lg:pb-20 gap-12 w-full">
+        
         {/* Text content wrapper - standard width (max-w-2xl) */}
         <div className="max-w-2xl w-full text-left flex flex-col gap-12">
 

@@ -7,7 +7,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="w-full flex justify-center fixed top-0 z-50 px-4 pt-3">
+    <div className="w-full flex justify-center fixed top-0 z-50 px-4 pt-6">
       <header className="w-full max-w-xl flex flex-col px-4 py-2 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md shadow-sm transition-all duration-300">
         <div className="flex justify-between items-center w-full">
           <Link href="/" className="flex items-center gap-3 font-bold text-zinc-900 dark:text-zinc-50 text-lg">

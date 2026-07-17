@@ -33,13 +33,13 @@ export default function Footer() {
       </svg>
 
       <div 
-        className="relative w-full h-[800px] sm:h-[720px] overflow-hidden"
+        className="relative w-full h-[1300px] sm:h-[1200px] overflow-hidden"
         style={{ clipPath: "url(#footer-curve)" }}
       >
-        {/* Background Image (using homepage header image) */}
+        {/* Background Image (using img2.svg) */}
         <div className="absolute inset-0 w-full h-full opacity-100">
           <Image
-            src="https://my-blog-tan-tau.vercel.app/banners/Post1.svg"
+            src="/img3.svg"
             alt="Footer Background Banner"
             fill
             sizes="100vw"
