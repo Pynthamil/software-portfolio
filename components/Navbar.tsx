@@ -8,15 +8,15 @@ export default function Navbar() {
 
   return (
     <div className="w-full flex justify-center fixed top-0 z-50 px-4 pt-6">
-      <header className="w-full max-w-xl flex flex-col px-4 py-2 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md shadow-sm transition-all duration-300">
+      <header className="w-full max-w-2xl flex flex-col px-4 py-2 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md shadow-sm transition-all duration-300">
         <div className="flex justify-between items-center w-full">
-          <Link href="/" className="flex items-center gap-3 font-bold text-zinc-900 dark:text-zinc-50 text-lg">
+          <Link href="/" className="flex items-center gap-3 font-bold text-zinc-900 dark:text-zinc-50 text-2xl">
             <img src="/SmileyFace.svg" alt="Smiley Face Logo" className="w-8 h-8 rounded-lg" />
             pyndulogs()
           </Link>
           
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-6 text-sm text-zinc-600 dark:text-zinc-400">
+          <div className="hidden md:flex items-center gap-6 text-lg text-zinc-600 dark:text-zinc-400">
             <Link href="#blog" className="hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors">blog</Link>
             <Link href="#projects" className="hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors">projects</Link>
             <Link href="#about" className="hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors">about</Link>
@@ -44,7 +44,7 @@ export default function Navbar() {
 
         {/* Mobile Nav Dropdown */}
         {isOpen && (
-          <div className="md:hidden flex flex-col mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-800 gap-4 text-sm text-zinc-600 dark:text-zinc-400 pb-2">
+          <div className="md:hidden flex flex-col mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-800 gap-4 text-lg text-zinc-600 dark:text-zinc-400 pb-2">
             <Link href="#blog" onClick={() => setIsOpen(false)} className="hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors px-2 py-1">blog</Link>
             <Link href="#projects" onClick={() => setIsOpen(false)} className="hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors px-2 py-1">projects</Link>
             <Link href="#about" onClick={() => setIsOpen(false)} className="hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors px-2 py-1">about</Link>

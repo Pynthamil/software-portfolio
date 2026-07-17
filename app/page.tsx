@@ -19,15 +19,15 @@ export default function Home() {
       {/* Content wrapper */}
       <div className="flex flex-col items-center px-12 pt-6 md:pt-10 lg:pt-12 pb-8 md:pb-16 lg:pb-20 gap-12 w-full">
         
-        {/* Text content wrapper - standard width (max-w-2xl) */}
-        <div className="max-w-2xl w-full text-left flex flex-col gap-12">
+        {/* Text content wrapper - standard width (max-w-3xl) */}
+        <div className="max-w-3xl w-full text-left flex flex-col gap-12 text-2xl">
 
         {/* Intro */}
         <div>
-          <h1 className="text-4xl font-bold text-zinc-900 dark:text-zinc-50 mb-8 [font-family:var(--font-dm-sans)]">
+          <h1 className="text-6xl font-bold text-zinc-900 dark:text-zinc-50 mb-8 [font-family:var(--font-dm-sans)]">
             Hi, this is Pynthamil!
           </h1>
-          <p className="mt-4 text-lg text-zinc-600 dark:text-zinc-400 text-justify">
+          <p className="mt-4 text-3xl text-zinc-600 dark:text-zinc-400 text-justify">
             I am a curious being who loves bringing the crazy ideas existing in my mind into reality through the sheer power of code.
           </p>
           <div className="mt-6 flex gap-4">
@@ -76,10 +76,10 @@ export default function Home() {
 
         {/* Section: Who am I */}
         <section id="about" className="scroll-mt-24">
-          <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">
+          <h2 className="text-4xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">
             who am i and what do i do for a living?
           </h2>
-          <p className="text-sm text-zinc-500 dark:text-zinc-400 italic mb-4">
+          <p className="text-lg text-zinc-500 dark:text-zinc-400 italic mb-4">
             a little less mystery about me
           </p>
           <ul className="plus-list space-y-2 text-zinc-700 dark:text-zinc-300">
@@ -94,10 +94,10 @@ export default function Home() {
 
         {/* Section: Outside of screens */}
         <section>
-          <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">
+          <h2 className="text-4xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">
             things i enjoy outside of screens
           </h2>
-          <p className="text-sm text-zinc-500 dark:text-zinc-400 italic mb-4">
+          <p className="text-lg text-zinc-500 dark:text-zinc-400 italic mb-4">
             when the laptop finally closes
           </p>
           <ul className="plus-list space-y-2 text-zinc-700 dark:text-zinc-300">
@@ -109,10 +109,10 @@ export default function Home() {
 
         {/* Section: Fun facts */}
         <section>
-          <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">
+          <h2 className="text-4xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">
             fun facts about me
           </h2>
-          <p className="text-sm text-zinc-500 dark:text-zinc-400 italic mb-4">
+          <p className="text-lg text-zinc-500 dark:text-zinc-400 italic mb-4">
             the lore drops
           </p>
           <ul className="plus-list space-y-2 text-zinc-700 dark:text-zinc-300">
@@ -127,34 +127,34 @@ export default function Home() {
 
         {/* Section: Projects */}
         <section id="projects" className="scroll-mt-24">
-          <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">
+          <h2 className="text-4xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">
             selected projects
           </h2>
-          <p className="text-sm text-zinc-500 dark:text-zinc-400 italic mb-4">
+          <p className="text-lg text-zinc-500 dark:text-zinc-400 italic mb-4">
             turning caffeine into code
           </p>
           <ul className="plus-list space-y-3 text-zinc-700 dark:text-zinc-300">
             <li>
               <strong>Project Alpha</strong> — A minimal, fast, and intentional web application built with modern tech.
-              <a href="#" className="ml-2 text-blue-600 hover:underline dark:text-blue-400 text-sm">View →</a>
+              <a href="#" className="ml-2 text-blue-600 hover:underline dark:text-blue-400 text-lg">View →</a>
             </li>
             <li>
               <strong>Project Beta</strong> — An experimental interface exploring effortless design and user interactions.
-              <a href="#" className="ml-2 text-blue-600 hover:underline dark:text-blue-400 text-sm">View →</a>
+              <a href="#" className="ml-2 text-blue-600 hover:underline dark:text-blue-400 text-lg">View →</a>
             </li>
             <li>
               <strong>Project Gamma</strong> — A tool that solves a very specific problem I had at 2:17 am.
-              <a href="#" className="ml-2 text-blue-600 hover:underline dark:text-blue-400 text-sm">View →</a>
+              <a href="#" className="ml-2 text-blue-600 hover:underline dark:text-blue-400 text-lg">View →</a>
             </li>
           </ul>
         </section>
 
         {/* Section: About my blog */}
         <section>
-          <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">
+          <h2 className="text-4xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">
             about my blog
           </h2>
-          <p className="text-sm text-zinc-500 dark:text-zinc-400 italic mb-4">
+          <p className="text-lg text-zinc-500 dark:text-zinc-400 italic mb-4">
             my brain leaving sticky notes for itself
           </p>
           <ul className="plus-list space-y-2 text-zinc-700 dark:text-zinc-300">
@@ -167,10 +167,10 @@ export default function Home() {
 
         {/* Section: Latest Blog Posts */}
         <section id="blog" className="scroll-mt-24">
-          <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">
+          <h2 className="text-4xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">
             latest posts
           </h2>
-          <p className="text-sm text-zinc-500 dark:text-zinc-400 italic mb-6">
+          <p className="text-lg text-zinc-500 dark:text-zinc-400 italic mb-6">
             from the digital notebook
           </p>
           <div className="flex flex-col gap-8">
@@ -180,13 +180,13 @@ export default function Home() {
                 <Image src="https://my-blog-tan-tau.vercel.app/banners/Post1.svg" alt="So...Here I Am on the Internet" width={400} height={300} className="w-full aspect-video object-cover rounded-lg group-hover:opacity-80 transition-opacity" />
               </div>
               <div>
-                <h3 className="font-bold text-lg text-zinc-900 dark:text-zinc-50 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                <h3 className="font-bold text-3xl text-zinc-900 dark:text-zinc-50 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                   So...Here I Am on the Internet
                 </h3>
-                <p className="text-sm text-zinc-600 dark:text-zinc-400 mt-1 line-clamp-2">
+                <p className="text-lg text-zinc-600 dark:text-zinc-400 mt-1 line-clamp-2">
                   a little about me, what I enjoy, and why I started this blog
                 </p>
-                <p className="text-sm font-medium text-blue-600 dark:text-blue-400 mt-2">Read post →</p>
+                <p className="text-lg font-medium text-blue-600 dark:text-blue-400 mt-2">Read post →</p>
               </div>
             </a>
             
@@ -196,13 +196,13 @@ export default function Home() {
                 <Image src="https://my-blog-tan-tau.vercel.app/banners/post2.svg" alt="readme, but make it aesthetic ✨" width={400} height={300} className="w-full aspect-video object-cover rounded-lg group-hover:opacity-80 transition-opacity" />
               </div>
               <div>
-                <h3 className="font-bold text-lg text-zinc-900 dark:text-zinc-50 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                <h3 className="font-bold text-3xl text-zinc-900 dark:text-zinc-50 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                   readme, but make it aesthetic ✨
                 </h3>
-                <p className="text-sm text-zinc-600 dark:text-zinc-400 mt-1 line-clamp-2">
+                <p className="text-lg text-zinc-600 dark:text-zinc-400 mt-1 line-clamp-2">
                   not everything has to be loud to be meaningful.
                 </p>
-                <p className="text-sm font-medium text-blue-600 dark:text-blue-400 mt-2">Read post →</p>
+                <p className="text-lg font-medium text-blue-600 dark:text-blue-400 mt-2">Read post →</p>
               </div>
             </a>
 
@@ -212,13 +212,13 @@ export default function Home() {
                 <Image src="https://my-blog-tan-tau.vercel.app/banners/post5.svg" alt="Git Commit Go" width={400} height={300} className="w-full aspect-video object-cover rounded-lg group-hover:opacity-80 transition-opacity" />
               </div>
               <div>
-                <h3 className="font-bold text-lg text-zinc-900 dark:text-zinc-50 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                <h3 className="font-bold text-3xl text-zinc-900 dark:text-zinc-50 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                   Git Commit Go
                 </h3>
-                <p className="text-sm text-zinc-600 dark:text-zinc-400 mt-1 line-clamp-2">
+                <p className="text-lg text-zinc-600 dark:text-zinc-400 mt-1 line-clamp-2">
                   A quick guide on how to interact with GitHub programmatically using their REST API.
                 </p>
-                <p className="text-sm font-medium text-blue-600 dark:text-blue-400 mt-2">Read post →</p>
+                <p className="text-lg font-medium text-blue-600 dark:text-blue-400 mt-2">Read post →</p>
               </div>
             </a>
           </div>
@@ -226,10 +226,10 @@ export default function Home() {
 
         {/* Section: Currently learning */}
         <section>
-          <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">
+          <h2 className="text-4xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">
             what i am currently learning
           </h2>
-          <p className="text-sm text-zinc-500 dark:text-zinc-400 italic mb-4">
+          <p className="text-lg text-zinc-500 dark:text-zinc-400 italic mb-4">
             learning, unlearning, relearning
           </p>
           <ul className="plus-list space-y-2 text-zinc-700 dark:text-zinc-300">

@@ -54,7 +54,7 @@ export default function Footer() {
         <div className="max-w-5xl mx-auto flex flex-col gap-12">
           
           {/* Main Footer Info Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-base font-mono text-zinc-650 dark:text-zinc-400">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-lg font-sans text-zinc-650 dark:text-zinc-400">
             {/* Column 1: Info */}
             <div className="flex flex-col gap-3">
               <span className="font-bold text-zinc-900 dark:text-white text-xl">pyndulogs()</span>
