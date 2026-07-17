@@ -5,20 +5,33 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Footer() {
-  const [views, setViews] = useState(1234);
+  const [views, setViews] = useState(1049);
 
   useEffect(() => {
-    // Generate a slightly dynamic view counter for visual interest
-    const savedViews = localStorage.getItem("portfolio_views");
-    if (savedViews) {
-      const nextViews = parseInt(savedViews, 10) + 1;
-      setViews(nextViews);
-      localStorage.setItem("portfolio_views", nextViews.toString());
-    } else {
-      const initialViews = Math.floor(Math.random() * 500) + 1000;
-      setViews(initialViews);
-      localStorage.setItem("portfolio_views", initialViews.toString());
-    }
+    // Increment the view counter and fetch the latest count
+    fetch("https://api.counterapi.dev/v1/pynthamil-portfolio/views/up")
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to fetch counter");
+        return res.json();
+      })
+      .then((data) => {
+        if (typeof data.count === "number") {
+          setViews(data.count);
+        }
+      })
+      .catch((err) => {
+        console.error("Counter API error:", err);
+        // Fallback to local storage if API is down
+        const savedViews = localStorage.getItem("portfolio_views");
+        if (savedViews) {
+          const nextViews = parseInt(savedViews, 10) + 1;
+          setViews(nextViews);
+          localStorage.setItem("portfolio_views", nextViews.toString());
+        } else {
+          setViews(1049);
+          localStorage.setItem("portfolio_views", "1049");
+        }
+      });
   }, []);
 
   return (
