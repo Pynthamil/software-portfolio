@@ -54,14 +54,14 @@ export default function Footer() {
         <div className="max-w-5xl mx-auto flex flex-col gap-12">
           
           {/* Main Footer Info Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-lg font-sans text-zinc-650 dark:text-zinc-400">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-2xl font-sans text-zinc-650 dark:text-zinc-400">
             {/* Column 1: Info */}
             <div className="flex flex-col gap-3">
-              <span className="font-bold text-zinc-900 dark:text-white text-xl">pyndulogs()</span>
-              <p className="text-sm text-zinc-500 dark:text-zinc-400">
+              <span className="font-bold text-zinc-900 dark:white text-3xl">pyndulogs()</span>
+              <p className="text-xl text-zinc-500 dark:text-zinc-400">
                 A student developer curious about interaction design and coding.
               </p>
-              <p className="text-sm text-zinc-400 dark:text-zinc-500 mt-2">
+              <p className="text-lg text-zinc-400 dark:text-zinc-500 mt-2">
                 © {new Date().getFullYear()} Pynthamil Pavendan. All rights reserved.
               </p>
             </div>
@@ -69,7 +69,7 @@ export default function Footer() {
             {/* Column 2: Navigation */}
             <div className="flex flex-col gap-2 md:items-center">
               <div className="flex flex-col gap-2">
-                <span className="font-bold text-zinc-900 dark:text-white text-xl mb-1">Navigation</span>
+                <span className="font-bold text-zinc-900 dark:text-white text-3xl mb-1">Navigation</span>
                 <Link href="#blog" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">/blog</Link>
                 <Link href="#projects" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">/projects</Link>
                 <Link href="#about" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">/about</Link>
@@ -79,14 +79,14 @@ export default function Footer() {
             {/* Column 3: Social & Stats */}
             <div className="flex flex-col gap-4 md:items-end">
               <div className="flex flex-col gap-2 md:items-end">
-                <span className="font-bold text-zinc-900 dark:text-white text-xl mb-1">Find Me</span>
+                <span className="font-bold text-zinc-900 dark:text-white text-3xl mb-1">Find Me</span>
                 <a href="https://github.com/pynthamil" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">GitHub</a>
                 <a href="https://linkedin.com/in/pynthamil" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">LinkedIn</a>
                 <a href="https://twitter.com/pynthamil" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Twitter</a>
               </div>
 
               {/* View Counter */}
-              <div className="flex items-center gap-2 text-sm text-zinc-500 bg-zinc-50 dark:bg-zinc-950 px-3 py-1.5 rounded-md border border-zinc-200 dark:border-zinc-800/80" title="Page views count">
+              <div className="flex items-center gap-2 text-lg text-zinc-500 bg-zinc-50 dark:bg-zinc-950 px-3 py-1.5 rounded-md border border-zinc-200 dark:border-zinc-800/80" title="Page views count">
                 <svg className="w-4 h-4 text-zinc-400 dark:text-zinc-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
