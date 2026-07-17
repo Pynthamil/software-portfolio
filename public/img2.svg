@@ -1,5 +1,5 @@
 <svg width="1280" height="832" viewBox="0 0 1280 832" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_337_13997)">
+<g clip-path="url(#clip0_341_14457)">
 <rect width="1280" height="832" fill="#3E56FF"/>
 <ellipse cx="639.5" cy="303.551" rx="569.5" ry="600.551" fill="#566BFF"/>
 <ellipse cx="640.453" cy="304.122" rx="452.453" ry="477.122" fill="#8191FF"/>
@@ -16,9 +16,15 @@
 <ellipse cx="1308" cy="650.5" rx="186" ry="234.5" fill="white"/>
 <circle cx="1064" cy="707" r="186" fill="white"/>
 <circle cx="797" cy="810" r="186" fill="white"/>
+<line x1="582.551" y1="233.16" x2="573.158" y2="242.058" stroke="#EF88B8" stroke-width="3.05556" stroke-linecap="round"/>
+<line x1="591.723" y1="233.16" x2="582.33" y2="242.058" stroke="#EF88B8" stroke-width="3.05556" stroke-linecap="round"/>
+<line x1="600.887" y1="233.16" x2="591.494" y2="242.058" stroke="#EF88B8" stroke-width="3.05556" stroke-linecap="round"/>
+<line x1="690.114" y1="233.16" x2="680.721" y2="242.058" stroke="#EF88B8" stroke-width="3.05556" stroke-linecap="round"/>
+<line x1="699.278" y1="233.16" x2="689.885" y2="242.058" stroke="#EF88B8" stroke-width="3.05556" stroke-linecap="round"/>
+<line x1="708.442" y1="233.16" x2="699.049" y2="242.058" stroke="#EF88B8" stroke-width="3.05556" stroke-linecap="round"/>
 </g>
 <defs>
-<clipPath id="clip0_337_13997">
+<clipPath id="clip0_341_14457">
 <rect width="1280" height="832" fill="white"/>
 </clipPath>
 </defs>
