@@ -1,26 +1,29 @@
 import Image from "next/image";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center bg-zinc-50 font-mono dark:bg-black px-12 py-8 md:px-24 md:py-16 lg:px-32 lg:py-20">
-
-      {/* Header Image */}
-      <div className="w-full max-w-3xl mb-0">
-        <Image
-          src="https://my-blog-tan-tau.vercel.app/banners/Post1.svg"
-          alt="So...Here I Am on the Internet"
-          width={900}
-          height={506}
-          className="w-full h-[480px] object-cover rounded-lg"
-          priority
-        />
-      </div>
-
-      <div className="max-w-2xl w-full text-left flex flex-col gap-12 mt-12">
+    <div className="flex flex-col w-full">
+      {/* Content wrapper */}
+      <div className="flex flex-col items-center px-12 pt-6 md:pt-10 lg:pt-12 pb-8 md:pb-16 lg:pb-20 mt-12 gap-12 w-full">
         
+        {/* Header Image - Slightly wider wrapper (max-w-3xl) */}
+        <div className="max-w-3xl w-full h-[500px] relative rounded-lg overflow-hidden">
+          <Image
+            src="https://my-blog-tan-tau.vercel.app/banners/Post1.svg"
+            alt="So...Here I Am on the Internet"
+            fill
+            className="object-cover rounded-lg"
+            priority
+          />
+        </div>
+
+        {/* Text content wrapper - standard width (max-w-2xl) */}
+        <div className="max-w-2xl w-full text-left flex flex-col gap-12">
+
         {/* Intro */}
         <div>
-          <h1 className="text-4xl font-bold text-zinc-900 dark:text-zinc-50 mb-8">
+          <h1 className="text-4xl font-bold text-zinc-900 dark:text-zinc-50 mb-8 [font-family:var(--font-dm-sans)]">
             Hi, this is Pynthamil!
           </h1>
           <p className="mt-4 text-lg text-zinc-600 dark:text-zinc-400 text-justify">
@@ -72,7 +75,7 @@ export default function Home() {
 
         {/* Section: Who am I */}
         <section id="about" className="scroll-mt-24">
-          <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">
+          <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">
             who am i and what do i do for a living?
           </h2>
           <p className="text-sm text-zinc-500 dark:text-zinc-400 italic mb-4">
@@ -90,7 +93,7 @@ export default function Home() {
 
         {/* Section: Outside of screens */}
         <section>
-          <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">
+          <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">
             things i enjoy outside of screens
           </h2>
           <p className="text-sm text-zinc-500 dark:text-zinc-400 italic mb-4">
@@ -105,7 +108,7 @@ export default function Home() {
 
         {/* Section: Fun facts */}
         <section>
-          <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">
+          <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">
             fun facts about me
           </h2>
           <p className="text-sm text-zinc-500 dark:text-zinc-400 italic mb-4">
@@ -123,7 +126,7 @@ export default function Home() {
 
         {/* Section: Projects */}
         <section id="projects" className="scroll-mt-24">
-          <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">
+          <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">
             selected projects
           </h2>
           <p className="text-sm text-zinc-500 dark:text-zinc-400 italic mb-4">
@@ -147,7 +150,7 @@ export default function Home() {
 
         {/* Section: About my blog */}
         <section>
-          <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">
+          <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">
             about my blog
           </h2>
           <p className="text-sm text-zinc-500 dark:text-zinc-400 italic mb-4">
@@ -163,7 +166,7 @@ export default function Home() {
 
         {/* Section: Latest Blog Posts */}
         <section id="blog" className="scroll-mt-24">
-          <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">
+          <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">
             latest posts
           </h2>
           <p className="text-sm text-zinc-500 dark:text-zinc-400 italic mb-6">
@@ -222,7 +225,7 @@ export default function Home() {
 
         {/* Section: Currently learning */}
         <section>
-          <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">
+          <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">
             what i am currently learning
           </h2>
           <p className="text-sm text-zinc-500 dark:text-zinc-400 italic mb-4">
@@ -236,18 +239,11 @@ export default function Home() {
           </ul>
         </section>
 
-        {/* Footer */}
-        <footer id="contact" className="mt-12 pt-8 border-t border-zinc-200 dark:border-zinc-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-zinc-500 dark:text-zinc-400 scroll-mt-24">
-          <p>© {new Date().getFullYear()} Pynthamil Pavendan</p>
-          <div className="flex items-center gap-2" title="Page views">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-              <circle cx="12" cy="12" r="3"></circle>
-            </svg>
-            <span>1,234 views</span>
-          </div>
-        </footer>
       </div>
     </div>
+      
+    {/* Curved Footer */}
+    <Footer />
+  </div>
   );
 }
