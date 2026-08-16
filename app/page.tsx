@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -63,14 +64,12 @@ export default function Home() {
             >
               /Twitter
             </a>
-            <a
-              href="https://my-blog-tan-tau.vercel.app"
+            <Link
+              href="/blog"
               className="text-blue-600 hover:underline dark:text-blue-400"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               /blog
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -82,7 +81,7 @@ export default function Home() {
           <p className="text-lg text-zinc-500 dark:text-zinc-400 italic mb-4">
             a little less mystery about me
           </p>
-          <ul className="plus-list space-y-2 text-zinc-700 dark:text-zinc-300">
+          <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-2 text-zinc-700 dark:text-zinc-300">
             <li>My name is Pynthamil Pavendan!</li>
             <li>I'm a student developer who enjoys turning ideas into things people can actually use</li>
             <li>I like building interfaces that feel simple, fast, and intentional</li>
@@ -100,7 +99,7 @@ export default function Home() {
           <p className="text-lg text-zinc-500 dark:text-zinc-400 italic mb-4">
             when the laptop finally closes
           </p>
-          <ul className="plus-list space-y-2 text-zinc-700 dark:text-zinc-300">
+          <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-2 text-zinc-700 dark:text-zinc-300">
             <li>I love reading books, watching movies, writing, and drawing</li>
             <li>I'm very curious so I love to constantly explore new things</li>
             <li>I don't believe the saying "curiosity kills the cat" — haha</li>
@@ -115,7 +114,7 @@ export default function Home() {
           <p className="text-lg text-zinc-500 dark:text-zinc-400 italic mb-4">
             the lore drops
           </p>
-          <ul className="plus-list space-y-2 text-zinc-700 dark:text-zinc-300">
+          <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-2 text-zinc-700 dark:text-zinc-300">
             <li>music taste: a bit of everything → if it sounds good, I'm listening</li>
             <li>I love singing and dancing like nobody's watching (because usually nobody is)</li>
             <li>introvert… who also loves to yap when the topic is interesting</li>
@@ -133,7 +132,7 @@ export default function Home() {
           <p className="text-lg text-zinc-500 dark:text-zinc-400 italic mb-4">
             turning caffeine into code
           </p>
-          <ul className="plus-list space-y-3 text-zinc-700 dark:text-zinc-300">
+          <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-3 text-zinc-700 dark:text-zinc-300">
             <li>
               <strong>Project Alpha</strong> — A minimal, fast, and intentional web application built with modern tech.
               <a href="#" className="ml-2 text-blue-600 hover:underline dark:text-blue-400 text-lg">View →</a>
@@ -157,7 +156,7 @@ export default function Home() {
           <p className="text-lg text-zinc-500 dark:text-zinc-400 italic mb-4">
             my brain leaving sticky notes for itself
           </p>
-          <ul className="plus-list space-y-2 text-zinc-700 dark:text-zinc-300">
+          <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-2 text-zinc-700 dark:text-zinc-300">
             <li>I write about things I'm learning, things I'm building, and things I randomly become obsessed with at 2:17 am</li>
             <li>sometimes it's about tech, sometimes design, sometimes a thought that refuses to leave me alone until I write it down</li>
             <li>it's less "expert advice" and more "let me see if this idea makes sense outside my head"</li>
@@ -165,19 +164,25 @@ export default function Home() {
           </ul>
         </section>
 
-        {/* Section: Latest Blog Posts */}
         <section id="blog" className="scroll-mt-24">
-          <h2 className="text-4xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">
-            latest posts
-          </h2>
-          <p className="text-lg text-zinc-500 dark:text-zinc-400 italic mb-6">
-            from the digital notebook
-          </p>
+          <div className="flex justify-between items-end mb-6">
+            <div>
+              <h2 className="text-4xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">
+                latest posts
+              </h2>
+              <p className="text-lg text-zinc-500 dark:text-zinc-400 italic mt-1">
+                from the digital notebook
+              </p>
+            </div>
+            <Link href="/blog" className="text-sm font-medium text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-300 transition-colors flex items-center gap-1 mb-2">
+              View all <span aria-hidden="true">&rarr;</span>
+            </Link>
+          </div>
           <div className="flex flex-col gap-8">
             {/* Post 1 */}
-            <a href="https://my-blog-tan-tau.vercel.app/posts/my-first-post" target="_blank" rel="noopener noreferrer" className="group flex flex-col sm:flex-row gap-4 sm:items-center">
-              <div className="w-full sm:w-64 shrink-0">
-                <Image src="https://my-blog-tan-tau.vercel.app/banners/Post1.svg" alt="So...Here I Am on the Internet" width={400} height={300} className="w-full aspect-video object-cover rounded-lg group-hover:opacity-80 transition-opacity" />
+            <Link href="/blog/so-here-i-am" className="group flex flex-col sm:flex-row gap-6 sm:items-center">
+              <div className="w-full sm:w-80 shrink-0">
+                <Image src="/post_covers/post1.svg" alt="So...Here I Am on the Internet" width={400} height={300} className="w-full aspect-video object-cover rounded-lg group-hover:opacity-80 transition-opacity" />
               </div>
               <div>
                 <h3 className="font-bold text-3xl text-zinc-900 dark:text-zinc-50 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
@@ -188,12 +193,12 @@ export default function Home() {
                 </p>
                 <p className="text-lg font-medium text-blue-600 dark:text-blue-400 mt-2">Read post →</p>
               </div>
-            </a>
+            </Link>
             
             {/* Post 2 */}
-            <a href="https://my-blog-tan-tau.vercel.app/posts/readme-aesthetic" target="_blank" rel="noopener noreferrer" className="group flex flex-col sm:flex-row gap-4 sm:items-center">
-              <div className="w-full sm:w-64 shrink-0">
-                <Image src="https://my-blog-tan-tau.vercel.app/banners/post2.svg" alt="readme, but make it aesthetic ✨" width={400} height={300} className="w-full aspect-video object-cover rounded-lg group-hover:opacity-80 transition-opacity" />
+            <Link href="/blog/readme-aesthetic" className="group flex flex-col sm:flex-row gap-6 sm:items-center">
+              <div className="w-full sm:w-80 shrink-0">
+                <Image src="/post_covers/post2.svg" alt="readme, but make it aesthetic ✨" width={400} height={300} className="w-full aspect-video object-cover rounded-lg group-hover:opacity-80 transition-opacity" />
               </div>
               <div>
                 <h3 className="font-bold text-3xl text-zinc-900 dark:text-zinc-50 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
@@ -204,12 +209,12 @@ export default function Home() {
                 </p>
                 <p className="text-lg font-medium text-blue-600 dark:text-blue-400 mt-2">Read post →</p>
               </div>
-            </a>
+            </Link>
 
             {/* Post 3 */}
-            <a href="https://my-blog-tan-tau.vercel.app/posts/git-commit-go" target="_blank" rel="noopener noreferrer" className="group flex flex-col sm:flex-row gap-4 sm:items-center">
-              <div className="w-full sm:w-64 shrink-0">
-                <Image src="https://my-blog-tan-tau.vercel.app/banners/post5.svg" alt="Git Commit Go" width={400} height={300} className="w-full aspect-video object-cover rounded-lg group-hover:opacity-80 transition-opacity" />
+            <Link href="/blog/git-commit-go" className="group flex flex-col sm:flex-row gap-6 sm:items-center">
+              <div className="w-full sm:w-80 shrink-0">
+                <Image src="/post_covers/post5.svg" alt="Git Commit Go" width={400} height={300} className="w-full aspect-video object-cover rounded-lg group-hover:opacity-80 transition-opacity" />
               </div>
               <div>
                 <h3 className="font-bold text-3xl text-zinc-900 dark:text-zinc-50 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
@@ -220,7 +225,7 @@ export default function Home() {
                 </p>
                 <p className="text-lg font-medium text-blue-600 dark:text-blue-400 mt-2">Read post →</p>
               </div>
-            </a>
+            </Link>
           </div>
         </section>
 
@@ -232,7 +237,7 @@ export default function Home() {
           <p className="text-lg text-zinc-500 dark:text-zinc-400 italic mb-4">
             learning, unlearning, relearning
           </p>
-          <ul className="plus-list space-y-2 text-zinc-700 dark:text-zinc-300">
+          <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-2 text-zinc-700 dark:text-zinc-300">
             <li>currently learning how to make things feel simple without making them boring</li>
             <li>exploring better ways to structure code, design cleaner interfaces, and build products that feel intentional from the first click</li>
             <li>trying to understand why some digital experiences feel effortless while others feel confusing, even when they do the same thing</li>

@@ -1,0 +1,296 @@
+import Image from "next/image";
+import Link from "next/link";
+
+export const metadata = {
+  title: "the idea ecosystem | Blog",
+  description: "How I use Notion to keep my projects and ideas calm and minimal.",
+};
+
+export default function BlogPost() {
+  return (
+    <div className="flex flex-col flex-1 items-center bg-white font-mono dark:bg-black px-12 py-8 md:px-24 md:py-16 lg:px-32 lg:py-20 mt-16 w-full">
+      <article className="max-w-2xl w-full text-left flex flex-col gap-10">
+        
+        {/* Back link */}
+        <Link href="/blog" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors inline-flex items-center gap-2 mb-4 w-fit">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          Back to blog
+        </Link>
+
+        {/* Header */}
+        <header className="flex flex-col gap-6">
+          <div className="w-full h-[350px] relative rounded-lg overflow-hidden border border-zinc-200 dark:border-zinc-800">
+            <Image
+              src="/post_covers/post3.svg"
+              alt="the idea ecosystem"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+          <div className="flex flex-col gap-4">
+            <div className="flex flex-wrap gap-2">
+              <span className="px-2 py-1 text-xs font-semibold bg-[#E5D4FF] text-zinc-900 rounded-md">Insights</span>
+              <span className="px-2 py-1 text-xs font-semibold bg-[#E5D4FF] text-zinc-900 rounded-md">Productivity</span>
+              <span className="px-2 py-1 text-xs font-semibold bg-[#E5D4FF] text-zinc-900 rounded-md">Notion</span>
+              <span className="px-2 py-1 text-xs font-semibold bg-[#E5D4FF] text-zinc-900 rounded-md">Organization</span>
+            </div>
+            
+            <div className="flex flex-col gap-1">
+              <h1 className="text-4xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">
+                the idea ecosystem
+              </h1>
+              <p className="text-xl text-zinc-600 dark:text-zinc-400 italic">
+                how i organise my projects using notion ✨
+              </p>
+            </div>
+
+            <div className="flex items-center gap-4 text-sm text-zinc-500 dark:text-zinc-400 mt-2">
+              <span>June 11, 2026</span>
+              <span aria-hidden="true">&bull;</span>
+              <span>4 min read</span>
+            </div>
+          </div>
+        </header>
+
+        {/* Content */}
+        <div className="prose prose-zinc dark:prose-invert font-mono text-zinc-700 dark:text-zinc-300 flex flex-col gap-8 text-lg leading-relaxed">
+          
+          <blockquote className="border-l-4 border-purple-400 pl-4 italic text-zinc-600 dark:text-zinc-400 my-4">
+            not everything has to be perfectly planned to be beautifully organised.
+          </blockquote>
+          
+          <p>For the longest time, my projects lived everywhere.</p>
+          
+          <p>
+            Some ideas were in notes apps.<br/>
+            Some were half-written in markdown files.<br/>
+            Some were just… existing in my brain, waiting for the <span className="italic">right moment</span>.
+          </p>
+
+          <p>And honestly?</p>
+          <p>That system worked — until it didn’t.</p>
+          
+          <p>So I turned to <strong>Notion</strong>.</p>
+          
+          <p>Not because I wanted a productivity system that looked impressive, but because I wanted something that felt <span className="italic">calm</span>.</p>
+          <p>Notion slowly became less of a tool and more of a quiet workspace where everything could exist without feeling overwhelming.</p>
+
+          <hr className="border-zinc-200 dark:border-zinc-800 my-4" />
+
+          <div className="flex flex-col gap-4">
+            <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">why I keep my setup minimal</h2>
+            <p>I don’t like complicated dashboards with 20 databases connected to each other.</p>
+            <p>I don’t want to spend more time managing the system than actually building things.</p>
+            <p>My rule is simple:</p>
+            <p className="font-bold">if it takes more than a few seconds to capture an idea, the system is too complex.</p>
+            
+            <p>I only track what actually helps me ship projects:</p>
+            <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-2 text-zinc-600 dark:text-zinc-400">
+              <li>what I’m working on</li>
+              <li>what’s done</li>
+              <li>what’s next</li>
+              <li>what tech I used</li>
+              <li>what the project is about</li>
+            </ul>
+            <p className="mt-4">Anything more quickly turns into maintenance work instead of progress.</p>
+          </div>
+
+          <hr className="border-zinc-200 dark:border-zinc-800 my-4" />
+
+          <div className="flex flex-col gap-4">
+            <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">my main structure</h2>
+            <p>Everything lives inside one main page called:</p>
+            <p className="font-bold text-zinc-900 dark:text-zinc-50">projects</p>
+            
+            <p>Inside it, I keep a single database with just a few properties:</p>
+            
+            <div className="overflow-x-auto my-4 border border-zinc-200 dark:border-zinc-800 rounded-lg">
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr className="bg-zinc-100 dark:bg-zinc-900">
+                    <th className="p-3 border-b border-zinc-200 dark:border-zinc-800">property</th>
+                    <th className="p-3 border-b border-zinc-200 dark:border-zinc-800">purpose</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-zinc-200 dark:divide-zinc-800">
+                  <tr>
+                    <td className="p-3 font-semibold">status</td>
+                    <td className="p-3 text-zinc-600 dark:text-zinc-400">idea, building, paused, finished</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 font-semibold">priority</td>
+                    <td className="p-3 text-zinc-600 dark:text-zinc-400">low, medium, high</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 font-semibold">link</td>
+                    <td className="p-3 text-zinc-600 dark:text-zinc-400">github repo or live website</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 font-semibold">stack</td>
+                    <td className="p-3 text-zinc-600 dark:text-zinc-400">the tech stack used</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p>That’s it.</p>
+            <p>
+              No complicated formulas.<br/>
+              No overwhelming tags.
+            </p>
+
+            <img src="https://cdn.hashnode.com/uploads/covers/69bf9c294a1e513e41a8bb97/7a4fed91-a713-4ea4-928c-3c650b3473a6.png" alt="Notion setup overview 1" className="rounded-lg border border-zinc-200 dark:border-zinc-800 my-4" />
+            <img src="https://cdn.hashnode.com/uploads/covers/69bf9c294a1e513e41a8bb97/a9b633f5-9ba9-4103-99c5-d0afbe83d0cf.png" alt="Notion setup overview 2" className="rounded-lg border border-zinc-200 dark:border-zinc-800 my-4" />
+
+            <p>Just enough structure to keep things manageable.</p>
+          </div>
+
+          <hr className="border-zinc-200 dark:border-zinc-800 my-4" />
+
+          <div className="flex flex-col gap-4">
+            <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">statuses I use</h2>
+            <p>I try not to overthink this part.</p>
+            
+            <div className="flex flex-col gap-2 mt-2">
+              <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">idea</h3>
+              <p>
+                random sparks of curiosity<br/>
+                things I might build<br/>
+                things I <span className="italic">probably</span> won’t build<br/>
+                but still want to remember
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-2 mt-4">
+              <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">building</h3>
+              <p>projects I am actively working on</p>
+              <p className="italic text-zinc-500">this helps me see what currently has my attention</p>
+            </div>
+
+            <div className="flex flex-col gap-2 mt-4">
+              <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">paused</h3>
+              <p>
+                projects that are not abandoned<br/>
+                just waiting for the right energy
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-2 mt-4">
+              <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">finished</h3>
+              <p>completed projects, experiments, or posts</p>
+              <p className="italic text-zinc-500">keeping them visible reminds me that progress does happen</p>
+            </div>
+          </div>
+
+          <hr className="border-zinc-200 dark:border-zinc-800 my-4" />
+
+          <div className="flex flex-col gap-4">
+            <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">how I capture ideas quickly</h2>
+            <p>Whenever an idea appears, I create a new page inside the projects database and write:</p>
+            <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-2 text-zinc-600 dark:text-zinc-400">
+              <li>what it is</li>
+              <li>why it interests me</li>
+              <li>any random thoughts</li>
+            </ul>
+            <p className="mt-4">
+              Sometimes it's one line.<br/>
+              Sometimes it's messy.<br/>
+              Sometimes it makes no sense later.
+            </p>
+            <p>And that’s okay.</p>
+            <p>The goal is not perfection, just <strong>not losing the idea</strong>.</p>
+          </div>
+
+          <hr className="border-zinc-200 dark:border-zinc-800 my-4" />
+
+          <div className="flex flex-col gap-4">
+            <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">my project page template</h2>
+            <p>Each project page usually contains:</p>
+            
+            <div className="flex flex-col gap-2 mt-2">
+              <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">overview</h3>
+              <p>what the project is about</p>
+              <img src="https://cdn.hashnode.com/uploads/covers/69bf9c294a1e513e41a8bb97/c19461bf-8640-4236-bf3a-5a80f62efc45.png" alt="Project overview" className="rounded-lg border border-zinc-200 dark:border-zinc-800 my-2" />
+            </div>
+
+            <div className="flex flex-col gap-2 mt-4">
+              <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">tasks</h3>
+              <p>I divide the whole project into manageable action items</p>
+              <img src="https://cdn.hashnode.com/uploads/covers/69bf9c294a1e513e41a8bb97/c9933037-d6e0-44f8-9959-71f2975193f0.png" alt="Tasks view" className="rounded-lg border border-zinc-200 dark:border-zinc-800 my-2" />
+            </div>
+
+            <div className="flex flex-col gap-2 mt-4">
+              <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">goals</h3>
+              <p>what I want this to become</p>
+              <img src="https://cdn.hashnode.com/uploads/covers/69bf9c294a1e513e41a8bb97/06483187-17bc-4858-a587-23baed7bf0d9.png" alt="Goals view" className="rounded-lg border border-zinc-200 dark:border-zinc-800 my-2" />
+            </div>
+
+            <div className="flex flex-col gap-2 mt-4">
+              <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">links</h3>
+              <p>
+                github<br/>
+                figma<br/>
+                references<br/>
+                articles
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-2 mt-4">
+              <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">notes</h3>
+              <p>
+                random thoughts<br/>
+                things to try<br/>
+                things to improve
+              </p>
+            </div>
+          </div>
+
+          <hr className="border-zinc-200 dark:border-zinc-800 my-4" />
+
+          <div className="flex flex-col gap-4">
+            <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">why this works for me</h2>
+            <p>This system works because it feels light.</p>
+            <p>
+              There’s no pressure to fill every field.<br/>
+              No pressure to update everything perfectly.
+            </p>
+            <p>Just a space where ideas can exist.</p>
+            <p>
+              Some projects grow.<br/>
+              Some don’t.
+            </p>
+            <p>But everything has a place.</p>
+            <p>And that makes starting easier.</p>
+          </div>
+
+          <hr className="border-zinc-200 dark:border-zinc-800 my-4" />
+
+          <div className="flex flex-col gap-4">
+            <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">small things that made a big difference</h2>
+            <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-2 text-zinc-600 dark:text-zinc-400">
+              <li>keeping the layout minimal</li>
+              <li>not adding unnecessary tags</li>
+              <li>allowing unfinished ideas to exist</li>
+              <li>using notion to have everything organised in a single space</li>
+            </ul>
+          </div>
+
+          <hr className="border-zinc-200 dark:border-zinc-800 my-4" />
+
+          <div className="flex flex-col gap-4">
+            <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">final thoughts</h2>
+            <p>organisation doesn’t have to be super aesthetic.</p>
+            <p>Sometimes it’s just: a minimal setup, a simple structure, and a place where your ideas feel welcome.</p>
+            <p>If your system feels comfortable, you’ll keep coming back to it.</p>
+            <p>And that consistency matters more than complexity.</p>
+            <p className="mt-4">If you're building your own system, start small.</p>
+            <p>You can always add more later.</p>
+            <p>But simple systems are the ones that last.</p>
+          </div>
+
+        </div>
+      </article>
+    </div>
+  );
+}

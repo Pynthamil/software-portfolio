@@ -19,9 +19,8 @@ export default function Footer() {
           setViews(data.count);
         }
       })
-      .catch((err) => {
-        console.error("Counter API error:", err);
-        // Fallback to local storage if API is down
+      .catch(() => {
+        // Fallback to local storage silently if API is down
         const savedViews = localStorage.getItem("portfolio_views");
         if (savedViews) {
           const nextViews = parseInt(savedViews, 10) + 1;

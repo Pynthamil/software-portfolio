@@ -17,7 +17,7 @@ export default function Navbar() {
           
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-6 text-lg text-zinc-600 dark:text-zinc-400">
-            <Link href="#blog" className="hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors">blog</Link>
+            <Link href="/blog" className="hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors">blog</Link>
             <Link href="#projects" className="hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors">projects</Link>
             <Link href="#about" className="hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors">about</Link>
             <Link href="#contact" className="hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors">contact</Link>
@@ -45,7 +45,7 @@ export default function Navbar() {
         {/* Mobile Nav Dropdown */}
         {isOpen && (
           <div className="md:hidden flex flex-col mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-800 gap-4 text-lg text-zinc-600 dark:text-zinc-400 pb-2">
-            <Link href="#blog" onClick={() => setIsOpen(false)} className="hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors px-2 py-1">blog</Link>
+            <Link href="/blog" onClick={() => setIsOpen(false)} className="hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors px-2 py-1">blog</Link>
             <Link href="#projects" onClick={() => setIsOpen(false)} className="hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors px-2 py-1">projects</Link>
             <Link href="#about" onClick={() => setIsOpen(false)} className="hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors px-2 py-1">about</Link>
             <Link href="#contact" onClick={() => setIsOpen(false)} className="hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors px-2 py-1">contact</Link>
