@@ -330,7 +330,9 @@ export default function Home() {
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
               {[
                 "/otherassets/photo-dump/48311c09-95f1-4ba9-b4e8-eabcbfd0313f.JPG",
+                "/otherassets/photo-dump/IMG-20250615-WA0139.jpg",
                 "/otherassets/photo-dump/IMG-20250629-WA0240.jpg",
+                "/otherassets/photo-dump/20250622_124021.jpg",
                 "/otherassets/photo-dump/IMG-20250629-WA0260.jpg",
                 "/otherassets/photo-dump/IMG-20250629-WA0302.jpg",
                 "/otherassets/photo-dump/IMG_2939.jpeg",
