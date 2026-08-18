@@ -11,41 +11,71 @@ const categories = [
     id: "development",
     title: "Latest Development blogs",
     blogs: [
-      { title: "Git Commit Go", image: "/post_covers/post5.svg", link: "/blog/git-commit-go" },
-      { title: "The Art of Committing", image: "/post_covers/post4.svg", link: "/blog/art-of-committing" },
+      {
+        title: "Git Commit Go",
+        description: "A quick guide on how to interact with GitHub programmatically using their REST API.",
+        image: "/post_covers/post5.svg",
+        link: "/blog/git-commit-go"
+      },
+      {
+        title: "The Art of Committing",
+        description: "A simple and calm guide to using Git and version control.",
+        image: "/post_covers/post4.svg",
+        link: "/blog/art-of-committing"
+      },
     ]
   },
   {
     id: "design",
     title: "Latest Design blogs",
     blogs: [
-      { title: "Figma 101", image: "/post_covers/post7.svg", link: "/blog/figma-101" },
-      { title: "readme, but make it aesthetic ✨", image: "/post_covers/post2.svg", link: "/blog/readme-aesthetic" },
+      {
+        title: "readme, but make it aesthetic ✨",
+        description: "not everything has to be loud to be meaningful.",
+        image: "/post_covers/post2.svg",
+        link: "/blog/readme-aesthetic"
+      },
+      {
+        title: "Figma 101",
+        description: "First steps in creating aesthetic and minimal design systems in Figma.",
+        image: "/post_covers/post7.svg",
+        link: "/blog/figma-101"
+      },
     ]
   },
   {
     id: "insights",
     title: "Latest Insights blogs",
     blogs: [
-      { title: "the idea ecosystem", image: "/post_covers/post3.svg", link: "/blog/idea-ecosystem" },
+      {
+        title: "the idea ecosystem",
+        description: "How I use Notion to keep my projects and ideas calm and minimal.",
+        image: "/post_covers/post3.svg",
+        link: "/blog/idea-ecosystem"
+      },
     ]
   },
   {
     id: "other",
     title: "Latest Other blogs",
     blogs: [
-      { title: "So...Here I Am on the Internet", image: "/post_covers/post1.svg", link: "/blog/so-here-i-am" },
+      {
+        title: "So...Here I Am on the Internet",
+        description: "a little about me, what I enjoy, and why I started this blog",
+        image: "/post_covers/post1.svg",
+        link: "/blog/so-here-i-am"
+      },
     ]
   }
 ];
 
 export default function BlogPage() {
   return (
-    <div className="flex flex-col flex-1 items-center bg-[#F7F6F4] font-mono dark:bg-[#0a0a0a] px-6 pt-28 md:pt-32 pb-16 w-full">
-      <div className="max-w-3xl w-full text-left flex flex-col gap-12">
+    <div className="flex flex-col flex-1 items-center bg-[#F7F6F4] font-mono dark:bg-[#0a0a0a] px-4 sm:px-6 pt-28 md:pt-32 pb-16 w-full">
+      <div className="max-w-3xl w-full text-left flex flex-col gap-10">
         
         {categories.map((category) => (
-          <section key={category.id} className="flex flex-col gap-5 w-full">
+          <section key={category.id} className="flex flex-col gap-4 w-full">
             {/* Category Header */}
             <div className="flex justify-between items-end w-full">
               <h2 className="text-xl sm:text-2xl font-bold text-zinc-900 dark:text-white [font-family:var(--font-dm-sans)]">
@@ -53,30 +83,37 @@ export default function BlogPage() {
               </h2>
             </div>
 
-            {/* Blog Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {/* Blog Cards List */}
+            <div className="flex flex-col gap-4">
               {category.blogs.map((blog, index) => (
-                <Link href={blog.link} key={index} className="group flex flex-col gap-3">
-                  <div className="w-full aspect-[16/10] relative rounded-xl overflow-hidden bg-white dark:bg-zinc-850 border border-zinc-200/80 dark:border-zinc-800 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-md">
+                <Link
+                  href={blog.link}
+                  key={index}
+                  className="group flex flex-col sm:flex-row items-center sm:items-start gap-5 p-4 sm:p-5 rounded-3xl bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 w-full"
+                >
+                  <div className="w-full sm:w-[240px] md:w-[260px] shrink-0 aspect-[16/10] relative rounded-2xl overflow-hidden bg-[#F0F2FF] dark:bg-zinc-800">
                     <Image
                       src={blog.image}
                       alt={blog.title}
                       fill
-                      className="object-cover"
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
-                  <h3 className="text-base font-semibold text-[#5569FF] group-hover:text-[#3730A3] dark:text-[#8191FF] dark:group-hover:text-[#B0C3FF] transition-colors [font-family:var(--font-dm-sans)]">
-                    {blog.title}
-                  </h3>
+                  <div className="flex flex-col justify-between flex-1 h-full py-1 text-left w-full">
+                    <div className="flex flex-col gap-2">
+                      <h3 className="text-xl sm:text-2xl font-bold text-zinc-900 dark:text-zinc-50 group-hover:text-[#5569FF] dark:group-hover:text-[#8191FF] transition-colors [font-family:var(--font-dm-sans)]">
+                        {blog.title}
+                      </h3>
+                      <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base leading-relaxed">
+                        {blog.description}
+                      </p>
+                    </div>
+                    <span className="text-[#3B82F6] dark:text-[#60A5FA] font-medium text-sm sm:text-base mt-4 inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                      Read post &rarr;
+                    </span>
+                  </div>
                 </Link>
               ))}
-            </div>
-            
-            {/* Pagination Mockup */}
-            <div className="flex justify-center items-center gap-3 mt-2 text-zinc-400 dark:text-zinc-600">
-              <button className="p-1 hover:text-zinc-900 dark:hover:text-zinc-300 transition-colors text-sm">&lsaquo;</button>
-              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-[#E5D4FF] text-zinc-900 text-xs font-bold">1</span>
-              <button className="p-1 hover:text-zinc-900 dark:hover:text-zinc-300 transition-colors text-sm">&rsaquo;</button>
             </div>
           </section>
         ))}
@@ -85,4 +122,5 @@ export default function BlogPage() {
     </div>
   );
 }
+
 
