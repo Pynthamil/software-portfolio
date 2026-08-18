@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Geist, JetBrains_Mono, DM_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import Navbar from "@/components/Navbar";
 import "./globals.css";
+
+const calSans = localFont({
+  src: "./fonts/CalSans-SemiBold.woff2",
+  variable: "--font-cal-sans",
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,9 +39,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${jetbrainsMono.variable} ${dmSans.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${jetbrainsMono.variable} ${dmSans.variable} ${calSans.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-white dark:bg-[#0a0a0a] font-sans text-zinc-900 dark:text-zinc-50">
+      <body className="min-h-full flex flex-col bg-[#F7F6F4] dark:bg-[#0a0a0a] font-sans text-zinc-900 dark:text-zinc-50">
         <Navbar />
         {children}
       </body>
