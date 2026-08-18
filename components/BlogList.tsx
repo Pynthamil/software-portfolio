@@ -74,7 +74,7 @@ export default function BlogList({ blogs }: BlogListProps) {
             className={`text-lg px-2 py-1 transition-colors ${
               currentPage === 1
                 ? "text-zinc-300 dark:text-zinc-700 cursor-not-allowed"
-                : "text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-200 cursor-pointer"
+                : "text-zinc-400 hover:text-[#5569FF] dark:hover:text-[#8191FF] cursor-pointer"
             }`}
           >
             &lsaquo;
@@ -87,8 +87,8 @@ export default function BlogList({ blogs }: BlogListProps) {
               onClick={() => handlePageChange(page)}
               className={`flex items-center justify-center w-9 h-9 rounded-full text-sm font-bold transition-all cursor-pointer ${
                 currentPage === page
-                  ? "bg-[#E5D4FF] text-zinc-900 shadow-xs"
-                  : "text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-200/60 dark:hover:bg-zinc-800"
+                  ? "bg-[#5569FF] text-white shadow-xs"
+                  : "text-zinc-600 dark:text-zinc-400 hover:text-[#5569FF] dark:hover:text-[#8191FF] hover:bg-[#EEF2FF] dark:hover:bg-zinc-800"
               }`}
             >
               {page}
@@ -103,7 +103,7 @@ export default function BlogList({ blogs }: BlogListProps) {
             className={`text-lg px-2 py-1 transition-colors ${
               currentPage === totalPages
                 ? "text-zinc-300 dark:text-zinc-700 cursor-not-allowed"
-                : "text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-200 cursor-pointer"
+                : "text-zinc-400 hover:text-[#5569FF] dark:hover:text-[#8191FF] cursor-pointer"
             }`}
           >
             &rsaquo;
