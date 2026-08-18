@@ -374,7 +374,6 @@ export default function Home() {
                       <li><span className="text-[#8FBCBB]">Email:</span> <a href="mailto:pavendanpynthamil@gmail.com" className="text-[#D08770] hover:underline transition-colors">pavendanpynthamil@gmail.com</a></li>
                       <li><span className="text-[#8FBCBB]">GitHub:</span> <a href="https://github.com/Pynthamil" target="_blank" rel="noopener noreferrer" className="text-[#D08770] hover:underline transition-colors">Pynthamil</a></li>
                       <li><span className="text-[#8FBCBB]">LinkedIn:</span> <a href="https://www.linkedin.com/in/pynthamil-pavendan-55795228a/" target="_blank" rel="noopener noreferrer" className="text-[#D08770] hover:underline transition-colors">pynthamil-pavendan</a></li>
-                      <li><span className="text-[#8FBCBB]">LeetCode:</span> <a href="https://leetcode.com/u/HashKnight/" target="_blank" rel="noopener noreferrer" className="text-[#D08770] hover:underline transition-colors">HashKnight</a></li>
                     </ul>
                   </li>
                 </ul>
