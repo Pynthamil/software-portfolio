@@ -78,7 +78,29 @@ export default function BlogPage() {
             </div>
           </Link>
         ))}
+
+        {/* Page Marker */}
+        <div className="flex justify-center items-center gap-6 mt-6 mb-2 select-none">
+          <button
+            type="button"
+            aria-label="Previous page"
+            className="text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200 text-lg transition-colors cursor-pointer"
+          >
+            &lsaquo;
+          </button>
+          <span className="flex items-center justify-center w-9 h-9 rounded-full bg-[#E5D4FF] text-zinc-900 font-bold text-sm">
+            1
+          </span>
+          <button
+            type="button"
+            aria-label="Next page"
+            className="text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200 text-lg transition-colors cursor-pointer"
+          >
+            &rsaquo;
+          </button>
+        </div>
       </div>
     </div>
   );
 }
+
