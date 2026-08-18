@@ -21,20 +21,51 @@ import ResumeBanner from "@/components/ResumeBanner";
 export default function Home() {
   const [currentPage, setCurrentPage] = useState(1);
 
-  // Sync page with hash in URL if direct link / navigation happens
+  // Sync page with hash in URL and handle navbar clicks seamlessly
   useEffect(() => {
-    const handleHash = () => {
-      const hash = window.location.hash.slice(1);
-      if (hash === "blog") {
+    const handleTarget = (id: string) => {
+      if (!id) return;
+      if (id === "top") {
+        setCurrentPage(1);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        return;
+      }
+
+      if (id === "blog") {
         setCurrentPage(2);
-      } else if (["about", "experience", "education", "projects", "contact"].includes(hash)) {
+      } else if (["about", "experience", "education", "projects", "contact"].includes(id)) {
         setCurrentPage(1);
       }
+
+      setTimeout(() => {
+        const elem = document.getElementById(id);
+        if (elem) {
+          if (elem instanceof HTMLDetailsElement) {
+            elem.open = true;
+          }
+          elem.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 120);
+    };
+
+    const handleHash = () => {
+      const hash = window.location.hash.slice(1);
+      if (hash) handleTarget(hash);
+    };
+
+    const handleNavEvent = (e: Event) => {
+      const customEvent = e as CustomEvent<{ id: string }>;
+      const id = customEvent.detail?.id;
+      if (id) handleTarget(id);
     };
 
     handleHash();
     window.addEventListener("hashchange", handleHash);
-    return () => window.removeEventListener("hashchange", handleHash);
+    window.addEventListener("nav-target", handleNavEvent);
+    return () => {
+      window.removeEventListener("hashchange", handleHash);
+      window.removeEventListener("nav-target", handleNavEvent);
+    };
   }, []);
 
   const handlePageChange = (page: number) => {
