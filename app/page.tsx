@@ -287,7 +287,7 @@ export default function Home() {
               <li>I enjoy challenging myself just for the plot</li>
               <li>I love chess</li>
               <li>most of my illustrations are inspired by Headspace</li>
-              <li>currently in my 3rd year of college, about to enter my final year — slightly terrifying & slightly exciting</li>
+              <li>currently in my final year of college — slightly terrifying & slightly exciting</li>
             </ul>
           </div>
         </details>
