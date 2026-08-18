@@ -87,9 +87,9 @@ export default function Home() {
         </div>
 
         {/* Section: Who am I */}
-        <details id="about" className="scroll-mt-28 group cursor-pointer">
-          <summary className="list-none outline-none [&::-webkit-details-marker]:hidden transition-opacity hover:opacity-90">
-            <WhoAmIHeader className="w-full h-auto" />
+        <details id="about" className="scroll-mt-28 group">
+          <summary className="list-none outline-none [&::-webkit-details-marker]:hidden cursor-pointer select-none block">
+            <WhoAmIHeader className="w-full h-auto block" />
           </summary>
           <div className="pt-6 pb-4 px-4 md:px-8">
             <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-2 text-zinc-700 dark:text-zinc-300">
@@ -104,9 +104,9 @@ export default function Home() {
         </details>
 
         {/* Section: Experience */}
-        <details id="experience" className="scroll-mt-28 group cursor-pointer">
-          <summary className="list-none outline-none [&::-webkit-details-marker]:hidden transition-opacity hover:opacity-90">
-            <ExperienceHeader className="w-full h-auto" />
+        <details id="experience" className="scroll-mt-28 group">
+          <summary className="list-none outline-none [&::-webkit-details-marker]:hidden cursor-pointer select-none block">
+            <ExperienceHeader className="w-full h-auto block" />
           </summary>
           <div className="pt-6 pb-4 px-4 md:px-8">
             <div className="flex flex-col gap-6">
@@ -146,9 +146,9 @@ export default function Home() {
         </details>
 
         {/* Section: Education */}
-        <details id="education" className="scroll-mt-28 group cursor-pointer">
-          <summary className="list-none outline-none [&::-webkit-details-marker]:hidden transition-opacity hover:opacity-90">
-            <EducationHeader className="w-full h-auto" />
+        <details id="education" className="scroll-mt-28 group">
+          <summary className="list-none outline-none [&::-webkit-details-marker]:hidden cursor-pointer select-none block">
+            <EducationHeader className="w-full h-auto block" />
           </summary>
           <div className="pt-6 pb-4 px-4 md:px-8">
             <div className="flex flex-col gap-6">
@@ -172,9 +172,9 @@ export default function Home() {
         </details>
 
         {/* Section: Selected Works */}
-        <details id="projects" className="scroll-mt-28 group cursor-pointer">
-          <summary className="list-none outline-none [&::-webkit-details-marker]:hidden transition-opacity hover:opacity-90">
-            <SelectedWorksHeader className="w-full h-auto" />
+        <details id="projects" className="scroll-mt-28 group">
+          <summary className="list-none outline-none [&::-webkit-details-marker]:hidden cursor-pointer select-none block">
+            <SelectedWorksHeader className="w-full h-auto block" />
           </summary>
           <div className="pt-6 pb-4 px-4 md:px-8">
             <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-3 text-zinc-700 dark:text-zinc-300">
@@ -195,9 +195,9 @@ export default function Home() {
         </details>
 
         {/* Section: About my blog */}
-        <details className="scroll-mt-28 group cursor-pointer">
-          <summary className="list-none outline-none [&::-webkit-details-marker]:hidden transition-opacity hover:opacity-90">
-            <AboutBlogHeader className="w-full h-auto" />
+        <details className="scroll-mt-28 group">
+          <summary className="list-none outline-none [&::-webkit-details-marker]:hidden cursor-pointer select-none block">
+            <AboutBlogHeader className="w-full h-auto block" />
           </summary>
           <div className="pt-6 pb-4 px-4 md:px-8">
             <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-2 text-zinc-700 dark:text-zinc-300">
@@ -210,9 +210,9 @@ export default function Home() {
         </details>
 
         {/* Section: Featured Writing */}
-        <details id="blog" className="scroll-mt-28 group cursor-pointer">
-          <summary className="list-none outline-none [&::-webkit-details-marker]:hidden transition-opacity hover:opacity-90">
-            <FeaturedWritingHeader className="w-full h-auto" />
+        <details id="blog" className="scroll-mt-28 group">
+          <summary className="list-none outline-none [&::-webkit-details-marker]:hidden cursor-pointer select-none block">
+            <FeaturedWritingHeader className="w-full h-auto block" />
           </summary>
           <div className="pt-6 pb-4 px-4 md:px-8 flex flex-col gap-6">
             <div className="flex flex-col gap-6">
@@ -274,9 +274,9 @@ export default function Home() {
         </details>
 
         {/* Section: Fun facts */}
-        <details className="scroll-mt-28 group cursor-pointer">
-          <summary className="list-none outline-none [&::-webkit-details-marker]:hidden transition-opacity hover:opacity-90">
-            <FunFactsHeader className="w-full h-auto" />
+        <details className="scroll-mt-28 group">
+          <summary className="list-none outline-none [&::-webkit-details-marker]:hidden cursor-pointer select-none block">
+            <FunFactsHeader className="w-full h-auto block" />
           </summary>
           <div className="pt-6 pb-4 px-4 md:px-8">
             <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-2 text-zinc-700 dark:text-zinc-300">
@@ -293,9 +293,9 @@ export default function Home() {
         </details>
 
         {/* Section: Outside of screens */}
-        <details className="scroll-mt-28 group cursor-pointer">
-          <summary className="list-none outline-none [&::-webkit-details-marker]:hidden transition-opacity hover:opacity-90">
-            <OutsideScreensHeader className="w-full h-auto" />
+        <details className="scroll-mt-28 group">
+          <summary className="list-none outline-none [&::-webkit-details-marker]:hidden cursor-pointer select-none block">
+            <OutsideScreensHeader className="w-full h-auto block" />
           </summary>
           <div className="pt-6 pb-4 px-4 md:px-8">
             <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-2 text-zinc-700 dark:text-zinc-300">
@@ -307,9 +307,9 @@ export default function Home() {
         </details>
 
         {/* Section: Currently learning */}
-        <details className="scroll-mt-28 group cursor-pointer">
-          <summary className="list-none outline-none [&::-webkit-details-marker]:hidden transition-opacity hover:opacity-90">
-            <CurrentlyLearningHeader className="w-full h-auto" />
+        <details className="scroll-mt-28 group">
+          <summary className="list-none outline-none [&::-webkit-details-marker]:hidden cursor-pointer select-none block">
+            <CurrentlyLearningHeader className="w-full h-auto block" />
           </summary>
           <div className="pt-6 pb-4 px-4 md:px-8">
             <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-2 text-zinc-700 dark:text-zinc-300">
@@ -322,9 +322,9 @@ export default function Home() {
         </details>
 
         {/* Section: Proof I go outside (Photo Dump) */}
-        <details className="scroll-mt-28 group cursor-pointer">
-          <summary className="list-none outline-none [&::-webkit-details-marker]:hidden transition-opacity hover:opacity-90">
-            <PhotoDumpHeader className="w-full h-auto" />
+        <details className="scroll-mt-28 group">
+          <summary className="list-none outline-none [&::-webkit-details-marker]:hidden cursor-pointer select-none block">
+            <PhotoDumpHeader className="w-full h-auto block" />
           </summary>
           <div className="pt-6 pb-4 px-4 md:px-8">
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
@@ -357,9 +357,9 @@ export default function Home() {
         </details>
 
         {/* Section: Contact */}
-        <details id="contact" className="scroll-mt-28 group cursor-pointer">
-          <summary className="list-none outline-none [&::-webkit-details-marker]:hidden transition-opacity hover:opacity-90">
-            <ContactHeader className="w-full h-auto" />
+        <details id="contact" className="scroll-mt-28 group">
+          <summary className="list-none outline-none [&::-webkit-details-marker]:hidden cursor-pointer select-none block">
+            <ContactHeader className="w-full h-auto block" />
           </summary>
           <div className="pt-6 pb-4 px-4 md:px-8">
             <div className="rounded-lg overflow-hidden bg-[#2D2D2D] border border-zinc-700/50 shadow-xl font-mono text-sm md:text-base">
