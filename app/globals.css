@@ -19,16 +19,6 @@
   }
 }
 
-body {
-  background-image: radial-gradient(rgba(0, 0, 0, 0.1) 1.5px, transparent 1.5px);
-  background-size: 24px 24px;
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1.5px, transparent 1.5px);
-  }
-}
 
 /* Dropdown header colors: normal state is vibrant purple #5569FF, hover state is deep royal purple #3730A3 */
 details.group summary svg path[fill="#B0C3FF" i],

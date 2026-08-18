@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function BlogPost() {
   return (
-    <div className="flex flex-col flex-1 items-center bg-white font-mono dark:bg-black px-12 py-8 md:px-24 md:py-16 lg:px-32 lg:py-20 mt-16 w-full">
+    <div className="flex flex-col flex-1 items-center bg-[#F7F6F4] font-mono dark:bg-[#0a0a0a] px-6 pt-28 md:pt-32 pb-16 w-full">
       <article className="max-w-2xl w-full text-left flex flex-col gap-10">
         
         {/* Back link */}

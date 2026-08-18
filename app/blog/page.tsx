@@ -41,23 +41,23 @@ const categories = [
 
 export default function BlogPage() {
   return (
-    <div className="flex flex-col flex-1 items-center bg-white font-mono dark:bg-[#0a0a0a] px-6 py-8 md:px-12 md:py-16 lg:px-24 mt-16 w-full">
-      <div className="max-w-6xl w-full text-left flex flex-col gap-24">
+    <div className="flex flex-col flex-1 items-center bg-[#F7F6F4] font-mono dark:bg-[#0a0a0a] px-6 pt-28 md:pt-32 pb-16 w-full">
+      <div className="max-w-3xl w-full text-left flex flex-col gap-12">
         
         {categories.map((category) => (
-          <section key={category.id} className="flex flex-col gap-6 w-full">
+          <section key={category.id} className="flex flex-col gap-5 w-full">
             {/* Category Header */}
-            <div className="flex justify-between items-end w-full mb-2">
-              <h2 className="text-3xl font-bold text-zinc-900 dark:text-white [font-family:var(--font-dm-sans)]">
+            <div className="flex justify-between items-end w-full">
+              <h2 className="text-xl sm:text-2xl font-bold text-zinc-900 dark:text-white [font-family:var(--font-dm-sans)]">
                 {category.title}
               </h2>
             </div>
 
             {/* Blog Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {category.blogs.map((blog, index) => (
-                <Link href={blog.link} key={index} className="group flex flex-col gap-4">
-                  <div className="w-full aspect-[4/3] relative rounded-2xl overflow-hidden bg-white dark:bg-zinc-800 transition-transform duration-300 group-hover:-translate-y-1 group-hover:shadow-xl">
+                <Link href={blog.link} key={index} className="group flex flex-col gap-3">
+                  <div className="w-full aspect-[16/10] relative rounded-xl overflow-hidden bg-white dark:bg-zinc-850 border border-zinc-200/80 dark:border-zinc-800 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-md">
                     <Image
                       src={blog.image}
                       alt={blog.title}
@@ -65,7 +65,7 @@ export default function BlogPage() {
                       className="object-cover"
                     />
                   </div>
-                  <h3 className="text-lg font-semibold text-indigo-500 dark:text-indigo-400 [font-family:var(--font-dm-sans)]">
+                  <h3 className="text-base font-semibold text-[#5569FF] group-hover:text-[#3730A3] dark:text-[#8191FF] dark:group-hover:text-[#B0C3FF] transition-colors [font-family:var(--font-dm-sans)]">
                     {blog.title}
                   </h3>
                 </Link>
@@ -73,10 +73,10 @@ export default function BlogPage() {
             </div>
             
             {/* Pagination Mockup */}
-            <div className="flex justify-center items-center gap-4 mt-4 text-zinc-500 dark:text-zinc-600">
-              <button className="p-2 hover:text-zinc-900 dark:hover:text-zinc-300 transition-colors">&lsaquo;</button>
-              <span className="flex items-center justify-center w-10 h-10 rounded-full bg-[#E5D4FF] text-zinc-900 font-bold">1</span>
-              <button className="p-2 hover:text-zinc-900 dark:hover:text-zinc-300 transition-colors">&rsaquo;</button>
+            <div className="flex justify-center items-center gap-3 mt-2 text-zinc-400 dark:text-zinc-600">
+              <button className="p-1 hover:text-zinc-900 dark:hover:text-zinc-300 transition-colors text-sm">&lsaquo;</button>
+              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-[#E5D4FF] text-zinc-900 text-xs font-bold">1</span>
+              <button className="p-1 hover:text-zinc-900 dark:hover:text-zinc-300 transition-colors text-sm">&rsaquo;</button>
             </div>
           </section>
         ))}
@@ -85,3 +85,4 @@ export default function BlogPage() {
     </div>
   );
 }
+
