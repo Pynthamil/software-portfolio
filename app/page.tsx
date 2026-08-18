@@ -87,7 +87,7 @@ export default function Home() {
         </div>
 
         {/* Section: Who am I */}
-        <details id="about" className="scroll-mt-24 group cursor-pointer">
+        <details id="about" className="scroll-mt-28 group cursor-pointer">
           <summary className="list-none outline-none [&::-webkit-details-marker]:hidden transition-opacity hover:opacity-90">
             <WhoAmIHeader className="w-full h-auto" />
           </summary>
@@ -104,7 +104,7 @@ export default function Home() {
         </details>
 
         {/* Section: Experience */}
-        <details id="experience" className="scroll-mt-24 group cursor-pointer">
+        <details id="experience" className="scroll-mt-28 group cursor-pointer">
           <summary className="list-none outline-none [&::-webkit-details-marker]:hidden transition-opacity hover:opacity-90">
             <ExperienceHeader className="w-full h-auto" />
           </summary>
@@ -146,7 +146,7 @@ export default function Home() {
         </details>
 
         {/* Section: Education */}
-        <details id="education" className="scroll-mt-24 group cursor-pointer">
+        <details id="education" className="scroll-mt-28 group cursor-pointer">
           <summary className="list-none outline-none [&::-webkit-details-marker]:hidden transition-opacity hover:opacity-90">
             <EducationHeader className="w-full h-auto" />
           </summary>
@@ -172,7 +172,7 @@ export default function Home() {
         </details>
 
         {/* Section: Selected Works */}
-        <details id="projects" className="scroll-mt-24 group cursor-pointer">
+        <details id="projects" className="scroll-mt-28 group cursor-pointer">
           <summary className="list-none outline-none [&::-webkit-details-marker]:hidden transition-opacity hover:opacity-90">
             <SelectedWorksHeader className="w-full h-auto" />
           </summary>
@@ -195,7 +195,7 @@ export default function Home() {
         </details>
 
         {/* Section: About my blog */}
-        <details className="scroll-mt-24 group cursor-pointer">
+        <details className="scroll-mt-28 group cursor-pointer">
           <summary className="list-none outline-none [&::-webkit-details-marker]:hidden transition-opacity hover:opacity-90">
             <AboutBlogHeader className="w-full h-auto" />
           </summary>
@@ -210,7 +210,7 @@ export default function Home() {
         </details>
 
         {/* Section: Featured Writing */}
-        <details id="blog" className="scroll-mt-24 group cursor-pointer">
+        <details id="blog" className="scroll-mt-28 group cursor-pointer">
           <summary className="list-none outline-none [&::-webkit-details-marker]:hidden transition-opacity hover:opacity-90">
             <FeaturedWritingHeader className="w-full h-auto" />
           </summary>
@@ -274,7 +274,7 @@ export default function Home() {
         </details>
 
         {/* Section: Fun facts */}
-        <details className="scroll-mt-24 group cursor-pointer">
+        <details className="scroll-mt-28 group cursor-pointer">
           <summary className="list-none outline-none [&::-webkit-details-marker]:hidden transition-opacity hover:opacity-90">
             <FunFactsHeader className="w-full h-auto" />
           </summary>
@@ -293,7 +293,7 @@ export default function Home() {
         </details>
 
         {/* Section: Outside of screens */}
-        <details className="scroll-mt-24 group cursor-pointer">
+        <details className="scroll-mt-28 group cursor-pointer">
           <summary className="list-none outline-none [&::-webkit-details-marker]:hidden transition-opacity hover:opacity-90">
             <OutsideScreensHeader className="w-full h-auto" />
           </summary>
@@ -307,7 +307,7 @@ export default function Home() {
         </details>
 
         {/* Section: Currently learning */}
-        <details className="scroll-mt-24 group cursor-pointer">
+        <details className="scroll-mt-28 group cursor-pointer">
           <summary className="list-none outline-none [&::-webkit-details-marker]:hidden transition-opacity hover:opacity-90">
             <CurrentlyLearningHeader className="w-full h-auto" />
           </summary>
@@ -322,7 +322,7 @@ export default function Home() {
         </details>
 
         {/* Section: Proof I go outside (Photo Dump) */}
-        <details className="scroll-mt-24 group cursor-pointer">
+        <details className="scroll-mt-28 group cursor-pointer">
           <summary className="list-none outline-none [&::-webkit-details-marker]:hidden transition-opacity hover:opacity-90">
             <PhotoDumpHeader className="w-full h-auto" />
           </summary>
@@ -355,7 +355,7 @@ export default function Home() {
         </details>
 
         {/* Section: Contact */}
-        <details className="scroll-mt-24 group cursor-pointer">
+        <details id="contact" className="scroll-mt-28 group cursor-pointer">
           <summary className="list-none outline-none [&::-webkit-details-marker]:hidden transition-opacity hover:opacity-90">
             <ContactHeader className="w-full h-auto" />
           </summary>
