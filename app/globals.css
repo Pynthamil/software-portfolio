@@ -30,22 +30,25 @@ body {
   }
 }
 
-/* Dropdown header hover effect: darker purple only for title text and plus button */
+/* Dropdown header colors: normal state is vibrant purple #5569FF, hover state is deep royal purple #3730A3 */
 details.group summary svg path[fill="#B0C3FF" i],
 details.group summary svg circle[fill="#B0C3FF" i] {
+  fill: #5569FF;
   transition: fill 0.2s ease;
 }
 
 details.group summary:hover svg path[fill="#B0C3FF" i],
 details.group summary:hover svg circle[fill="#B0C3FF" i] {
-  fill: #5569FF;
+  fill: #3730A3;
 }
 
 details.group summary svg g[class*="rotate-45"] path[stroke="#5569FF" i] {
+  stroke: #ffffff;
   transition: stroke 0.2s ease;
 }
 
 details.group summary:hover svg g[class*="rotate-45"] path[stroke="#5569FF" i] {
   stroke: #ffffff;
 }
+
 
