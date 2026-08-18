@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <div className="flex flex-col w-full relative">
       {/* Resume Banner (Right Side) */}
-      <aside className="hidden xl:block fixed right-2 2xl:right-6 top-32 z-30 w-64 2xl:w-76 select-none">
+      <aside className="hidden xl:block fixed right-6 2xl:right-10 top-32 z-30 w-72 2xl:w-84 select-none">
         <a
           href="https://drive.google.com/file/d/1UG_8apujjGO0uE6IiS-yg7QQfLVzhcl5/view"
           target="_blank"
@@ -39,7 +39,7 @@ export default function Home() {
         <div className="max-w-3xl w-full text-left flex flex-col gap-12 text-2xl">
 
         {/* Intro */}
-        <div className="max-w-xl">
+        <div className="max-w-xl pl-2 sm:pl-4">
           <HiThisIsPynthamil className="w-full max-w-[390px] h-auto text-[#6082FF]" />
           <p className="mt-4 text-zinc-700 dark:text-zinc-300">
             I am a curious being who loves bringing the crazy ideas existing in my mind into reality through the sheer power of code.
