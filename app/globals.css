@@ -29,3 +29,23 @@ body {
     background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1.5px, transparent 1.5px);
   }
 }
+
+/* Dropdown header hover effect: darker purple only for title text and plus button */
+details.group summary svg path[fill="#B0C3FF" i],
+details.group summary svg circle[fill="#B0C3FF" i] {
+  transition: fill 0.2s ease;
+}
+
+details.group summary:hover svg path[fill="#B0C3FF" i],
+details.group summary:hover svg circle[fill="#B0C3FF" i] {
+  fill: #5569FF;
+}
+
+details.group summary svg g[class*="rotate-45"] path[stroke="#5569FF" i] {
+  transition: stroke 0.2s ease;
+}
+
+details.group summary:hover svg g[class*="rotate-45"] path[stroke="#5569FF" i] {
+  stroke: #ffffff;
+}
+
