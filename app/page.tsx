@@ -39,7 +39,7 @@ export default function Home() {
         <div className="max-w-3xl w-full text-left flex flex-col gap-12 text-2xl">
 
         {/* Intro */}
-        <div className="max-w-xl pl-2 sm:pl-4">
+        <div className="max-w-xl pl-6 sm:pl-10">
           <HiThisIsPynthamil className="w-full max-w-[390px] h-auto text-[#6082FF]" />
           <p className="mt-4 text-zinc-700 dark:text-zinc-300">
             I am a curious being who loves bringing the crazy ideas existing in my mind into reality through the sheer power of code.
