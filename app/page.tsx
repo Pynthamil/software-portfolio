@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <div className="flex flex-col w-full relative">
       {/* Resume Banner (Right Side) */}
-      <aside className="hidden xl:block fixed right-6 2xl:right-10 top-32 z-30 w-72 2xl:w-84 select-none">
+      <aside className="hidden xl:block fixed right-2 2xl:right-6 top-32 z-30 w-64 2xl:w-76 select-none">
         <a
           href="https://drive.google.com/file/d/1UG_8apujjGO0uE6IiS-yg7QQfLVzhcl5/view"
           target="_blank"
