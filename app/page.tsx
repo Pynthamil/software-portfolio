@@ -83,7 +83,7 @@ export default function Home() {
           href="https://drive.google.com/file/d/1UG_8apujjGO0uE6IiS-yg7QQfLVzhcl5/view"
           target="_blank"
           rel="noopener noreferrer"
-          className="block bg-white dark:bg-zinc-850 rounded-lg p-3 shadow-sm border border-zinc-200/70 dark:border-zinc-700/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group"
+          className="block bg-white rounded-lg p-3 shadow-sm border border-zinc-200/70 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group"
         >
           <div className="rounded-md overflow-hidden">
             <ResumeBanner className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300" />
@@ -103,13 +103,13 @@ export default function Home() {
               {/* Intro */}
               <div className="max-w-xl pl-6 sm:pl-10">
                 <HiThisIsPynthamil className="w-full max-w-[390px] h-auto text-[#6082FF]" />
-                <p className="mt-4 text-zinc-700 dark:text-zinc-300">
+                <p className="mt-4 text-zinc-700">
                   I am a curious being who loves bringing the crazy ideas existing in my mind into reality through the sheer power of code.
                 </p>
                 <div className="mt-6 flex flex-wrap gap-4">
                   <a
                     href="https://github.com/Pynthamil"
-                    className="text-blue-600 hover:underline dark:text-blue-400"
+                    className="text-blue-600 hover:underline"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -117,7 +117,7 @@ export default function Home() {
                   </a>
                   <a
                     href="https://www.linkedin.com/in/pynthamil-pavendan-55795228a/"
-                    className="text-blue-600 hover:underline dark:text-blue-400"
+                    className="text-blue-600 hover:underline"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -125,7 +125,7 @@ export default function Home() {
                   </a>
                   <a
                     href="https://leetcode.com/u/HashKnight/"
-                    className="text-blue-600 hover:underline dark:text-blue-400"
+                    className="text-blue-600 hover:underline"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -133,7 +133,7 @@ export default function Home() {
                   </a>
                   <a
                     href="https://twitter.com/pyndu15"
-                    className="text-blue-600 hover:underline dark:text-blue-400"
+                    className="text-blue-600 hover:underline"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -141,7 +141,7 @@ export default function Home() {
                   </a>
                   <Link
                     href="/blog"
-                    className="text-blue-600 hover:underline dark:text-blue-400"
+                    className="text-blue-600 hover:underline"
                   >
                     /blog
                   </Link>
@@ -154,7 +154,7 @@ export default function Home() {
                   <WhoAmIHeader className="w-full h-auto block" />
                 </summary>
                 <div className="pt-6 pb-4 px-4 md:px-8">
-                  <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-2 text-zinc-700 dark:text-zinc-300">
+                  <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-2 text-zinc-700">
                     <li>My name is Pynthamil Pavendan!</li>
                     <li>I'm a student developer who enjoys turning ideas into things people can actually use</li>
                     <li>I like building interfaces that feel simple, fast, and intentional</li>
@@ -179,11 +179,11 @@ export default function Home() {
                           <Image src="/otherassets/node.png" alt="Node Logo" fill className="object-cover" />
                         </div>
                         <div>
-                          <h3 className="font-bold text-xl text-zinc-900 dark:text-zinc-50">Founder</h3>
-                          <p className="text-zinc-600 dark:text-zinc-400">Node &middot; Full-time</p>
+                          <h3 className="font-bold text-xl text-zinc-900">Founder</h3>
+                          <p className="text-zinc-600">Node &middot; Full-time</p>
                         </div>
                       </div>
-                      <div className="text-zinc-500 dark:text-zinc-400 sm:text-right">
+                      <div className="text-zinc-500 sm:text-right">
                         Aug 2026 &mdash; Present &middot; 1 mo
                       </div>
                     </div>
@@ -195,11 +195,11 @@ export default function Home() {
                           <Image src="/otherassets/scientiflow.png" alt="Scientiflow Logo" fill className="object-cover" />
                         </div>
                         <div>
-                          <h3 className="font-bold text-xl text-zinc-900 dark:text-zinc-50">Frontend Developer</h3>
-                          <p className="text-zinc-600 dark:text-zinc-400">Scientiflow &middot; Internship</p>
+                          <h3 className="font-bold text-xl text-zinc-900">Frontend Developer</h3>
+                          <p className="text-zinc-600">Scientiflow &middot; Internship</p>
                         </div>
                       </div>
-                      <div className="text-zinc-500 dark:text-zinc-400 sm:text-right">
+                      <div className="text-zinc-500 sm:text-right">
                         May 2025 &mdash; Jul 2025 &middot; 3 mos
                       </div>
                     </div>
@@ -221,11 +221,11 @@ export default function Home() {
                           <Image src="/otherassets/vellore_institute_of_technology_logo.jpeg" alt="VIT Logo" fill className="object-cover" />
                         </div>
                         <div>
-                          <h3 className="font-bold text-xl text-zinc-900 dark:text-zinc-50">Vellore Institute of Technology</h3>
-                          <p className="text-zinc-600 dark:text-zinc-400">Bachelor of Technology in Computer Science</p>
+                          <h3 className="font-bold text-xl text-zinc-900">Vellore Institute of Technology</h3>
+                          <p className="text-zinc-600">Bachelor of Technology in Computer Science</p>
                         </div>
                       </div>
-                      <div className="text-zinc-500 dark:text-zinc-400 sm:text-right whitespace-nowrap shrink-0">
+                      <div className="text-zinc-500 sm:text-right whitespace-nowrap shrink-0">
                         2023 — 2027
                       </div>
                     </div>
@@ -239,18 +239,18 @@ export default function Home() {
                   <SelectedWorksHeader className="w-full h-auto block" />
                 </summary>
                 <div className="pt-6 pb-4 px-4 md:px-8">
-                  <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-3 text-zinc-700 dark:text-zinc-300">
+                  <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-3 text-zinc-700">
                     <li>
                       <strong>Node</strong> — An app to find your next team of avengers to conquer a hackathon.
-                      <a href="#" className="ml-2 text-blue-600 hover:underline dark:text-blue-400 text-lg">View →</a>
+                      <a href="#" className="ml-2 text-blue-600 hover:underline text-lg">View →</a>
                     </li>
                     <li>
                       <strong>Semantic Email Life-Management System</strong> — A smart system that turns your chaotic inbox into a lightweight second brain by extracting tasks, deadlines, and context.
-                      <a href="#" className="ml-2 text-blue-600 hover:underline dark:text-blue-400 text-lg">View →</a>
+                      <a href="#" className="ml-2 text-blue-600 hover:underline text-lg">View →</a>
                     </li>
                     <li>
                       <strong>Project Gamma</strong> — A tool that solves a very specific problem I had at 2:17 am.
-                      <a href="#" className="ml-2 text-blue-600 hover:underline dark:text-blue-400 text-lg">View →</a>
+                      <a href="#" className="ml-2 text-blue-600 hover:underline text-lg">View →</a>
                     </li>
                   </ul>
                 </div>
@@ -294,7 +294,7 @@ export default function Home() {
                   <AboutBlogHeader className="w-full h-auto block" />
                 </summary>
                 <div className="pt-6 pb-4 px-4 md:px-8">
-                  <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-2 text-zinc-700 dark:text-zinc-300">
+                  <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-2 text-zinc-700">
                     <li>I write about things I'm learning, things I'm building, and things I randomly become obsessed with at 2:17 am</li>
                     <li>sometimes it's about tech, sometimes design, sometimes a thought that refuses to leave me alone until I write it down</li>
                     <li>it's less "expert advice" and more "let me see if this idea makes sense outside my head"</li>
@@ -311,56 +311,68 @@ export default function Home() {
                 <div className="pt-6 pb-4 px-4 md:px-8 flex flex-col gap-6">
                   <div className="flex flex-col gap-6">
                     {/* Post 1 */}
-                    <Link href="/blog/so-here-i-am" className="group flex flex-col sm:flex-row gap-6 sm:items-center bg-white dark:bg-zinc-850 rounded-2xl p-5 sm:p-6 shadow-sm border border-zinc-200/70 dark:border-zinc-700/50 hover:shadow-md transition-all">
-                      <div className="w-full sm:w-72 shrink-0">
-                        <Image src="/post_covers/post1.svg" alt="So...Here I Am on the Internet" width={400} height={300} className="w-full aspect-video object-cover rounded-xl group-hover:opacity-90 transition-opacity" />
-                      </div>
+                    <div className="flex flex-col sm:flex-row gap-6 sm:items-center bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-zinc-200/70">
+                      <Link href="/blog/so-here-i-am" className="w-full sm:w-72 shrink-0 block">
+                        <Image src="/post_covers/post1.svg" alt="So...Here I Am on the Internet" width={400} height={300} className="w-full aspect-video object-cover rounded-xl" />
+                      </Link>
                       <div className="flex flex-col justify-center">
-                        <h3 className="font-bold text-2xl md:text-3xl text-zinc-900 dark:text-zinc-50 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                          So...Here I Am on the Internet
-                        </h3>
-                        <p className="text-base md:text-lg text-zinc-600 dark:text-zinc-400 mt-1 line-clamp-2">
+                        <Link href="/blog/so-here-i-am" className="block w-fit">
+                          <h3 className="font-bold text-2xl md:text-3xl text-[#18181B] hover:text-[#5569FF] transition-colors [font-family:var(--font-dm-sans)]">
+                            So...Here I Am on the Internet
+                          </h3>
+                        </Link>
+                        <p className="text-base md:text-lg text-[#71717A] mt-1 line-clamp-2 [font-family:var(--font-dm-sans)]">
                           a little about me, what I enjoy, and why I started this blog
                         </p>
-                        <p className="text-base md:text-lg font-medium text-blue-600 dark:text-blue-400 mt-2">Read post →</p>
+                        <Link href="/blog/so-here-i-am" className="text-base md:text-lg font-medium text-[#5569FF] hover:text-[#3730A3] transition-colors mt-2 w-fit [font-family:var(--font-dm-sans)]">
+                          Read post →
+                        </Link>
                       </div>
-                    </Link>
+                    </div>
                     
                     {/* Post 2 */}
-                    <Link href="/blog/readme-aesthetic" className="group flex flex-col sm:flex-row gap-6 sm:items-center bg-white dark:bg-zinc-850 rounded-2xl p-5 sm:p-6 shadow-sm border border-zinc-200/70 dark:border-zinc-700/50 hover:shadow-md transition-all">
-                      <div className="w-full sm:w-72 shrink-0">
-                        <Image src="/post_covers/post2.svg" alt="readme, but make it aesthetic ✨" width={400} height={300} className="w-full aspect-video object-cover rounded-xl group-hover:opacity-90 transition-opacity" />
-                      </div>
+                    <div className="flex flex-col sm:flex-row gap-6 sm:items-center bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-zinc-200/70">
+                      <Link href="/blog/readme-aesthetic" className="w-full sm:w-72 shrink-0 block">
+                        <Image src="/post_covers/post2.svg" alt="readme, but make it aesthetic ✨" width={400} height={300} className="w-full aspect-video object-cover rounded-xl" />
+                      </Link>
                       <div className="flex flex-col justify-center">
-                        <h3 className="font-bold text-2xl md:text-3xl text-zinc-900 dark:text-zinc-50 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                          readme, but make it aesthetic ✨
-                        </h3>
-                        <p className="text-base md:text-lg text-zinc-600 dark:text-zinc-400 mt-1 line-clamp-2">
+                        <Link href="/blog/readme-aesthetic" className="block w-fit">
+                          <h3 className="font-bold text-2xl md:text-3xl text-[#18181B] hover:text-[#5569FF] transition-colors [font-family:var(--font-dm-sans)]">
+                            readme, but make it aesthetic ✨
+                          </h3>
+                        </Link>
+                        <p className="text-base md:text-lg text-[#71717A] mt-1 line-clamp-2 [font-family:var(--font-dm-sans)]">
                           not everything has to be loud to be meaningful.
                         </p>
-                        <p className="text-base md:text-lg font-medium text-blue-600 dark:text-blue-400 mt-2">Read post →</p>
+                        <Link href="/blog/readme-aesthetic" className="text-base md:text-lg font-medium text-[#5569FF] hover:text-[#3730A3] transition-colors mt-2 w-fit [font-family:var(--font-dm-sans)]">
+                          Read post →
+                        </Link>
                       </div>
-                    </Link>
+                    </div>
 
                     {/* Post 3 */}
-                    <Link href="/blog/git-commit-go" className="group flex flex-col sm:flex-row gap-6 sm:items-center bg-white dark:bg-zinc-850 rounded-2xl p-5 sm:p-6 shadow-sm border border-zinc-200/70 dark:border-zinc-700/50 hover:shadow-md transition-all">
-                      <div className="w-full sm:w-72 shrink-0">
-                        <Image src="/post_covers/post5.svg" alt="Git Commit Go" width={400} height={300} className="w-full aspect-video object-cover rounded-xl group-hover:opacity-90 transition-opacity" />
-                      </div>
+                    <div className="flex flex-col sm:flex-row gap-6 sm:items-center bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-zinc-200/70">
+                      <Link href="/blog/git-commit-go" className="w-full sm:w-72 shrink-0 block">
+                        <Image src="/post_covers/post5.svg" alt="Git Commit Go" width={400} height={300} className="w-full aspect-video object-cover rounded-xl" />
+                      </Link>
                       <div className="flex flex-col justify-center">
-                        <h3 className="font-bold text-2xl md:text-3xl text-zinc-900 dark:text-zinc-50 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                          Git Commit Go
-                        </h3>
-                        <p className="text-base md:text-lg text-zinc-600 dark:text-zinc-400 mt-1 line-clamp-2">
+                        <Link href="/blog/git-commit-go" className="block w-fit">
+                          <h3 className="font-bold text-2xl md:text-3xl text-[#18181B] hover:text-[#5569FF] transition-colors [font-family:var(--font-dm-sans)]">
+                            Git Commit Go
+                          </h3>
+                        </Link>
+                        <p className="text-base md:text-lg text-[#71717A] mt-1 line-clamp-2 [font-family:var(--font-dm-sans)]">
                           A quick guide on how to interact with GitHub programmatically using their REST API.
                         </p>
-                        <p className="text-base md:text-lg font-medium text-blue-600 dark:text-blue-400 mt-2">Read post →</p>
+                        <Link href="/blog/git-commit-go" className="text-base md:text-lg font-medium text-[#5569FF] hover:text-[#3730A3] transition-colors mt-2 w-fit [font-family:var(--font-dm-sans)]">
+                          Read post →
+                        </Link>
                       </div>
-                    </Link>
+                    </div>
                   </div>
                   {/* View all at bottom center */}
                   <div className="flex justify-center pt-2">
-                    <Link href="/blog" className="text-xl md:text-2xl font-normal text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center gap-1.5">
+                    <Link href="/blog" className="text-xl md:text-2xl font-normal text-[#71717A] hover:text-[#5569FF] transition-colors flex items-center gap-1.5 [font-family:var(--font-dm-sans)]">
                       View all <span aria-hidden="true">&rarr;</span>
                     </Link>
                   </div>
@@ -373,7 +385,7 @@ export default function Home() {
                   <FunFactsHeader className="w-full h-auto block" />
                 </summary>
                 <div className="pt-6 pb-4 px-4 md:px-8">
-                  <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-2 text-zinc-700 dark:text-zinc-300">
+                  <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-2 text-zinc-700">
                     <li>music taste: a bit of everything → if it sounds good, I'm listening</li>
                     <li>I love singing and dancing like nobody's watching (because usually nobody is)</li>
                     <li>introvert… who also loves to yap when the topic is interesting</li>
@@ -392,7 +404,7 @@ export default function Home() {
                   <OutsideScreensHeader className="w-full h-auto block" />
                 </summary>
                 <div className="pt-6 pb-4 px-4 md:px-8">
-                  <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-2 text-zinc-700 dark:text-zinc-300">
+                  <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-2 text-zinc-700">
                     <li>I love reading books, watching movies, writing, and drawing</li>
                     <li>I'm very curious so I love to constantly explore new things</li>
                     <li>I don't believe the saying "curiosity kills the cat" — haha</li>
@@ -406,7 +418,7 @@ export default function Home() {
                   <CurrentlyLearningHeader className="w-full h-auto block" />
                 </summary>
                 <div className="pt-6 pb-4 px-4 md:px-8">
-                  <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-2 text-zinc-700 dark:text-zinc-300">
+                  <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-2 text-zinc-700">
                     <li>currently learning how to make things feel simple without making them boring</li>
                     <li>exploring better ways to structure code, design cleaner interfaces, and build products that feel intentional from the first click</li>
                     <li>trying to understand why some digital experiences feel effortless while others feel confusing, even when they do the same thing</li>
@@ -435,7 +447,7 @@ export default function Home() {
                     ].map((src, idx) => (
                       <div
                         key={idx}
-                        className="relative aspect-square rounded-2xl overflow-hidden shadow-sm border border-zinc-200/60 dark:border-zinc-700/60 bg-zinc-100 dark:bg-zinc-800 group/photo hover:scale-[1.02] transition-transform duration-300"
+                        className="relative aspect-square rounded-2xl overflow-hidden shadow-sm border border-zinc-200/60 bg-zinc-100 group/photo hover:scale-[1.02] transition-transform duration-300"
                       >
                         <Image
                           src={src}
@@ -461,8 +473,8 @@ export default function Home() {
               aria-label="Previous page"
               className={`text-lg px-2 py-1 transition-colors ${
                 currentPage === 1
-                  ? "text-zinc-300 dark:text-zinc-700 cursor-not-allowed"
-                  : "text-zinc-400 hover:text-[#5569FF] dark:hover:text-[#8191FF] cursor-pointer"
+                  ? "text-zinc-300 cursor-not-allowed"
+                  : "text-zinc-400 hover:text-[#5569FF] cursor-pointer"
               }`}
             >
               &lsaquo;
@@ -476,7 +488,7 @@ export default function Home() {
                 className={`flex items-center justify-center w-9 h-9 rounded-full text-sm font-bold transition-all cursor-pointer ${
                   currentPage === page
                     ? "bg-[#5569FF] text-white shadow-xs"
-                    : "text-zinc-600 dark:text-zinc-400 hover:text-[#5569FF] dark:hover:text-[#8191FF] hover:bg-[#EEF2FF] dark:hover:bg-zinc-800"
+                    : "text-zinc-600 hover:text-[#5569FF] hover:bg-[#EEF2FF]"
                 }`}
               >
                 {page}
@@ -490,8 +502,8 @@ export default function Home() {
               aria-label="Next page"
               className={`text-lg px-2 py-1 transition-colors ${
                 currentPage === 2
-                  ? "text-zinc-300 dark:text-zinc-700 cursor-not-allowed"
-                  : "text-zinc-400 hover:text-[#5569FF] dark:hover:text-[#8191FF] cursor-pointer"
+                  ? "text-zinc-300 cursor-not-allowed"
+                  : "text-zinc-400 hover:text-[#5569FF] cursor-pointer"
               }`}
             >
               &rsaquo;

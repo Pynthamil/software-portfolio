@@ -46,7 +46,7 @@ const blogs: BlogPost[] = [
 
 export default function BlogPage() {
   return (
-    <div className="flex flex-col flex-1 items-center bg-[#F7F6F4] font-mono dark:bg-[#0a0a0a] px-4 pt-24 pb-16 w-full min-h-screen">
+    <div className="flex flex-col flex-1 items-center bg-[#F7F6F4] font-mono px-4 pt-24 pb-16 w-full min-h-screen">
       <BlogList blogs={blogs} />
     </div>
   );

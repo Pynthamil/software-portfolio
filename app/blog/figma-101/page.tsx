@@ -8,18 +8,18 @@ export const metadata = {
 
 export default function BlogPost() {
   return (
-    <div className="flex flex-col flex-1 items-center bg-[#F7F6F4] font-mono dark:bg-[#0a0a0a] px-6 pt-28 md:pt-32 pb-16 w-full">
+    <div className="flex flex-col flex-1 items-center bg-[#F7F6F4] font-mono px-6 pt-28 md:pt-32 pb-16 w-full">
       <article className="max-w-2xl w-full text-left flex flex-col gap-10">
         
         {/* Back link */}
-        <Link href="/blog" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors inline-flex items-center gap-2 mb-4 w-fit">
+        <Link href="/blog" className="text-zinc-500 hover:text-zinc-900 transition-colors inline-flex items-center gap-2 mb-4 w-fit">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
           Back to blog
         </Link>
 
         {/* Header */}
         <header className="flex flex-col gap-6">
-          <div className="w-full h-[350px] relative rounded-lg overflow-hidden border border-zinc-200 dark:border-zinc-800">
+          <div className="w-full h-[350px] relative rounded-lg overflow-hidden border border-zinc-200">
             <Image
               src="/post_covers/post7.svg"
               alt="Figma 101"
@@ -29,15 +29,15 @@ export default function BlogPost() {
             />
           </div>
           <div className="flex flex-col gap-3">
-            <h1 className="text-4xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">
+            <h1 className="text-4xl font-bold text-zinc-900 [font-family:var(--font-dm-sans)]">
               Figma 101 : Understanding the Tool
             </h1>
-            <span className="text-zinc-500 dark:text-zinc-400">August 12, 2026</span>
+            <span className="text-zinc-500">August 12, 2026</span>
           </div>
         </header>
 
         {/* Content */}
-        <div className="prose prose-zinc dark:prose-invert font-mono text-zinc-700 dark:text-zinc-300 flex flex-col gap-8 text-lg leading-relaxed">
+        <div className="prose prose-zinc font-mono text-zinc-700 flex flex-col gap-8 text-lg leading-relaxed">
           
           <p>
             First of all, you need to have an account to start designing on Figma. I used my google account to sign in.
@@ -46,7 +46,7 @@ export default function BlogPost() {
             Let’s start by creating a design file.
           </p>
 
-          <div className="w-full relative rounded-lg overflow-hidden border border-zinc-200 dark:border-zinc-800">
+          <div className="w-full relative rounded-lg overflow-hidden border border-zinc-200">
             <Image
               src="/post_assets/img7.1.svg"
               alt="Figma 101 start"
@@ -58,7 +58,7 @@ export default function BlogPost() {
 
           <p>This is what it looks like inside the design file.</p>
 
-          <div className="w-full relative rounded-lg overflow-hidden border border-zinc-200 dark:border-zinc-800">
+          <div className="w-full relative rounded-lg overflow-hidden border border-zinc-200">
             <Image
               src="/post_assets/img7.2.svg"
               alt="Inside the design file"
@@ -70,7 +70,7 @@ export default function BlogPost() {
 
           <p>Next, let us create a frame which will be the base on which we will be working on.</p>
 
-          <div className="w-full relative rounded-lg overflow-hidden border border-zinc-200 dark:border-zinc-800">
+          <div className="w-full relative rounded-lg overflow-hidden border border-zinc-200">
             <Image
               src="/post_assets/img7.3.svg"
               alt="Creating a frame"
@@ -82,7 +82,7 @@ export default function BlogPost() {
 
           <p>There a lot of options like desktop, mobile phone, watch etc.</p>
 
-          <div className="w-full relative rounded-lg overflow-hidden border border-zinc-200 dark:border-zinc-800">
+          <div className="w-full relative rounded-lg overflow-hidden border border-zinc-200">
             <Image
               src="/post_assets/img7.4.svg"
               alt="Frame options"
@@ -92,7 +92,7 @@ export default function BlogPost() {
             />
           </div>
 
-          <div className="w-full relative rounded-lg overflow-hidden border border-zinc-200 dark:border-zinc-800">
+          <div className="w-full relative rounded-lg overflow-hidden border border-zinc-200">
             <Image
               src="/post_assets/img7.5.svg"
               alt="Shapes menu"
@@ -104,7 +104,7 @@ export default function BlogPost() {
 
           <p>Now let’s talk about shapes and colours.</p>
 
-          <div className="w-full relative rounded-lg overflow-hidden border border-zinc-200 dark:border-zinc-800">
+          <div className="w-full relative rounded-lg overflow-hidden border border-zinc-200">
             <Image
               src="/post_assets/img7.6.svg"
               alt="Shapes and colours"
@@ -116,7 +116,7 @@ export default function BlogPost() {
 
           <p>Text.</p>
 
-          <div className="w-full relative rounded-lg overflow-hidden border border-zinc-200 dark:border-zinc-800">
+          <div className="w-full relative rounded-lg overflow-hidden border border-zinc-200">
             <Image
               src="/post_assets/img7.7.svg"
               alt="Text tool"
@@ -126,7 +126,7 @@ export default function BlogPost() {
             />
           </div>
 
-          <div className="w-full relative rounded-lg overflow-hidden border border-zinc-200 dark:border-zinc-800">
+          <div className="w-full relative rounded-lg overflow-hidden border border-zinc-200">
             <Image
               src="/post_assets/img7.8.svg"
               alt="Text properties"
@@ -139,13 +139,13 @@ export default function BlogPost() {
           <p>Assets.</p>
           <p>Layers.</p>
 
-          <div className="flex flex-col gap-4 mt-6 pt-6 border-t border-zinc-200 dark:border-zinc-800">
-            <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">Exercise:</h2>
+          <div className="flex flex-col gap-4 mt-6 pt-6 border-t border-zinc-200">
+            <h2 className="text-2xl font-bold text-zinc-900 [font-family:var(--font-dm-sans)]">Exercise:</h2>
             <p>Create a splash screen and a simple welcome screen.</p>
           </div>
 
           <div className="flex flex-col gap-4 mt-2">
-            <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">Making a splash screen</h3>
+            <h3 className="text-xl font-bold text-zinc-900 [font-family:var(--font-dm-sans)]">Making a splash screen</h3>
             <video 
               controls 
               src="/post_assets/vid7.1.mov" 

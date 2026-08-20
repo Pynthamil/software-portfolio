@@ -34,7 +34,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${jetbrainsMono.variable} ${dmSans.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#F7F6F4] dark:bg-[#0a0a0a] font-sans text-zinc-900 dark:text-zinc-50">
+      <body className="min-h-full flex flex-col bg-[#F7F6F4] font-sans text-zinc-900">
         <Navbar />
         {children}
       </body>

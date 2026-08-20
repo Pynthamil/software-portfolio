@@ -12,13 +12,6 @@
   --font-mono: var(--font-jetbrains-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 
 /* Dropdown header colors: normal state is vibrant purple #5569FF, hover state is deep royal purple #3730A3 */
 details.group summary svg path[fill="#B0C3FF" i],

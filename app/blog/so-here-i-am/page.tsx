@@ -8,18 +8,18 @@ export const metadata = {
 
 export default function BlogPost() {
   return (
-    <div className="flex flex-col flex-1 items-center bg-[#F7F6F4] font-mono dark:bg-[#0a0a0a] px-6 pt-28 md:pt-32 pb-16 w-full">
+    <div className="flex flex-col flex-1 items-center bg-[#F7F6F4] font-mono px-6 pt-28 md:pt-32 pb-16 w-full">
       <article className="max-w-2xl w-full text-left flex flex-col gap-10">
         
         {/* Back link */}
-        <Link href="/blog" className="text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors inline-flex items-center gap-2 mb-4 w-fit">
+        <Link href="/blog" className="text-zinc-500 hover:text-zinc-900 transition-colors inline-flex items-center gap-2 mb-4 w-fit">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
           Back to blog
         </Link>
 
         {/* Header */}
         <header className="flex flex-col gap-6">
-          <div className="w-full h-[350px] relative rounded-lg overflow-hidden border border-zinc-200 dark:border-zinc-800">
+          <div className="w-full h-[350px] relative rounded-lg overflow-hidden border border-zinc-200">
             <Image
               src="/post_covers/post1.svg"
               alt="So...Here I Am on the Internet"
@@ -29,15 +29,15 @@ export default function BlogPost() {
             />
           </div>
           <div className="flex flex-col gap-3">
-            <h1 className="text-4xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">
+            <h1 className="text-4xl font-bold text-zinc-900 [font-family:var(--font-dm-sans)]">
               So...Here I Am on the Internet
             </h1>
-            <span className="text-zinc-500 dark:text-zinc-400">August 15, 2026</span>
+            <span className="text-zinc-500">August 15, 2026</span>
           </div>
         </header>
 
         {/* Content */}
-        <div className="prose prose-zinc dark:prose-invert font-mono text-zinc-700 dark:text-zinc-300 flex flex-col gap-8 text-lg leading-relaxed">
+        <div className="prose prose-zinc font-mono text-zinc-700 flex flex-col gap-8 text-lg leading-relaxed">
           
           <p>Hey there, this is Pynthamil 👋</p>
           
@@ -55,9 +55,9 @@ export default function BlogPost() {
           </p>
 
           <div className="flex flex-col gap-4">
-            <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">Why this blog exists</h2>
+            <h2 className="text-2xl font-bold text-zinc-900 [font-family:var(--font-dm-sans)]">Why this blog exists</h2>
             <p>I have always wanted a space where I could:</p>
-            <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-2 text-zinc-600 dark:text-zinc-400">
+            <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-2 text-zinc-600">
               <li>share what I am learning</li>
               <li>document experiments</li>
               <li>talk about ideas that may or may not work</li>
@@ -68,9 +68,9 @@ export default function BlogPost() {
 
           <p>Think of this as a safe space to try, fail, learn, repeat.</p>
 
-          <div className="bg-zinc-100 dark:bg-zinc-900 p-6 rounded-lg border border-zinc-200 dark:border-zinc-800 text-sm">
-            <p className="text-zinc-500 dark:text-zinc-400 mb-2">Or in dev terms:</p>
-            <code className="text-blue-600 dark:text-blue-400 whitespace-pre">
+          <div className="bg-zinc-100 p-6 rounded-lg border border-zinc-200 text-sm">
+            <p className="text-zinc-500 mb-2">Or in dev terms:</p>
+            <code className="text-blue-600 whitespace-pre">
 {`while(alive) {
    try()
    fail()
@@ -81,9 +81,9 @@ export default function BlogPost() {
           </div>
 
           <div className="flex flex-col gap-4">
-            <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">Aside from coding and designing in Figma</h2>
+            <h2 className="text-2xl font-bold text-zinc-900 [font-family:var(--font-dm-sans)]">Aside from coding and designing in Figma</h2>
             <p>Here are the things that make up most of my personality / hobbies and favourite things:</p>
-            <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-2 text-zinc-600 dark:text-zinc-400">
+            <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-2 text-zinc-600">
               <li>binge watching shows and movies</li>
               <li>drawing (proud artist moment)</li>
               <li>reading books</li>
@@ -95,8 +95,8 @@ export default function BlogPost() {
           </div>
 
           <div className="flex flex-col gap-4">
-            <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">Fun facts about me</h2>
-            <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-2 text-zinc-600 dark:text-zinc-400">
+            <h2 className="text-2xl font-bold text-zinc-900 [font-family:var(--font-dm-sans)]">Fun facts about me</h2>
+            <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-2 text-zinc-600">
               <li>favourite boy band: Enhypen</li>
               <li>music taste: everything</li>
               <li>I love singing and dancing like nobody is watching</li>
@@ -108,9 +108,9 @@ export default function BlogPost() {
           </div>
 
           <div className="flex flex-col gap-4">
-            <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">What you will find here</h2>
+            <h2 className="text-2xl font-bold text-zinc-900 [font-family:var(--font-dm-sans)]">What you will find here</h2>
             <p>This blog will mostly document:</p>
-            <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-2 text-zinc-600 dark:text-zinc-400">
+            <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-2 text-zinc-600">
               <li>things I build</li>
               <li>things I try to build</li>
               <li>things that refuse to work</li>
@@ -127,20 +127,20 @@ export default function BlogPost() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-4 mt-8 pt-8 border-t border-zinc-200 dark:border-zinc-800">
-            <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 [font-family:var(--font-dm-sans)]">You can request posts too</h2>
+          <div className="flex flex-col gap-4 mt-8 pt-8 border-t border-zinc-200">
+            <h2 className="text-2xl font-bold text-zinc-900 [font-family:var(--font-dm-sans)]">You can request posts too</h2>
             <p>
               If there is something you would like me to write about, explore, or build, feel free to suggest it.
             </p>
             <p>I cannot promise perfection, but I can promise:</p>
-            <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-2 text-zinc-600 dark:text-zinc-400">
+            <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-2 text-zinc-600">
               <li>effort</li>
               <li>curiosity</li>
               <li>honest documentation of the process</li>
             </ul>
           </div>
 
-          <p className="font-bold text-zinc-900 dark:text-zinc-50 text-xl mt-6">
+          <p className="font-bold text-zinc-900 text-xl mt-6">
             Thanks for being here 🤍
           </p>
           <p className="italic">

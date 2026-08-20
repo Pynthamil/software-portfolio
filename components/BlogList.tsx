@@ -34,33 +34,40 @@ export default function BlogList({ blogs }: BlogListProps) {
   return (
     <div className="max-w-2xl w-full flex flex-col gap-4">
       {currentBlogs.map((blog, index) => (
-        <Link
-          href={blog.link}
+        <div
           key={startIndex + index}
-          className="group flex flex-col sm:flex-row items-center sm:items-start gap-4 p-4 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200/90 dark:border-zinc-800 shadow-sm hover:shadow-md transition-all duration-200 w-full"
+          className="flex flex-col sm:flex-row items-center sm:items-start gap-4 p-4 rounded-2xl bg-white border border-zinc-200/90 shadow-sm w-full"
         >
-          <div className="w-full sm:w-[220px] md:w-[230px] shrink-0 aspect-[16/10] relative rounded-xl overflow-hidden bg-[#F0F2FF] dark:bg-zinc-800">
+          <Link
+            href={blog.link}
+            className="w-full sm:w-[220px] md:w-[230px] shrink-0 aspect-[16/10] relative rounded-xl overflow-hidden bg-[#F0F2FF] block"
+          >
             <Image
               src={blog.image}
               alt={blog.title}
               fill
-              className="object-cover group-hover:scale-105 transition-transform duration-300"
+              className="object-cover"
             />
-          </div>
+          </Link>
           <div className="flex flex-col justify-between flex-1 py-0.5 text-left w-full h-full">
             <div>
-              <h2 className="text-xl sm:text-2xl font-bold text-zinc-900 dark:text-zinc-50 leading-tight [font-family:var(--font-dm-sans)]">
-                {blog.title}
-              </h2>
-              <p className="text-zinc-600 dark:text-zinc-400 text-sm mt-1.5 leading-relaxed [font-family:var(--font-dm-sans)]">
+              <Link href={blog.link} className="block w-fit">
+                <h2 className="text-xl sm:text-2xl font-bold text-[#18181B] hover:text-[#5569FF] transition-colors leading-tight [font-family:var(--font-dm-sans)]">
+                  {blog.title}
+                </h2>
+              </Link>
+              <p className="text-[#71717A] text-sm mt-1.5 leading-relaxed [font-family:var(--font-dm-sans)]">
                 {blog.description}
               </p>
             </div>
-            <span className="text-blue-600 dark:text-blue-400 text-sm font-medium mt-3 inline-flex items-center gap-1 group-hover:underline [font-family:var(--font-dm-sans)]">
+            <Link
+              href={blog.link}
+              className="text-[#5569FF] hover:text-[#3730A3] text-sm font-medium mt-3 inline-flex items-center gap-1 transition-colors w-fit [font-family:var(--font-dm-sans)]"
+            >
               Read post &rarr;
-            </span>
+            </Link>
           </div>
-        </Link>
+        </div>
       ))}
 
       {/* Pagination Page Marker */}
@@ -73,8 +80,8 @@ export default function BlogList({ blogs }: BlogListProps) {
             aria-label="Previous page"
             className={`text-lg px-2 py-1 transition-colors ${
               currentPage === 1
-                ? "text-zinc-300 dark:text-zinc-700 cursor-not-allowed"
-                : "text-zinc-400 hover:text-[#5569FF] dark:hover:text-[#8191FF] cursor-pointer"
+                ? "text-zinc-300 cursor-not-allowed"
+                : "text-zinc-400 hover:text-[#5569FF] cursor-pointer"
             }`}
           >
             &lsaquo;
@@ -88,7 +95,7 @@ export default function BlogList({ blogs }: BlogListProps) {
               className={`flex items-center justify-center w-9 h-9 rounded-full text-sm font-bold transition-all cursor-pointer ${
                 currentPage === page
                   ? "bg-[#5569FF] text-white shadow-xs"
-                  : "text-zinc-600 dark:text-zinc-400 hover:text-[#5569FF] dark:hover:text-[#8191FF] hover:bg-[#EEF2FF] dark:hover:bg-zinc-800"
+                  : "text-zinc-600 hover:text-[#5569FF] hover:bg-[#EEF2FF]"
               }`}
             >
               {page}
@@ -102,8 +109,8 @@ export default function BlogList({ blogs }: BlogListProps) {
             aria-label="Next page"
             className={`text-lg px-2 py-1 transition-colors ${
               currentPage === totalPages
-                ? "text-zinc-300 dark:text-zinc-700 cursor-not-allowed"
-                : "text-zinc-400 hover:text-[#5569FF] dark:hover:text-[#8191FF] cursor-pointer"
+                ? "text-zinc-300 cursor-not-allowed"
+                : "text-zinc-400 hover:text-[#5569FF] cursor-pointer"
             }`}
           >
             &rsaquo;
