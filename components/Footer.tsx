@@ -94,7 +94,7 @@ export default function Footer() {
                 <span className="font-bold text-zinc-900 dark:text-white text-3xl mb-1">Find Me</span>
                 <a href="https://github.com/Pynthamil" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">GitHub</a>
                 <a href="https://www.linkedin.com/in/pynthamil-pavendan-55795228a/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">LinkedIn</a>
-                <a href="https://twitter.com/pynthamil" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Twitter</a>
+                <a href="https://twitter.com/pyndu15" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Twitter</a>
                 <a href="mailto:pavendanpynthamil@gmail.com" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Email</a>
               </div>
 
