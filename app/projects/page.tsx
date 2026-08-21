@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
@@ -10,7 +9,7 @@ interface ProjectItem {
   title: string;
   tagline: string;
   description: string;
-  image: string;
+  video: string;
   link: string;
   tags: string[];
   status: string;
@@ -22,11 +21,11 @@ const projects: ProjectItem[] = [
     title: "Semantic Email Life-Management System",
     tagline: "Inbox to Second Brain",
     description: "A smart system that turns your chaotic inbox into a lightweight second brain by extracting tasks, deadlines, and context automatically.",
-    image: "/project-assets/semantic/cover2.svg",
+    video: "/project-assets/semantic/demo1.mov",
     link: "/projects/semantic-email",
     tags: ["Python", "FastAPI", "NLP", "Notion API"],
     status: "Prototype",
-    bgClass: "bg-[#FFDFE0]",
+    bgClass: "bg-black/5",
   },
 ];
 
@@ -42,7 +41,7 @@ export default function ProjectsPage() {
             Back to home
           </Link>
           <h1 className="text-3xl sm:text-4xl font-bold text-[#18181B] [font-family:var(--font-dm-sans)]">
-            Selected Projects
+            Projects
           </h1>
           <p className="text-base sm:text-lg text-[#71717A] [font-family:var(--font-dm-sans)]">
             Things I&apos;ve designed, built, and shipped.
@@ -58,13 +57,15 @@ export default function ProjectsPage() {
             >
               <Link
                 href={project.link}
-                className={`w-full sm:w-[250px] md:w-[270px] shrink-0 aspect-[16/10] relative rounded-xl overflow-hidden ${project.bgClass} flex items-center justify-center p-2 block`}
+                className="w-full sm:w-[250px] md:w-[270px] shrink-0 aspect-[16/10] relative rounded-xl overflow-hidden bg-black/5 flex items-center justify-center block"
               >
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-contain p-1"
+                <video
+                  src={project.video}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-full object-cover rounded-xl"
                 />
               </Link>
 
