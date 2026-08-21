@@ -11,14 +11,6 @@ export default function SemanticEmailProjectPage() {
     <div className="flex flex-col flex-1 items-center bg-[#F7F6F4] [font-family:var(--font-dm-sans)] px-6 pt-28 md:pt-32 pb-16 w-full">
       <div className="w-full flex flex-col items-center gap-8">
         
-        {/* Back link */}
-        <div className="max-w-5xl w-full">
-          <Link href="/projects" className="text-zinc-500 hover:text-[#5569FF] transition-colors inline-flex items-center gap-2 mb-2 w-fit font-medium">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-            Back to projects
-          </Link>
-        </div>
-
         {/* Big Cover Image */}
         <div className="max-w-5xl w-full relative rounded-lg overflow-hidden">
           <Image
@@ -146,6 +138,29 @@ export default function SemanticEmailProjectPage() {
             <p>
               From meeting coordination and task assignments to urgent deadline notices, the pipeline automatically detects message urgency and maps unstructured context into structured actions.
             </p>
+
+            {/* Scenario 1 & 2 Visuals */}
+            <div className="flex flex-col gap-6 my-2">
+              <div className="-mx-3 sm:-mx-6 md:-mx-10 w-[calc(100%+1.5rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+5rem)] max-w-none relative rounded-lg overflow-hidden self-center">
+                <Image
+                  src="/project-assets/semantic/scenario1.svg"
+                  alt="Email Scenario 1"
+                  width={1760}
+                  height={1234}
+                  className="w-full h-auto object-contain block rounded-lg"
+                />
+              </div>
+
+              <div className="-mx-3 sm:-mx-6 md:-mx-10 w-[calc(100%+1.5rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+5rem)] max-w-none relative rounded-lg overflow-hidden self-center">
+                <Image
+                  src="/project-assets/semantic/scenario2.svg"
+                  alt="Email Scenario 2"
+                  width={1792}
+                  height={1234}
+                  className="w-full h-auto object-contain block rounded-lg"
+                />
+              </div>
+            </div>
           </div>
 
           <hr className="border-zinc-200 my-2" />

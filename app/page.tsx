@@ -241,7 +241,7 @@ export default function Home() {
                 <div className="pt-6 pb-4 px-4 md:px-8 flex flex-col gap-4">
                   <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-3 text-zinc-700 text-base md:text-lg">
                     <li>
-                      <strong className="text-[#18181B]">Semantic Email Life-Management System</strong> — A smart system that turns your chaotic inbox into a lightweight second brain by extracting tasks, deadlines, and context.
+                      <strong className="text-[#18181B]">Our inboxes store information, but fail to turn it into meaningful action.</strong> — A smart system that turns your chaotic inbox into a lightweight second brain by extracting tasks, deadlines, and context.
                       <Link href="/projects/semantic-email" className="ml-2 text-[#5569FF] hover:text-[#3730A3] hover:underline font-medium inline-flex items-center gap-1 transition-colors">
                         View &rarr;
                       </Link>
