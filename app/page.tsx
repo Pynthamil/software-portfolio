@@ -238,21 +238,20 @@ export default function Home() {
                 <summary className="list-none outline-none [&::-webkit-details-marker]:hidden cursor-pointer select-none block">
                   <SelectedWorksHeader className="w-full h-auto block" />
                 </summary>
-                <div className="pt-6 pb-4 px-4 md:px-8">
-                  <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-3 text-zinc-700">
+                <div className="pt-6 pb-4 px-4 md:px-8 flex flex-col gap-4">
+                  <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-3 text-zinc-700 text-base md:text-lg">
                     <li>
-                      <strong>Node</strong> — An app to find your next team of avengers to conquer a hackathon.
-                      <a href="#" className="ml-2 text-blue-600 hover:underline text-lg">View →</a>
-                    </li>
-                    <li>
-                      <strong>Semantic Email Life-Management System</strong> — A smart system that turns your chaotic inbox into a lightweight second brain by extracting tasks, deadlines, and context.
-                      <a href="#" className="ml-2 text-blue-600 hover:underline text-lg">View →</a>
-                    </li>
-                    <li>
-                      <strong>Project Gamma</strong> — A tool that solves a very specific problem I had at 2:17 am.
-                      <a href="#" className="ml-2 text-blue-600 hover:underline text-lg">View →</a>
+                      <strong className="text-[#18181B]">Semantic Email Life-Management System</strong> — A smart system that turns your chaotic inbox into a lightweight second brain by extracting tasks, deadlines, and context.
+                      <Link href="/projects/semantic-email" className="ml-2 text-[#5569FF] hover:text-[#3730A3] hover:underline font-medium inline-flex items-center gap-1 transition-colors">
+                        View &rarr;
+                      </Link>
                     </li>
                   </ul>
+                  <div className="flex justify-center pt-2">
+                    <Link href="/projects" className="text-base md:text-lg font-normal text-[#71717A] hover:text-[#5569FF] transition-colors flex items-center gap-1.5 [font-family:var(--font-dm-sans)]">
+                      View all projects <span aria-hidden="true">&rarr;</span>
+                    </Link>
+                  </div>
                 </div>
               </details>
 

@@ -64,8 +64,7 @@ export default function Navbar() {
               blog
             </Link>
             <Link
-              href="/#projects"
-              onClick={(e) => handleNavClick(e, "/#projects")}
+              href="/projects"
               className="hover:text-[#5569FF] transition-colors"
             >
               projects
@@ -131,11 +130,8 @@ export default function Navbar() {
               blog
             </Link>
             <Link
-              href="/#projects"
-              onClick={(e) => {
-                setIsOpen(false);
-                handleNavClick(e, "/#projects");
-              }}
+              href="/projects"
+              onClick={() => setIsOpen(false)}
               className="hover:text-[#5569FF] transition-colors px-2 py-1"
             >
               projects

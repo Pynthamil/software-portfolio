@@ -82,9 +82,9 @@ export default function Footer() {
             <div className="flex flex-col gap-2 md:items-center">
               <div className="flex flex-col gap-2">
                 <span className="font-bold text-zinc-900 text-3xl mb-1">Navigation</span>
-                <Link href="/blog" className="hover:text-blue-600 transition-colors">/blog</Link>
-                <Link href="/#projects" className="hover:text-blue-600 transition-colors">/projects</Link>
-                <Link href="/#about" className="hover:text-blue-600 transition-colors">/about</Link>
+                <Link href="/blog" className="hover:text-[#5569FF] transition-colors">/blog</Link>
+                <Link href="/projects" className="hover:text-[#5569FF] transition-colors">/projects</Link>
+                <Link href="/#about" className="hover:text-[#5569FF] transition-colors">/about</Link>
               </div>
             </div>
 
