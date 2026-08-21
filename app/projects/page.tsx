@@ -54,7 +54,7 @@ function ProjectHoverCard({ project }: { project: ProjectItem }) {
       href={project.link}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="w-full relative rounded-2xl overflow-hidden bg-[#FFDFE0] block group aspect-[1994/1286]"
+      className="w-full relative rounded-lg overflow-hidden bg-[#FFDFE0] block group aspect-[1994/1286]"
     >
       {/* Cover Image (Default) */}
       <Image
@@ -62,7 +62,7 @@ function ProjectHoverCard({ project }: { project: ProjectItem }) {
         alt={project.title}
         width={1994}
         height={1286}
-        className={`w-full h-full object-contain block rounded-2xl transition-opacity duration-300 ${
+        className={`w-full h-full object-contain block rounded-lg transition-opacity duration-300 ${
           isHovered ? "opacity-0" : "opacity-100"
         }`}
         priority
@@ -75,7 +75,7 @@ function ProjectHoverCard({ project }: { project: ProjectItem }) {
         muted
         loop
         playsInline
-        className={`absolute inset-0 w-full h-full object-cover rounded-2xl transition-opacity duration-300 ${
+        className={`absolute inset-0 w-full h-full object-cover rounded-lg transition-opacity duration-300 ${
           isHovered ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
       />
@@ -107,11 +107,30 @@ export default function ProjectsPage() {
             >
               <ProjectHoverCard project={project} />
 
-              <div className="flex flex-col gap-3 text-left w-full">
-                <Link href={project.link} className="block w-fit">
-                  <h2 className="text-2xl sm:text-3xl font-bold text-[#18181B] hover:text-[#5569FF] transition-colors leading-tight [font-family:var(--font-dm-sans)]">
+              <div className="flex items-center justify-between gap-4 w-full">
+                <Link href={project.link} className="block group/title">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-[#18181B] group-hover/title:text-[#5569FF] transition-colors leading-tight [font-family:var(--font-dm-sans)]">
                     {project.title}
                   </h2>
+                </Link>
+                <Link
+                  href={project.link}
+                  className="w-12 h-12 sm:w-14 sm:h-14 shrink-0 rounded-full bg-white shadow-sm hover:shadow border border-zinc-100 flex items-center justify-center text-[#4084F3] hover:text-[#2563EB] hover:scale-105 transition-all"
+                  aria-label="View Project"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#4084F3"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <line x1="7" y1="17" x2="17" y2="7" />
+                    <polyline points="7 7 17 7 17 17" />
+                  </svg>
                 </Link>
               </div>
             </div>
