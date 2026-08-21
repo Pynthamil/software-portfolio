@@ -49,15 +49,15 @@ export default function ProjectsPage() {
         </div>
 
         {/* Project Cards List */}
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-10">
           {projects.map((project) => (
             <div
               key={project.link}
-              className="flex flex-col sm:flex-row items-center sm:items-start gap-6 p-6 rounded-2xl bg-white border border-zinc-200/90 shadow-sm w-full"
+              className="flex flex-col gap-6 w-full text-left"
             >
               <Link
                 href={project.link}
-                className="w-full sm:w-[250px] md:w-[270px] shrink-0 aspect-[16/10] relative rounded-xl overflow-hidden bg-black/5 flex items-center justify-center block"
+                className="w-full relative rounded-2xl overflow-hidden bg-black/5 block group"
               >
                 <video
                   src={project.video}
@@ -65,34 +65,32 @@ export default function ProjectsPage() {
                   muted
                   loop
                   playsInline
-                  className="w-full h-full object-cover rounded-xl"
+                  className="w-full h-auto rounded-2xl block"
                 />
               </Link>
 
-              <div className="flex flex-col justify-between flex-1 py-0.5 text-left w-full h-full">
-                <div>
-                  <div className="flex flex-wrap gap-1.5 mb-2">
-                    {project.tags.map((tag) => (
-                      <span key={tag} className="px-2 py-0.5 text-[11px] font-semibold bg-[#E5D4FF] text-zinc-900 rounded-md">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  <Link href={project.link} className="block w-fit">
-                    <h2 className="text-xl sm:text-2xl font-bold text-[#18181B] hover:text-[#5569FF] transition-colors leading-tight [font-family:var(--font-dm-sans)]">
-                      {project.title}
-                    </h2>
-                  </Link>
-
-                  <p className="text-[#71717A] text-sm mt-1.5 leading-relaxed [font-family:var(--font-dm-sans)]">
-                    {project.description}
-                  </p>
+              <div className="flex flex-col gap-3 text-left w-full">
+                <div className="flex flex-wrap gap-1.5">
+                  {project.tags.map((tag) => (
+                    <span key={tag} className="px-2.5 py-1 text-xs font-semibold bg-[#E5D4FF] text-zinc-900 rounded-md">
+                      {tag}
+                    </span>
+                  ))}
                 </div>
+
+                <Link href={project.link} className="block w-fit">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-[#18181B] hover:text-[#5569FF] transition-colors leading-tight [font-family:var(--font-dm-sans)]">
+                    {project.title}
+                  </h2>
+                </Link>
+
+                <p className="text-[#71717A] text-base sm:text-lg leading-relaxed [font-family:var(--font-dm-sans)]">
+                  {project.description}
+                </p>
 
                 <Link
                   href={project.link}
-                  className="text-[#5569FF] hover:text-[#3730A3] text-sm font-medium mt-4 inline-flex items-center gap-1 transition-colors w-fit [font-family:var(--font-dm-sans)]"
+                  className="text-[#5569FF] hover:text-[#3730A3] text-base font-semibold mt-1 inline-flex items-center gap-1 transition-colors w-fit [font-family:var(--font-dm-sans)]"
                 >
                   View project &rarr;
                 </Link>
