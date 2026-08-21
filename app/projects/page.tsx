@@ -115,7 +115,7 @@ export default function ProjectsPage() {
                 </Link>
                 <Link
                   href={project.link}
-                  className="w-12 h-12 sm:w-14 sm:h-14 shrink-0 rounded-full bg-white shadow-sm hover:shadow border border-zinc-100 flex items-center justify-center text-[#4084F3] hover:text-[#2563EB] hover:scale-105 transition-all"
+                  className="w-12 h-12 sm:w-14 sm:h-14 shrink-0 rounded-full bg-white flex items-center justify-center text-[#4084F3] hover:text-[#2563EB] hover:scale-105 transition-all"
                   aria-label="View Project"
                 >
                   <svg
