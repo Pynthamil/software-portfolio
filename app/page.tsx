@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/Footer";
@@ -17,6 +17,59 @@ import EducationHeader from "@/components/EducationHeader";
 import FeaturedWritingHeader from "@/components/FeaturedWritingHeader";
 import PhotoDumpHeader from "@/components/PhotoDumpHeader";
 import ResumeBanner from "@/components/ResumeBanner";
+
+function SemanticProjectCard() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+    if (videoRef.current) {
+      videoRef.current.currentTime = 0;
+      videoRef.current.play().catch(() => {});
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    if (videoRef.current) {
+      videoRef.current.pause();
+    }
+  };
+
+  return (
+    <Link
+      href="/projects/semantic-email"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      className="w-full relative rounded-lg overflow-hidden bg-[#FFDFE0] block group aspect-[1994/1286]"
+    >
+      {/* Cover Image (Default) */}
+      <Image
+        src="/project-assets/semantic/cover2.svg"
+        alt="Semantic Email Cover"
+        width={1994}
+        height={1286}
+        className={`w-full h-full object-contain block rounded-lg transition-opacity duration-300 ${
+          isHovered ? "opacity-0" : "opacity-100"
+        }`}
+        priority
+      />
+
+      {/* Video (Plays on Hover) */}
+      <video
+        ref={videoRef}
+        src="/project-assets/semantic/demo1.mov"
+        muted
+        loop
+        playsInline
+        className={`absolute inset-0 w-full h-full object-cover rounded-lg transition-opacity duration-300 ${
+          isHovered ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+      />
+    </Link>
+  );
+}
 
 export default function Home() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -238,19 +291,30 @@ export default function Home() {
                 <summary className="list-none outline-none [&::-webkit-details-marker]:hidden cursor-pointer select-none block">
                   <SelectedWorksHeader className="w-full h-auto block" />
                 </summary>
-                <div className="pt-6 pb-4 px-4 md:px-8 flex flex-col gap-4">
-                  <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-3 text-zinc-700 text-base md:text-lg">
-                    <li>
-                      <strong className="text-[#18181B]">Our inboxes store information, but fail to turn it into meaningful action.</strong> — A smart system that turns your chaotic inbox into a lightweight second brain by extracting tasks, deadlines, and context.
-                      <Link href="/projects/semantic-email" className="ml-2 text-[#5569FF] hover:text-[#3730A3] hover:underline font-medium inline-flex items-center gap-1 transition-colors">
-                        View &rarr;
-                      </Link>
-                    </li>
-                  </ul>
-                  <div className="flex justify-center pt-2">
-                    <Link href="/projects" className="text-base md:text-lg font-normal text-[#71717A] hover:text-[#5569FF] transition-colors flex items-center gap-1.5 [font-family:var(--font-dm-sans)]">
+                <div className="pt-4 pb-4 px-4 md:px-8 flex flex-col gap-5">
+                  {/* Top Right View All Projects Link */}
+                  <div className="flex justify-end items-center">
+                    <Link
+                      href="/projects"
+                      className="text-sm md:text-base font-medium text-[#71717A] hover:text-[#5569FF] transition-colors flex items-center gap-1 [font-family:var(--font-dm-sans)]"
+                    >
                       View all projects <span aria-hidden="true">&rarr;</span>
                     </Link>
+                  </div>
+
+                  {/* Semantic Email Preview Card */}
+                  <div className="flex flex-col gap-4">
+                    <SemanticProjectCard />
+                    <div className="flex flex-col gap-1.5">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs uppercase tracking-wider font-semibold text-[#5569FF] bg-[#5569FF]/10 px-2 py-0.5 rounded-full">
+                          Case Study
+                        </span>
+                      </div>
+                      <h3 className="font-bold text-xl md:text-2xl text-zinc-900 leading-snug">
+                        Our inboxes store information, but fail to turn it into meaningful action.
+                      </h3>
+                    </div>
                   </div>
                 </div>
               </details>
