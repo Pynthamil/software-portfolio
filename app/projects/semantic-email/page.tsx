@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import UserPersonaCarousel from "@/components/UserPersonaCarousel";
+import ScrollBackToTopSection from "@/components/ScrollBackToTopSection";
 
 export const metadata = {
   title: "Semantic Email Life-Management System | Projects",
@@ -143,7 +144,7 @@ export default function SemanticEmailProjectPage() {
               From meeting coordination and task assignments to urgent deadline notices, the pipeline automatically detects message urgency and maps unstructured context into structured actions.
             </p>
 
-            {/* Scenario 1 & 2 Visuals */}
+            {/* Scenario Visuals */}
             <div className="flex flex-col gap-6 my-2">
               <h2 className="text-2xl md:text-3xl font-bold text-[#18181B] m-0">
                 The Everyday Problem
@@ -153,16 +154,6 @@ export default function SemanticEmailProjectPage() {
                   src="/project-assets/semantic/scenario2.svg"
                   alt="Email Scenario 2"
                   width={1792}
-                  height={1234}
-                  className="w-full h-auto object-contain block rounded-lg"
-                />
-              </div>
-
-              <div className="-mx-3 sm:-mx-6 md:-mx-10 w-[calc(100%+1.5rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+5rem)] max-w-none relative rounded-lg overflow-hidden self-center">
-                <Image
-                  src="/project-assets/semantic/scenario1.svg"
-                  alt="Email Scenario 1"
-                  width={1760}
                   height={1234}
                   className="w-full h-auto object-contain block rounded-lg"
                 />
@@ -190,19 +181,66 @@ export default function SemanticEmailProjectPage() {
               It reads incoming emails, understands semantic intent using LLM function calling, and pipes structured data directly into Notion databases and calendar events without requiring manual intervention.
             </p>
 
-            {/* Demo Video */}
-            <div className="-mx-3 sm:-mx-6 md:-mx-10 w-[calc(100%+1.5rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+5rem)] max-w-none relative rounded-lg overflow-hidden my-2 self-center bg-black/5">
-              <video
-                src="/project-assets/semantic/demo1.mov"
-                controls
-                playsInline
-                autoPlay
-                muted
-                loop
-                className="w-full h-auto rounded-lg block"
-              />
+            {/* Demo Videos */}
+            <div className="flex flex-col gap-8 my-2">
+              {/* Demo 1 */}
+              <div className="flex flex-col gap-3">
+                <div className="-mx-3 sm:-mx-6 md:-mx-10 w-[calc(100%+1.5rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+5rem)] max-w-none relative rounded-lg overflow-hidden self-center bg-black/5">
+                  <video
+                    src="/project-assets/semantic/demo1.mov"
+                    controls
+                    playsInline
+                    autoPlay
+                    muted
+                    loop
+                    className="w-full h-auto rounded-lg block"
+                  />
+                </div>
+                <p>
+                  As new emails land in the inbox, the background pipeline intercepts incoming messages and parses unstructured text through NLP models to automatically organize priorities and track context in real time.
+                </p>
+              </div>
+
+              {/* Demo 2 */}
+              <div className="flex flex-col gap-3">
+                <div className="-mx-3 sm:-mx-6 md:-mx-10 w-[calc(100%+1.5rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+5rem)] max-w-none relative rounded-lg overflow-hidden self-center bg-black/5">
+                  <video
+                    src="/project-assets/semantic/demo2.mov"
+                    controls
+                    playsInline
+                    autoPlay
+                    muted
+                    loop
+                    className="w-full h-auto rounded-lg block"
+                  />
+                </div>
+                <p>
+                  Opening an email reveals a structured breakdown—including automatic summaries, actionable next steps, shared resources, conversation threads, and a communication frequency heatmap, with one-tap access to compose a reply.
+                </p>
+              </div>
+
+              {/* Demo 3 */}
+              <div className="flex flex-col gap-3">
+                <div className="-mx-3 sm:-mx-6 md:-mx-10 w-[calc(100%+1.5rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+5rem)] max-w-none relative rounded-lg overflow-hidden self-center bg-black/5">
+                  <video
+                    src="/project-assets/semantic/demo3.mov"
+                    controls
+                    playsInline
+                    autoPlay
+                    muted
+                    loop
+                    className="w-full h-auto rounded-lg block"
+                  />
+                </div>
+                <p>
+                  The copilot automatically interprets the surrounding thread context and intent. Clicking &ldquo;Generate the content&rdquo; instantly produces a natural, tailored draft without requiring manual prompt writing or instructions.
+                </p>
+              </div>
             </div>
           </div>
+
+          {/* Scroll Back to Top & Thanks for Reading */}
+          <ScrollBackToTopSection />
 
         </div>
       </article>
