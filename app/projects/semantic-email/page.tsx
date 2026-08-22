@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import UserPersonaCarousel from "@/components/UserPersonaCarousel";
 
 export const metadata = {
   title: "Semantic Email Life-Management System | Projects",
@@ -69,6 +70,9 @@ export default function SemanticEmailProjectPage() {
               </p>
             </div>
           </div>
+
+          {/* User Personas Carousel */}
+          <UserPersonaCarousel />
 
           {/* Pain Points Section */}
           <div className="flex flex-col gap-4">
