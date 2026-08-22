@@ -25,12 +25,12 @@ export default function ScrollBackToTopSection({
       <button
         type="button"
         onClick={scrollToTop}
-        className="inline-flex items-center gap-1.5 text-base sm:text-lg font-medium text-[#D08770] hover:text-[#5569FF] hover:-translate-y-0.5 transition-all duration-200 cursor-pointer bg-transparent border-none p-0 group"
+        className="inline-flex items-center gap-1.5 text-base sm:text-lg font-medium text-[#5569FF] hover:text-[#3730A3] hover:-translate-y-0.5 transition-all duration-200 cursor-pointer bg-transparent border-none p-0 group"
       >
         <span className="group-hover:-translate-y-0.5 transition-transform duration-200" aria-hidden="true">
           &uarr;
         </span>
-        <span className="underline underline-offset-4 decoration-[#D08770]/40 group-hover:decoration-[#5569FF]">
+        <span className="underline underline-offset-4 decoration-[#5569FF]/40 group-hover:decoration-[#3730A3]">
           Scroll Back to Top
         </span>
       </button>

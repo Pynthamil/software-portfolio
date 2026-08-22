@@ -1,9 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export const metadata = {
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
   title: "Figma 101 | Blog",
   description: "A template for new posts",
+  openGraph: {
+    title: "Figma 101 | Blog",
+    description: "A template for new posts",
+    url: "/blog/figma-101",
+    images: ["/post_covers/post7.svg"],
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Figma 101 | Blog",
+    description: "A template for new posts",
+    images: ["/post_covers/post7.svg"],
+  },
 };
 
 export default function BlogPost() {

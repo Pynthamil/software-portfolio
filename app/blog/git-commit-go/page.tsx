@@ -1,9 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export const metadata = {
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
   title: "Git Commit Go | Blog",
   description: "A quick guide on how to interact with GitHub programmatically using their REST API.",
+  openGraph: {
+    title: "Git Commit Go | Blog",
+    description: "A quick guide on how to interact with GitHub programmatically using their REST API.",
+    url: "/blog/git-commit-go",
+    images: ["/post_covers/post5.svg"],
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Git Commit Go | Blog",
+    description: "A quick guide on how to interact with GitHub programmatically using their REST API.",
+    images: ["/post_covers/post5.svg"],
+  },
 };
 
 export default function BlogPost() {

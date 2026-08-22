@@ -20,8 +20,39 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Pynthamil Pavendan",
+  metadataBase: new URL("https://software-portfolio-ecru.vercel.app"),
+  title: {
+    default: "Pynthamil Pavendan",
+    template: "%s | Pynthamil Pavendan",
+  },
   description: "Software Developer & Designer Portfolio",
+  icons: {
+    icon: "/SmileyFace.svg",
+    shortcut: "/SmileyFace.svg",
+    apple: "/SmileyFace.svg",
+  },
+  openGraph: {
+    title: "Pynthamil Pavendan",
+    description: "Software Developer & Designer Portfolio",
+    url: "https://software-portfolio-ecru.vercel.app",
+    siteName: "Pynthamil Pavendan Portfolio",
+    images: [
+      {
+        url: "/SmileyFace.svg",
+        width: 705,
+        height: 705,
+        alt: "Pynthamil Pavendan Logo",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Pynthamil Pavendan",
+    description: "Software Developer & Designer Portfolio",
+    images: ["/SmileyFace.svg"],
+  },
 };
 
 export default function RootLayout({

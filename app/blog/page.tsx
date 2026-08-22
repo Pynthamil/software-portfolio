@@ -1,8 +1,22 @@
 import BlogList, { BlogPost } from "@/components/BlogList";
 
-export const metadata = {
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
   title: "Blog | Pynthamil Pavendan",
   description: "my brain leaving sticky notes for itself",
+  openGraph: {
+    title: "Blog | Pynthamil Pavendan",
+    description: "my brain leaving sticky notes for itself",
+    url: "/blog",
+    images: ["/post_covers/post1.svg"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog | Pynthamil Pavendan",
+    description: "my brain leaving sticky notes for itself",
+    images: ["/post_covers/post1.svg"],
+  },
 };
 
 const blogs: BlogPost[] = [

@@ -3,9 +3,31 @@ import Link from "next/link";
 import UserPersonaCarousel from "@/components/UserPersonaCarousel";
 import ScrollBackToTopSection from "@/components/ScrollBackToTopSection";
 
-export const metadata = {
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
   title: "Semantic Email Life-Management System | Projects",
   description: "A smart system that turns your chaotic inbox into a lightweight second brain by extracting tasks, deadlines, and context.",
+  openGraph: {
+    title: "Semantic Email Life-Management System | Projects",
+    description: "A smart system that turns your chaotic inbox into a lightweight second brain by extracting tasks, deadlines, and context.",
+    url: "/projects/semantic-email",
+    images: [
+      {
+        url: "/project-assets/semantic/cover2.svg",
+        width: 1994,
+        height: 1286,
+        alt: "Semantic Email Life-Management System Cover",
+      },
+    ],
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Semantic Email Life-Management System | Projects",
+    description: "A smart system that turns your chaotic inbox into a lightweight second brain by extracting tasks, deadlines, and context.",
+    images: ["/project-assets/semantic/cover2.svg"],
+  },
 };
 
 export default function SemanticEmailProjectPage() {

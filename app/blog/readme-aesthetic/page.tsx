@@ -1,9 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export const metadata = {
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
   title: "readme, but make it aesthetic ✨ | Blog",
   description: "not everything has to be loud to be meaningful.",
+  openGraph: {
+    title: "readme, but make it aesthetic ✨ | Blog",
+    description: "not everything has to be loud to be meaningful.",
+    url: "/blog/readme-aesthetic",
+    images: ["/post_covers/post2.svg"],
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "readme, but make it aesthetic ✨ | Blog",
+    description: "not everything has to be loud to be meaningful.",
+    images: ["/post_covers/post2.svg"],
+  },
 };
 
 export default function BlogPost() {

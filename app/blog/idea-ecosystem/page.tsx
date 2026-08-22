@@ -1,9 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export const metadata = {
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
   title: "the idea ecosystem | Blog",
   description: "How I use Notion to keep my projects and ideas calm and minimal.",
+  openGraph: {
+    title: "the idea ecosystem | Blog",
+    description: "How I use Notion to keep my projects and ideas calm and minimal.",
+    url: "/blog/idea-ecosystem",
+    images: ["/post_covers/post4.svg"],
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "the idea ecosystem | Blog",
+    description: "How I use Notion to keep my projects and ideas calm and minimal.",
+    images: ["/post_covers/post4.svg"],
+  },
 };
 
 export default function BlogPost() {

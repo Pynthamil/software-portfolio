@@ -1,9 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export const metadata = {
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
   title: "The Art of Committing | Blog",
   description: "A simple and calm guide to using Git and version control.",
+  openGraph: {
+    title: "The Art of Committing | Blog",
+    description: "A simple and calm guide to using Git and version control.",
+    url: "/blog/art-of-committing",
+    images: ["/post_covers/post6.svg"],
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Art of Committing | Blog",
+    description: "A simple and calm guide to using Git and version control.",
+    images: ["/post_covers/post6.svg"],
+  },
 };
 
 export default function BlogPost() {

@@ -1,9 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export const metadata = {
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
   title: "So...Here I Am on the Internet | Blog",
   description: "Hey there, this is Pynthamil 👋 I love coding, especially the feeling of bringing an idea from my mind into existence.",
+  openGraph: {
+    title: "So...Here I Am on the Internet | Blog",
+    description: "Hey there, this is Pynthamil 👋 I love coding, especially the feeling of bringing an idea from my mind into existence.",
+    url: "/blog/so-here-i-am",
+    images: ["/post_covers/post1.svg"],
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "So...Here I Am on the Internet | Blog",
+    description: "Hey there, this is Pynthamil 👋 I love coding, especially the feeling of bringing an idea from my mind into existence.",
+    images: ["/post_covers/post1.svg"],
+  },
 };
 
 export default function BlogPost() {

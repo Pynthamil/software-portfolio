@@ -1,9 +1,31 @@
 import Image from "next/image";
 import ScrollBackToTopSection from "@/components/ScrollBackToTopSection";
 
-export const metadata = {
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
   title: "Designing CodeDex for Accessible, On-the-Go Learning | Projects",
   description: "A playful and engaging learning platform project built for Codédex.",
+  openGraph: {
+    title: "Designing CodeDex for Accessible, On-the-Go Learning | Projects",
+    description: "A playful and engaging learning platform project built for Codédex.",
+    url: "/projects/codedex",
+    images: [
+      {
+        url: "/project-assets/codedex/cover3.svg",
+        width: 1994,
+        height: 1286,
+        alt: "Designing CodeDex Cover",
+      },
+    ],
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Designing CodeDex for Accessible, On-the-Go Learning | Projects",
+    description: "A playful and engaging learning platform project built for Codédex.",
+    images: ["/project-assets/codedex/cover3.svg"],
+  },
 };
 
 export default function CodedexProjectPage() {
