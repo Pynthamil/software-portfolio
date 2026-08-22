@@ -13,21 +13,21 @@ interface Persona {
 
 const personas: Persona[] = [
   {
-    id: "persona-1",
-    title: "Student Researcher",
+    id: "persona-faculty",
+    title: "The Academic Faculty",
+    icon: "🧑‍🏫",
+    image: "/project-assets/semantic/up2.svg",
+    alt: "User Persona - The Academic Faculty",
+  },
+  {
+    id: "persona-student",
+    title: "The Student Researcher",
     icon: "🎓",
     image: "/project-assets/semantic/up3.svg",
-    alt: "User Persona - Student Researcher",
+    alt: "User Persona - The Student Researcher",
   },
   {
-    id: "persona-2",
-    title: "Active Developer",
-    icon: "💻",
-    image: "/project-assets/semantic/up3.svg",
-    alt: "User Persona - Active Developer",
-  },
-  {
-    id: "persona-3",
+    id: "persona-overwhelmed",
     title: "The Overwhelmed Student",
     icon: "📚",
     image: "/project-assets/semantic/up3.svg",
