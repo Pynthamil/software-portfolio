@@ -112,6 +112,19 @@ export default function CodedexProjectPage() {
                 className="w-full h-auto object-contain block rounded-lg"
               />
             </div>
+
+            {/* More Coming Soon Section */}
+            <div className="flex flex-col items-center justify-center p-8 sm:p-10 rounded-2xl bg-white border border-zinc-200/80 shadow-xs text-center gap-3 my-4">
+              <span className="text-xs uppercase tracking-widest font-semibold text-[#5569FF] bg-[#5569FF]/10 px-3 py-1 rounded-full">
+                Work in Progress
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-bold text-zinc-900 m-0">
+                More Coming Soon ✨
+              </h3>
+              <p className="text-zinc-600 text-base sm:text-lg max-w-md m-0">
+                Interactive prototypes, mobile onboarding flows, and the complete design system breakdown are currently being documented.
+              </p>
+            </div>
           </div>
 
           {/* Scroll Back to Top & Thanks for Reading */}
