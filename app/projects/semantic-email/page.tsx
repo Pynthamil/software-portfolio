@@ -145,11 +145,14 @@ export default function SemanticEmailProjectPage() {
 
             {/* Scenario 1 & 2 Visuals */}
             <div className="flex flex-col gap-6 my-2">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#18181B] m-0">
+                The Everyday Problem
+              </h2>
               <div className="-mx-3 sm:-mx-6 md:-mx-10 w-[calc(100%+1.5rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+5rem)] max-w-none relative rounded-lg overflow-hidden self-center">
                 <Image
-                  src="/project-assets/semantic/scenario1.svg"
-                  alt="Email Scenario 1"
-                  width={1760}
+                  src="/project-assets/semantic/scenario2.svg"
+                  alt="Email Scenario 2"
+                  width={1792}
                   height={1234}
                   className="w-full h-auto object-contain block rounded-lg"
                 />
@@ -157,9 +160,9 @@ export default function SemanticEmailProjectPage() {
 
               <div className="-mx-3 sm:-mx-6 md:-mx-10 w-[calc(100%+1.5rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+5rem)] max-w-none relative rounded-lg overflow-hidden self-center">
                 <Image
-                  src="/project-assets/semantic/scenario2.svg"
-                  alt="Email Scenario 2"
-                  width={1792}
+                  src="/project-assets/semantic/scenario1.svg"
+                  alt="Email Scenario 1"
+                  width={1760}
                   height={1234}
                   className="w-full h-auto object-contain block rounded-lg"
                 />
