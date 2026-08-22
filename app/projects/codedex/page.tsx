@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ScrollBackToTopSection from "@/components/ScrollBackToTopSection";
 
 export const metadata = {
   title: "Designing CodeDex for Accessible, On-the-Go Learning | Projects",
@@ -112,6 +113,9 @@ export default function CodedexProjectPage() {
               />
             </div>
           </div>
+
+          {/* Scroll Back to Top & Thanks for Reading */}
+          <ScrollBackToTopSection />
         </article>
       </div>
     </div>
