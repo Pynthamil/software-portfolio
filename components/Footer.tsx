@@ -5,11 +5,12 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Footer() {
-  const [views, setViews] = useState(1049);
+  const [views, setViews] = useState<number>(0);
+  const [isRevealed, setIsRevealed] = useState(false);
 
   useEffect(() => {
     // Increment the view counter and fetch the latest count
-    fetch("https://api.counterapi.dev/v1/pynthamil-portfolio/views/up")
+    fetch("https://api.counterapi.dev/v1/pynthamil-portfolio-live/views/up")
       .then((res) => {
         if (!res.ok) throw new Error("Failed to fetch counter");
         return res.json();
@@ -21,14 +22,14 @@ export default function Footer() {
       })
       .catch(() => {
         // Fallback to local storage silently if API is down
-        const savedViews = localStorage.getItem("portfolio_views");
+        const savedViews = localStorage.getItem("portfolio_views_count");
         if (savedViews) {
           const nextViews = parseInt(savedViews, 10) + 1;
           setViews(nextViews);
-          localStorage.setItem("portfolio_views", nextViews.toString());
+          localStorage.setItem("portfolio_views_count", nextViews.toString());
         } else {
-          setViews(1049);
-          localStorage.setItem("portfolio_views", "1049");
+          setViews(1);
+          localStorage.setItem("portfolio_views_count", "1");
         }
       });
   }, []);
@@ -98,14 +99,37 @@ export default function Footer() {
                 <a href="mailto:pavendanpynthamil@gmail.com" className="hover:text-blue-600 transition-colors">Email</a>
               </div>
 
-              {/* View Counter */}
-              <div className="flex items-center gap-2 text-lg text-zinc-500 bg-zinc-50 px-3 py-1.5 rounded-md border border-zinc-200" title="Page views count">
-                <svg className="w-4 h-4 text-zinc-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                </svg>
-                <span>{views.toLocaleString()} views</span>
-              </div>
+              {/* View Counter Smooth Expanding Button */}
+              <button
+                onClick={() => setIsRevealed(!isRevealed)}
+                aria-label={isRevealed ? "Hide page views count" : "Show page views count"}
+                title={isRevealed ? "Click to hide views count" : "Click to view page views"}
+                className={`h-10 bg-white hover:bg-zinc-50/90 text-zinc-900 rounded-md border border-zinc-200 shadow-xs flex items-center transition-all duration-300 ease-out cursor-pointer overflow-hidden active:scale-95 select-none ${
+                  isRevealed ? "px-3 gap-2 min-w-[72px]" : "w-10 px-0 justify-center"
+                }`}
+              >
+                <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center">
+                  <svg className="w-5 h-5 text-zinc-800" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M 4 14 A 8 8 0 0 1 20 14" strokeWidth="2.5" />
+                    <circle cx="12" cy="14" r="3.5" strokeWidth="2.5" />
+                    <line
+                      x1="3"
+                      y1="3"
+                      x2="21"
+                      y2="21"
+                      strokeWidth="2.8"
+                      className={`transition-opacity duration-300 ease-out ${isRevealed ? "opacity-0" : "opacity-100"}`}
+                    />
+                  </svg>
+                </div>
+                <span
+                  className={`font-semibold text-lg text-zinc-900 tracking-tight whitespace-nowrap overflow-hidden transition-all duration-300 ease-out ${
+                    isRevealed ? "max-w-[120px] opacity-100 pr-1" : "max-w-0 opacity-0 pr-0"
+                  }`}
+                >
+                  {views.toLocaleString()}
+                </span>
+              </button>
             </div>
           </div>
 
