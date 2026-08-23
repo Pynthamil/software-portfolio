@@ -122,10 +122,10 @@ export default function SemanticEmailProjectPage() {
             </h2>
             <div className="md:col-span-2 text-zinc-600 text-base md:text-lg leading-relaxed flex flex-col gap-3">
               <p className="m-0">
-                Our discovery process involved analyzing real student and developer workflows across dozens of active inboxes. We identified that over 75% of cognitive overload comes from low-signal emails masking high-priority action items.
+                My discovery process involved analyzing real student and faculty workflows across dozens of active inboxes. I identified that over 75% of cognitive overload comes from low-signal emails masking high-priority action items, urgent deadlines, and essential follow-ups.
               </p>
               <p className="m-0">
-                We synthesized these findings to formulate an automated semantic parsing pipeline that converts passive incoming text into structured task objects with clear deadlines and priority scores.
+                I synthesized these findings into targeted user personas to design a lightweight copilot interface that turns passive incoming text into structured action items, clear priorities, and frictionless task management.
               </p>
             </div>
           </div>
