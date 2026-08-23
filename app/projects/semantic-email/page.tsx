@@ -51,7 +51,7 @@ export default function SemanticEmailProjectPage() {
         <article className="max-w-2xl w-full text-left flex flex-col gap-10">
           
           {/* Header */}
-          <header className="flex flex-col gap-4">
+          <header className="flex flex-col gap-6">
             <div className="flex flex-col gap-1">
               <h1 className="text-3xl sm:text-4xl font-bold text-[#18181B]">
                 Semantic Email Life-Management System
@@ -59,6 +59,42 @@ export default function SemanticEmailProjectPage() {
               <p className="text-lg sm:text-xl text-[#71717A]">
                 A smart system that turns your chaotic inbox into a lightweight second brain by extracting tasks, deadlines, and context.
               </p>
+            </div>
+
+            {/* Project Metadata Info Card */}
+            <div className="bg-white rounded-md border border-zinc-200/80 p-4 sm:p-5 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 shadow-xs">
+              <div className="flex flex-col gap-1">
+                <span className="text-xs font-bold text-blue-600 tracking-wider uppercase">
+                  Duration
+                </span>
+                <span className="text-sm sm:text-base text-zinc-700 font-medium">
+                  Aug 2026
+                </span>
+              </div>
+              <div className="flex flex-col gap-1">
+                <span className="text-xs font-bold text-blue-600 tracking-wider uppercase">
+                  Role
+                </span>
+                <span className="text-sm sm:text-base text-zinc-700 font-medium">
+                  UX/UI Designer
+                </span>
+              </div>
+              <div className="flex flex-col gap-1">
+                <span className="text-xs font-bold text-blue-600 tracking-wider uppercase">
+                  Team
+                </span>
+                <span className="text-sm sm:text-base text-zinc-700 font-medium">
+                  Solo Project
+                </span>
+              </div>
+              <div className="flex flex-col gap-1">
+                <span className="text-xs font-bold text-blue-600 tracking-wider uppercase">
+                  Tools
+                </span>
+                <span className="text-sm sm:text-base text-zinc-700 font-medium">
+                  Figma
+                </span>
+              </div>
             </div>
           </header>
 
@@ -237,7 +273,7 @@ export default function SemanticEmailProjectPage() {
                   />
                 </div>
                 <p>
-                  Opening an email reveals a structured breakdown—including automatic summaries, actionable next steps, shared resources, conversation threads, and a communication frequency heatmap, with one-tap access to compose a reply.
+                  Opening an email reveals a structured breakdown, including automatic summaries, actionable next steps, shared resources, conversation threads, and a communication frequency heatmap, with one-tap access to compose a reply.
                 </p>
               </div>
 
@@ -257,6 +293,51 @@ export default function SemanticEmailProjectPage() {
                 <p>
                   The copilot automatically interprets the surrounding thread context and intent. Clicking &ldquo;Generate the content&rdquo; instantly produces a natural, tailored draft without requiring manual prompt writing or instructions.
                 </p>
+              </div>
+            </div>
+          </div>
+
+          <hr className="border-zinc-200 my-2" />
+
+          {/* Outcomes & What I Learned Section */}
+          <div className="flex flex-col gap-6 pt-2">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#18181B] m-0">
+              Outcomes &amp; What I Learned
+            </h2>
+
+            <p className="m-0 text-zinc-600 text-base md:text-lg leading-relaxed">
+              Designing the Semantic Email Life-Management System provided deep insights into crafting human-centered AI interfaces that solve cognitive overload rather than adding new complexity.
+            </p>
+
+            <div className="flex flex-col gap-4 my-2">
+              <div className="-mx-3 sm:-mx-6 md:-mx-10 w-[calc(100%+1.5rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+5rem)] max-w-none relative rounded-md overflow-hidden self-center">
+                <Image
+                  src="/project-assets/semantic/insight1.svg"
+                  alt="Key Outcome &amp; Learning 1"
+                  width={2652}
+                  height={482}
+                  className="w-full h-auto object-contain block rounded-md"
+                />
+              </div>
+
+              <div className="-mx-3 sm:-mx-6 md:-mx-10 w-[calc(100%+1.5rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+5rem)] max-w-none relative rounded-md overflow-hidden self-center">
+                <Image
+                  src="/project-assets/semantic/insight2.svg"
+                  alt="Key Outcome &amp; Learning 2"
+                  width={2652}
+                  height={482}
+                  className="w-full h-auto object-contain block rounded-md"
+                />
+              </div>
+
+              <div className="-mx-3 sm:-mx-6 md:-mx-10 w-[calc(100%+1.5rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+5rem)] max-w-none relative rounded-md overflow-hidden self-center">
+                <Image
+                  src="/project-assets/semantic/insight3.svg"
+                  alt="Key Outcome &amp; Learning 3"
+                  width={2652}
+                  height={482}
+                  className="w-full h-auto object-contain block rounded-md"
+                />
               </div>
             </div>
           </div>

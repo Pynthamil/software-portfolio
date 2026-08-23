@@ -20,11 +20,11 @@ const personas: Persona[] = [
     alt: "User Persona - The Academic Faculty",
   },
   {
-    id: "persona-student",
-    title: "The Student Researcher",
-    icon: "🎓",
-    image: "/project-assets/semantic/up3.svg",
-    alt: "User Persona - The Student Researcher",
+    id: "persona-high-school",
+    title: "The High School Student",
+    icon: "🎒",
+    image: "/project-assets/semantic/up1.svg",
+    alt: "User Persona - The High School Student",
   },
   {
     id: "persona-overwhelmed",
