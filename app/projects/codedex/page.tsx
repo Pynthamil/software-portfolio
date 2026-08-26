@@ -1,5 +1,7 @@
 import Image from "next/image";
 import ScrollBackToTopSection from "@/components/ScrollBackToTopSection";
+import ProjectSidebar from "@/components/ProjectSidebar";
+import CodedexCover from "@/components/CodedexCover";
 
 import type { Metadata } from "next";
 
@@ -12,9 +14,9 @@ export const metadata: Metadata = {
     url: "/projects/codedex",
     images: [
       {
-        url: "/project-assets/codedex/cover3.svg",
-        width: 1994,
-        height: 1286,
+        url: "/project-assets/codedex/Iphone 14.svg",
+        width: 561,
+        height: 974,
         alt: "Designing CodeDex Cover",
       },
     ],
@@ -24,23 +26,24 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Designing CodeDex for Accessible, On-the-Go Learning | Projects",
     description: "A playful and engaging learning platform project built for Codédex.",
-    images: ["/project-assets/codedex/cover3.svg"],
+    images: ["/project-assets/codedex/Iphone 14.svg"],
   },
 };
 
+const navItems = [
+  { id: "overview", label: "OVERVIEW" },
+  { id: "context", label: "CONTEXT" },
+  { id: "more", label: "MORE" },
+];
+
 export default function CodedexProjectPage() {
   return (
-    <div className="flex flex-col flex-1 items-center bg-[#F7F6F4] [font-family:var(--font-dm-sans)] px-6 pt-28 md:pt-32 pb-16 w-full">
+    <div className="flex flex-col flex-1 items-center bg-[#F7F6F4] [font-family:var(--font-dm-sans)] px-6 pt-28 md:pt-32 pb-16 w-full relative">
+      <ProjectSidebar items={navItems} />
+
       <div className="w-full flex flex-col items-center gap-8">
-        <div className="max-w-5xl w-full relative rounded-lg overflow-hidden bg-[#F7FFE0]">
-          <Image
-            src="/project-assets/codedex/cover3.svg"
-            alt="Designing CodeDex for Accessible, On-the-Go Learning Cover"
-            width={1994}
-            height={1286}
-            className="w-full h-auto object-contain block rounded-lg"
-            priority
-          />
+        <div id="overview" className="max-w-5xl w-full relative rounded-md overflow-hidden bg-[#F7FFE0] scroll-mt-32 aspect-[16/10] sm:aspect-[16/9]">
+          <CodedexCover />
         </div>
         <article className="max-w-2xl w-full text-left flex flex-col gap-10">
           <header className="flex flex-col gap-4">
@@ -53,44 +56,44 @@ export default function CodedexProjectPage() {
           </header>
 
           <div className="flex flex-col gap-8 w-full">
-            <div className="-mx-3 sm:-mx-6 md:-mx-10 w-[calc(100%+1.5rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+5rem)] max-w-none relative rounded-lg overflow-hidden self-center">
+            <div id="context" className="scroll-mt-32 -mx-3 sm:-mx-6 md:-mx-10 w-[calc(100%+1.5rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+5rem)] max-w-none relative rounded-md overflow-hidden self-center">
               <Image
                 src="/project-assets/codedex/chall.svg"
                 alt="The Challenge"
                 width={829}
                 height={212}
-                className="w-full h-auto object-contain block rounded-lg"
+                className="w-full h-auto object-contain block rounded-md"
                 priority
               />
             </div>
 
-            <div className="-mx-3 sm:-mx-6 md:-mx-10 w-[calc(100%+1.5rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+5rem)] max-w-none relative rounded-lg overflow-hidden self-center">
+            <div className="-mx-3 sm:-mx-6 md:-mx-10 w-[calc(100%+1.5rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+5rem)] max-w-none relative rounded-md overflow-hidden self-center">
               <Image
                 src="/project-assets/codedex/soln.svg"
                 alt="The Solution"
                 width={829}
                 height={206}
-                className="w-full h-auto object-contain block rounded-lg"
+                className="w-full h-auto object-contain block rounded-md"
               />
             </div>
 
-            <div className="-mx-3 sm:-mx-6 md:-mx-10 w-[calc(100%+1.5rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+5rem)] max-w-none relative rounded-lg overflow-hidden self-center">
+            <div className="-mx-3 sm:-mx-6 md:-mx-10 w-[calc(100%+1.5rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+5rem)] max-w-none relative rounded-md overflow-hidden self-center">
               <Image
                 src="/project-assets/codedex/mascot1.svg"
                 alt="Meet Dexter Mascot"
                 width={829}
                 height={206}
-                className="w-full h-auto object-contain block rounded-lg"
+                className="w-full h-auto object-contain block rounded-md"
               />
             </div>
 
-            <div className="-mx-4 sm:-mx-10 md:-mx-16 lg:-mx-24 w-[calc(100%+2rem)] sm:w-[calc(100%+5rem)] md:w-[calc(100%+8rem)] lg:w-[calc(100%+12rem)] max-w-none relative rounded-lg overflow-hidden self-center">
+            <div id="more" className="scroll-mt-32 -mx-4 sm:-mx-10 md:-mx-16 lg:-mx-24 w-[calc(100%+2rem)] sm:w-[calc(100%+5rem)] md:w-[calc(100%+8rem)] lg:w-[calc(100%+12rem)] max-w-none relative rounded-md overflow-hidden self-center">
               <Image
                 src="/project-assets/codedex/codedex3.webp"
                 alt="CodeDex Interface Overview"
                 width={2400}
                 height={1500}
-                className="w-full h-auto object-contain block rounded-lg"
+                className="w-full h-auto object-contain block rounded-md"
               />
             </div>
 

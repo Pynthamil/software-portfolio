@@ -2,14 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import UserPersonaCarousel from "@/components/UserPersonaCarousel";
 import ScrollBackToTopSection from "@/components/ScrollBackToTopSection";
+import ProjectSidebar from "@/components/ProjectSidebar";
 
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Semantic Email Life-Management System | Projects",
+  title: "Our inboxes store information, but fail to turn it into meaningful action. | Projects",
   description: "A smart system that turns your chaotic inbox into a lightweight second brain by extracting tasks, deadlines, and context.",
   openGraph: {
-    title: "Semantic Email Life-Management System | Projects",
+    title: "Our inboxes store information, but fail to turn it into meaningful action. | Projects",
     description: "A smart system that turns your chaotic inbox into a lightweight second brain by extracting tasks, deadlines, and context.",
     url: "/projects/semantic-email",
     images: [
@@ -17,32 +18,40 @@ export const metadata: Metadata = {
         url: "/project-assets/semantic/cover2.svg",
         width: 1994,
         height: 1286,
-        alt: "Semantic Email Life-Management System Cover",
+        alt: "Semantic Email Cover",
       },
     ],
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Semantic Email Life-Management System | Projects",
+    title: "Our inboxes store information, but fail to turn it into meaningful action. | Projects",
     description: "A smart system that turns your chaotic inbox into a lightweight second brain by extracting tasks, deadlines, and context.",
     images: ["/project-assets/semantic/cover2.svg"],
   },
 };
 
+const navItems = [
+  { id: "overview", label: "OVERVIEW" },
+  { id: "context", label: "CONTEXT" },
+  { id: "more", label: "MORE" },
+];
+
 export default function SemanticEmailProjectPage() {
   return (
-    <div className="flex flex-col flex-1 items-center bg-[#F7F6F4] [font-family:var(--font-dm-sans)] px-6 pt-28 md:pt-32 pb-16 w-full">
+    <div className="flex flex-col flex-1 items-center bg-[#F7F6F4] [font-family:var(--font-dm-sans)] px-6 pt-28 md:pt-32 pb-16 w-full relative">
+      <ProjectSidebar items={navItems} />
+
       <div className="w-full flex flex-col items-center gap-8">
         
         {/* Big Cover Image */}
-        <div className="max-w-5xl w-full relative rounded-lg overflow-hidden">
+        <div id="overview" className="max-w-5xl w-full relative rounded-md overflow-hidden scroll-mt-32">
           <Image
             src="/project-assets/semantic/cover2.svg"
-            alt="Semantic Email Life-Management System Cover"
+            alt="Semantic Email Cover"
             width={1994}
             height={1286}
-            className="w-full h-auto object-contain block rounded-lg"
+            className="w-full h-auto object-contain block rounded-md"
             priority
           />
         </div>
@@ -53,8 +62,8 @@ export default function SemanticEmailProjectPage() {
           {/* Header */}
           <header className="flex flex-col gap-6">
             <div className="flex flex-col gap-1">
-              <h1 className="text-3xl sm:text-4xl font-bold text-[#18181B]">
-                Semantic Email Life-Management System
+              <h1 className="text-3xl sm:text-4xl font-bold text-[#18181B] leading-tight">
+                Our inboxes store information, but fail to turn it into meaningful action.
               </h1>
               <p className="text-lg sm:text-xl text-[#71717A]">
                 A smart system that turns your chaotic inbox into a lightweight second brain by extracting tasks, deadlines, and context.
@@ -99,7 +108,7 @@ export default function SemanticEmailProjectPage() {
           </header>
 
         {/* The Challenge Section with Dotted SVG Banner */}
-        <section className="w-full flex flex-col gap-6">
+        <section id="context" className="w-full flex flex-col gap-6 scroll-mt-32">
           <div className="-mx-3 sm:-mx-6 md:-mx-10 w-[calc(100%+1.5rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+5rem)] max-w-none relative rounded-lg overflow-hidden self-center">
             <Image
               src="/project-assets/semantic/chall.svg"
@@ -222,7 +231,7 @@ export default function SemanticEmailProjectPage() {
           <hr className="border-zinc-200 my-2" />
 
           {/* The Solution Section */}
-          <div className="flex flex-col gap-4">
+          <div id="more" className="flex flex-col gap-4 scroll-mt-32">
             <div className="-mx-3 sm:-mx-6 md:-mx-10 w-[calc(100%+1.5rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+5rem)] max-w-none relative rounded-lg overflow-hidden my-2 self-center">
               <Image
                 src="/project-assets/semantic/soln.svg"

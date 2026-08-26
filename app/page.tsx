@@ -42,7 +42,7 @@ function SemanticProjectCard() {
       href="/projects/semantic-email"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="w-full relative rounded-lg overflow-hidden bg-[#FFDFE0] block group aspect-[1994/1286]"
+      className="w-full relative rounded-md overflow-hidden bg-[#FFDFE0] block group aspect-[1994/1286]"
     >
       {/* Cover Image (Default) */}
       <Image
@@ -50,7 +50,7 @@ function SemanticProjectCard() {
         alt="Semantic Email Cover"
         width={1994}
         height={1286}
-        className={`w-full h-full object-contain block rounded-lg transition-opacity duration-300 ${
+        className={`w-full h-full object-contain block rounded-md transition-opacity duration-300 ${
           isHovered ? "opacity-0" : "opacity-100"
         }`}
         priority
@@ -63,7 +63,7 @@ function SemanticProjectCard() {
         muted
         loop
         playsInline
-        className={`absolute inset-0 w-full h-full object-cover rounded-lg transition-opacity duration-300 ${
+        className={`absolute inset-0 w-full h-full object-cover rounded-md transition-opacity duration-300 ${
           isHovered ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
       />
