@@ -257,7 +257,7 @@ export default function SemanticEmailProjectPage() {
             <div className="flex flex-col gap-8 my-2">
               {/* Demo 1 */}
               <div className="flex flex-col gap-3">
-                <div className="-mx-3 sm:-mx-6 md:-mx-10 w-[calc(100%+1.5rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+5rem)] max-w-none aspect-square relative rounded-xl overflow-hidden self-center bg-black/5">
+                <div className="w-full aspect-square relative rounded-xl overflow-hidden self-center bg-black/5">
                   <video
                     src="/project-assets/semantic/demo1.mov"
                     controls
@@ -275,7 +275,7 @@ export default function SemanticEmailProjectPage() {
 
               {/* Demo 2 */}
               <div className="flex flex-col gap-3">
-                <div className="-mx-3 sm:-mx-6 md:-mx-10 w-[calc(100%+1.5rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+5rem)] max-w-none aspect-square relative rounded-xl overflow-hidden self-center bg-black/5">
+                <div className="w-full aspect-square relative rounded-xl overflow-hidden self-center bg-black/5">
                   <video
                     src="/project-assets/semantic/demo2.mov"
                     controls
@@ -293,7 +293,7 @@ export default function SemanticEmailProjectPage() {
 
               {/* Demo 3 */}
               <div className="flex flex-col gap-3">
-                <div className="-mx-3 sm:-mx-6 md:-mx-10 w-[calc(100%+1.5rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+5rem)] max-w-none aspect-square relative rounded-xl overflow-hidden self-center bg-black/5">
+                <div className="w-full aspect-square relative rounded-xl overflow-hidden self-center bg-black/5">
                   <video
                     src="/project-assets/semantic/demo3.mov"
                     controls
