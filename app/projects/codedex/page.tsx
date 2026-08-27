@@ -32,8 +32,11 @@ export const metadata: Metadata = {
 
 const navItems = [
   { id: "overview", label: "OVERVIEW" },
-  { id: "context", label: "CONTEXT" },
-  { id: "more", label: "MORE" },
+  { id: "problem", label: "PROBLEM" },
+  { id: "approach", label: "APPROACH" },
+  { id: "exploration", label: "EXPLORATION" },
+  { id: "solution", label: "SOLUTION" },
+  { id: "outcome", label: "OUTCOME" },
 ];
 
 export default function CodedexProjectPage() {
@@ -56,7 +59,7 @@ export default function CodedexProjectPage() {
           </header>
 
           <div className="flex flex-col gap-8 w-full">
-            <div id="context" className="scroll-mt-32 -mx-3 sm:-mx-6 md:-mx-10 w-[calc(100%+1.5rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+5rem)] max-w-none relative rounded-md overflow-hidden self-center">
+            <div id="problem" className="scroll-mt-32 -mx-3 sm:-mx-6 md:-mx-10 w-[calc(100%+1.5rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+5rem)] max-w-none relative rounded-md overflow-hidden self-center">
               <Image
                 src="/project-assets/codedex/chall.svg"
                 alt="The Challenge"
@@ -67,27 +70,29 @@ export default function CodedexProjectPage() {
               />
             </div>
 
-            <div className="-mx-3 sm:-mx-6 md:-mx-10 w-[calc(100%+1.5rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+5rem)] max-w-none relative rounded-md overflow-hidden self-center">
-              <Image
-                src="/project-assets/codedex/soln.svg"
-                alt="The Solution"
-                width={829}
-                height={206}
-                className="w-full h-auto object-contain block rounded-md"
-              />
+            <div id="approach" className="scroll-mt-32 flex flex-col gap-8 w-full">
+              <div className="-mx-3 sm:-mx-6 md:-mx-10 w-[calc(100%+1.5rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+5rem)] max-w-none relative rounded-md overflow-hidden self-center">
+                <Image
+                  src="/project-assets/codedex/soln.svg"
+                  alt="The Solution"
+                  width={829}
+                  height={206}
+                  className="w-full h-auto object-contain block rounded-md"
+                />
+              </div>
+
+              <div className="-mx-3 sm:-mx-6 md:-mx-10 w-[calc(100%+1.5rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+5rem)] max-w-none relative rounded-md overflow-hidden self-center">
+                <Image
+                  src="/project-assets/codedex/mascot1.svg"
+                  alt="Meet Dexter Mascot"
+                  width={829}
+                  height={206}
+                  className="w-full h-auto object-contain block rounded-md"
+                />
+              </div>
             </div>
 
-            <div className="-mx-3 sm:-mx-6 md:-mx-10 w-[calc(100%+1.5rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+5rem)] max-w-none relative rounded-md overflow-hidden self-center">
-              <Image
-                src="/project-assets/codedex/mascot1.svg"
-                alt="Meet Dexter Mascot"
-                width={829}
-                height={206}
-                className="w-full h-auto object-contain block rounded-md"
-              />
-            </div>
-
-            <div id="more" className="scroll-mt-32 -mx-4 sm:-mx-10 md:-mx-16 lg:-mx-24 w-[calc(100%+2rem)] sm:w-[calc(100%+5rem)] md:w-[calc(100%+8rem)] lg:w-[calc(100%+12rem)] max-w-none relative rounded-md overflow-hidden self-center">
+            <div id="exploration" className="scroll-mt-32 -mx-4 sm:-mx-10 md:-mx-16 lg:-mx-24 w-[calc(100%+2rem)] sm:w-[calc(100%+5rem)] md:w-[calc(100%+8rem)] lg:w-[calc(100%+12rem)] max-w-none relative rounded-md overflow-hidden self-center">
               <Image
                 src="/project-assets/codedex/codedex3.webp"
                 alt="CodeDex Interface Overview"
@@ -118,28 +123,30 @@ export default function CodedexProjectPage() {
               </div>
             </div>
 
-            <div className="-mx-3 sm:-mx-6 md:-mx-10 w-[calc(100%+1.5rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+5rem)] max-w-none relative rounded-lg overflow-hidden self-center">
-              <Image
-                src="/project-assets/codedex/cp2.svg"
-                alt="Color Palette"
-                width={829}
-                height={155}
-                className="w-full h-auto object-contain block rounded-lg"
-              />
+            <div id="solution" className="scroll-mt-32 flex flex-col gap-8 w-full">
+              <div className="-mx-3 sm:-mx-6 md:-mx-10 w-[calc(100%+1.5rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+5rem)] max-w-none relative rounded-lg overflow-hidden self-center">
+                <Image
+                  src="/project-assets/codedex/cp2.svg"
+                  alt="Color Palette"
+                  width={829}
+                  height={155}
+                  className="w-full h-auto object-contain block rounded-lg"
+                />
+              </div>
+
+              <div className="-mx-4 sm:-mx-10 md:-mx-16 lg:-mx-24 w-[calc(100%+2rem)] sm:w-[calc(100%+5rem)] md:w-[calc(100%+8rem)] lg:w-[calc(100%+12rem)] max-w-none relative rounded-lg overflow-hidden self-center">
+                <Image
+                  src="/project-assets/codedex/color-palette.webp"
+                  alt="CodeDex Color Palette"
+                  width={2442}
+                  height={1973}
+                  className="w-full h-auto object-contain block rounded-lg"
+                />
+              </div>
             </div>
 
-            <div className="-mx-4 sm:-mx-10 md:-mx-16 lg:-mx-24 w-[calc(100%+2rem)] sm:w-[calc(100%+5rem)] md:w-[calc(100%+8rem)] lg:w-[calc(100%+12rem)] max-w-none relative rounded-lg overflow-hidden self-center">
-              <Image
-                src="/project-assets/codedex/color-palette.webp"
-                alt="CodeDex Color Palette"
-                width={2442}
-                height={1973}
-                className="w-full h-auto object-contain block rounded-lg"
-              />
-            </div>
-
-            {/* More Coming Soon Section */}
-            <div className="flex flex-col items-center justify-center p-8 sm:p-10 rounded-2xl bg-white border border-zinc-200/80 shadow-xs text-center gap-3 my-4">
+            {/* More Coming Soon Section (Outcome) */}
+            <div id="outcome" className="scroll-mt-32 flex flex-col items-center justify-center p-8 sm:p-10 rounded-2xl bg-white border border-zinc-200/80 shadow-xs text-center gap-3 my-4">
               <span className="text-xs uppercase tracking-widest font-semibold text-[#5569FF] bg-[#5569FF]/10 px-3 py-1 rounded-full">
                 Work in Progress
               </span>

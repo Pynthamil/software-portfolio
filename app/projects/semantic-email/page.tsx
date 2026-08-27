@@ -33,8 +33,11 @@ export const metadata: Metadata = {
 
 const navItems = [
   { id: "overview", label: "OVERVIEW" },
-  { id: "context", label: "CONTEXT" },
-  { id: "more", label: "MORE" },
+  { id: "problem", label: "PROBLEM" },
+  { id: "approach", label: "APPROACH" },
+  { id: "exploration", label: "EXPLORATION" },
+  { id: "solution", label: "SOLUTION" },
+  { id: "outcome", label: "OUTCOME" },
 ];
 
 export default function SemanticEmailProjectPage() {
@@ -107,8 +110,8 @@ export default function SemanticEmailProjectPage() {
             </div>
           </header>
 
-        {/* The Challenge Section with Dotted SVG Banner */}
-        <section id="context" className="w-full flex flex-col gap-6 scroll-mt-32">
+        {/* The Challenge Section (Problem) */}
+        <section id="problem" className="w-full flex flex-col gap-6 scroll-mt-32">
           <div className="-mx-3 sm:-mx-6 md:-mx-10 w-[calc(100%+1.5rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+5rem)] max-w-none relative rounded-lg overflow-hidden self-center">
             <Image
               src="/project-assets/semantic/chall.svg"
@@ -124,23 +127,25 @@ export default function SemanticEmailProjectPage() {
         {/* Content */}
         <div className="prose prose-zinc [font-family:var(--font-dm-sans)] text-zinc-700 flex flex-col gap-8 text-lg leading-relaxed max-w-none">
           
-          {/* Research Section */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 pt-2 items-start">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#18181B] m-0">
-              Research
-            </h2>
-            <div className="md:col-span-2 text-zinc-600 text-base md:text-lg leading-relaxed flex flex-col gap-3">
-              <p className="m-0">
-                My discovery process involved analyzing real student and faculty workflows across dozens of active inboxes. I identified that over 75% of cognitive overload comes from low-signal emails masking high-priority action items, urgent deadlines, and essential follow-ups.
-              </p>
-              <p className="m-0">
-                I synthesized these findings into targeted user personas to design a lightweight copilot interface that turns passive incoming text into structured action items, clear priorities, and frictionless task management.
-              </p>
+          {/* Research & Approach Section */}
+          <div id="approach" className="scroll-mt-32 flex flex-col gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 pt-2 items-start">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#18181B] m-0">
+                Research
+              </h2>
+              <div className="md:col-span-2 text-zinc-600 text-base md:text-lg leading-relaxed flex flex-col gap-3">
+                <p className="m-0">
+                  My discovery process involved analyzing real student and faculty workflows across dozens of active inboxes. I identified that over 75% of cognitive overload comes from low-signal emails masking high-priority action items, urgent deadlines, and essential follow-ups.
+                </p>
+                <p className="m-0">
+                  I synthesized these findings into targeted user personas to design a lightweight copilot interface that turns passive incoming text into structured action items, clear priorities, and frictionless task management.
+                </p>
+              </div>
             </div>
-          </div>
 
-          {/* User Personas Carousel */}
-          <UserPersonaCarousel />
+            {/* User Personas Carousel */}
+            <UserPersonaCarousel />
+          </div>
 
           {/* Pain Points Section */}
           <div className="flex flex-col gap-4">
@@ -176,8 +181,8 @@ export default function SemanticEmailProjectPage() {
 
           <hr className="border-zinc-200 my-2" />
 
-          {/* Scenarios Section */}
-          <div className="flex flex-col gap-4">
+          {/* Exploration Section */}
+          <div id="exploration" className="flex flex-col gap-4 scroll-mt-32">
             <div className="-mx-3 sm:-mx-6 md:-mx-10 w-[calc(100%+1.5rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+5rem)] max-w-none relative rounded-lg overflow-hidden my-1 self-center">
               <Image
                 src="/project-assets/semantic/scenario.svg"
@@ -231,7 +236,7 @@ export default function SemanticEmailProjectPage() {
           <hr className="border-zinc-200 my-2" />
 
           {/* The Solution Section */}
-          <div id="more" className="flex flex-col gap-4 scroll-mt-32">
+          <div id="solution" className="flex flex-col gap-4 scroll-mt-32">
             <div className="-mx-3 sm:-mx-6 md:-mx-10 w-[calc(100%+1.5rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+5rem)] max-w-none relative rounded-lg overflow-hidden my-2 self-center">
               <Image
                 src="/project-assets/semantic/soln.svg"
@@ -252,7 +257,7 @@ export default function SemanticEmailProjectPage() {
             <div className="flex flex-col gap-8 my-2">
               {/* Demo 1 */}
               <div className="flex flex-col gap-3">
-                <div className="-mx-3 sm:-mx-6 md:-mx-10 w-[calc(100%+1.5rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+5rem)] max-w-none relative rounded-lg overflow-hidden self-center bg-black/5">
+                <div className="-mx-3 sm:-mx-6 md:-mx-10 w-[calc(100%+1.5rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+5rem)] max-w-none aspect-square relative rounded-xl overflow-hidden self-center bg-black/5">
                   <video
                     src="/project-assets/semantic/demo1.mov"
                     controls
@@ -260,7 +265,7 @@ export default function SemanticEmailProjectPage() {
                     autoPlay
                     muted
                     loop
-                    className="w-full h-auto rounded-lg block"
+                    className="w-full h-full object-cover rounded-xl block"
                   />
                 </div>
                 <p>
@@ -270,7 +275,7 @@ export default function SemanticEmailProjectPage() {
 
               {/* Demo 2 */}
               <div className="flex flex-col gap-3">
-                <div className="-mx-3 sm:-mx-6 md:-mx-10 w-[calc(100%+1.5rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+5rem)] max-w-none relative rounded-lg overflow-hidden self-center bg-black/5">
+                <div className="-mx-3 sm:-mx-6 md:-mx-10 w-[calc(100%+1.5rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+5rem)] max-w-none aspect-square relative rounded-xl overflow-hidden self-center bg-black/5">
                   <video
                     src="/project-assets/semantic/demo2.mov"
                     controls
@@ -278,7 +283,7 @@ export default function SemanticEmailProjectPage() {
                     autoPlay
                     muted
                     loop
-                    className="w-full h-auto rounded-lg block"
+                    className="w-full h-full object-cover rounded-xl block"
                   />
                 </div>
                 <p>
@@ -288,7 +293,7 @@ export default function SemanticEmailProjectPage() {
 
               {/* Demo 3 */}
               <div className="flex flex-col gap-3">
-                <div className="-mx-3 sm:-mx-6 md:-mx-10 w-[calc(100%+1.5rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+5rem)] max-w-none relative rounded-lg overflow-hidden self-center bg-black/5">
+                <div className="-mx-3 sm:-mx-6 md:-mx-10 w-[calc(100%+1.5rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+5rem)] max-w-none aspect-square relative rounded-xl overflow-hidden self-center bg-black/5">
                   <video
                     src="/project-assets/semantic/demo3.mov"
                     controls
@@ -296,7 +301,7 @@ export default function SemanticEmailProjectPage() {
                     autoPlay
                     muted
                     loop
-                    className="w-full h-auto rounded-lg block"
+                    className="w-full h-full object-cover rounded-xl block"
                   />
                 </div>
                 <p>
@@ -309,7 +314,7 @@ export default function SemanticEmailProjectPage() {
           <hr className="border-zinc-200 my-2" />
 
           {/* Outcomes & What I Learned Section */}
-          <div className="flex flex-col gap-6 pt-2">
+          <div id="outcome" className="flex flex-col gap-6 pt-2 scroll-mt-32">
             <h2 className="text-2xl md:text-3xl font-bold text-[#18181B] m-0">
               Outcomes &amp; What I Learned
             </h2>
