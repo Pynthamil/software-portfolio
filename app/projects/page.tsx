@@ -70,7 +70,7 @@ function ProjectHoverCard({ project }: { project: ProjectItem }) {
         href={project.link}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className={`w-full relative rounded-xl overflow-hidden ${project.bgClass} block group aspect-square`}
+        className={`w-full relative rounded-lg overflow-hidden ${project.bgClass} block group aspect-square`}
       >
         <CodedexCover />
       </Link>
@@ -82,7 +82,7 @@ function ProjectHoverCard({ project }: { project: ProjectItem }) {
       href={project.link}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`w-full relative rounded-xl overflow-hidden ${project.bgClass} block group aspect-square`}
+      className={`w-full relative rounded-lg overflow-hidden ${project.bgClass} block group aspect-square`}
     >
       {/* Cover Image (Default - zoomed to fill card) */}
       <Image
@@ -90,7 +90,7 @@ function ProjectHoverCard({ project }: { project: ProjectItem }) {
         alt={project.name}
         width={1994}
         height={1286}
-        className={`w-full h-full object-contain scale-[1.35] sm:scale-[1.4] origin-center block rounded-xl transition-opacity duration-300 ${
+        className={`w-full h-full object-contain scale-[1.35] sm:scale-[1.4] origin-center block rounded-lg transition-opacity duration-300 ${
           isHovered && project.video ? "opacity-0" : "opacity-100"
         }`}
         priority
@@ -104,7 +104,7 @@ function ProjectHoverCard({ project }: { project: ProjectItem }) {
           muted
           loop
           playsInline
-          className={`absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-300 ${
+          className={`absolute inset-0 w-full h-full object-cover rounded-lg transition-opacity duration-300 ${
             isHovered ? "opacity-100" : "opacity-0 pointer-events-none"
           }`}
         />
