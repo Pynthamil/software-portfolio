@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ShareButton from "@/components/ShareButton";
+import ProjectSidebar from "@/components/ProjectSidebar";
 
 import type { Metadata } from "next";
 
@@ -22,21 +23,21 @@ export const metadata: Metadata = {
   },
 };
 
+const navItems = [
+  { id: "overview", label: "OVERVIEW" },
+  { id: "challenge", label: "CHALLENGE" },
+  { id: "in-progress", label: "IN PROGRESS" },
+];
+
 export default function BlogPost() {
   return (
-    <div className="flex flex-col flex-1 items-center bg-[#F7F6F4] font-mono px-6 pt-28 md:pt-32 pb-16 w-full">
+    <div className="flex flex-col flex-1 items-center bg-[#F7F6F4] font-mono px-6 pt-28 md:pt-32 pb-16 w-full relative">
+      <ProjectSidebar items={navItems} backHref="/blog" backLabel="BLOG" />
+
       <div className="max-w-3xl w-full flex flex-col items-center gap-8">
         
-        {/* Back link */}
-        <div className="w-full max-w-2xl flex justify-start">
-          <Link href="/blog" className="text-zinc-500 hover:text-zinc-900 transition-colors inline-flex items-center gap-2 w-fit">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-            Back to blog
-          </Link>
-        </div>
-
         {/* Big Cover Image - wider than written content */}
-        <div className="w-full max-w-3xl h-[340px] sm:h-[400px] md:h-[440px] relative rounded-2xl overflow-hidden border border-zinc-200 shadow-xs">
+        <div id="overview" className="w-full max-w-3xl h-[340px] sm:h-[400px] md:h-[440px] relative rounded-2xl overflow-hidden border border-zinc-200 shadow-xs scroll-mt-32">
           <Image
             src="/post_covers/post1.svg"
             alt="My Struggles Building Semantic Email"
@@ -78,11 +79,11 @@ export default function BlogPost() {
 
           {/* Content - Coming Soon */}
           <div className="prose prose-zinc font-mono text-zinc-700 flex flex-col gap-8 text-lg leading-relaxed">
-            <blockquote className="border-l-4 border-purple-400 pl-4 italic text-zinc-600 my-2">
+            <blockquote id="challenge" className="border-l-4 border-purple-400 pl-4 italic text-zinc-600 my-2 scroll-mt-32">
               building something that looks simple on the surface usually means fighting through a mountain of unseen complexity underneath.
             </blockquote>
 
-            <div className="flex flex-col items-center justify-center p-8 sm:p-12 rounded-2xl bg-white border border-zinc-200/80 shadow-xs text-center gap-3 my-4">
+            <div id="in-progress" className="flex flex-col items-center justify-center p-8 sm:p-12 rounded-2xl bg-white border border-zinc-200/80 shadow-xs text-center gap-3 my-4 scroll-mt-32">
               <span className="text-xs uppercase tracking-widest font-semibold text-[#5569FF] bg-[#5569FF]/10 px-3 py-1 rounded-full">
                 Coming Soon
               </span>

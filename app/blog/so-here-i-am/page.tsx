@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ShareButton from "@/components/ShareButton";
+import ProjectSidebar from "@/components/ProjectSidebar";
 
 import type { Metadata } from "next";
 
@@ -22,21 +23,24 @@ export const metadata: Metadata = {
   },
 };
 
+const navItems = [
+  { id: "overview", label: "OVERVIEW" },
+  { id: "why-this-blog", label: "WHY THIS BLOG" },
+  { id: "hobbies", label: "HOBBIES" },
+  { id: "fun-facts", label: "FUN FACTS" },
+  { id: "what-to-find", label: "WHAT TO FIND" },
+  { id: "requests", label: "REQUESTS" },
+];
+
 export default function BlogPost() {
   return (
-    <div className="flex flex-col flex-1 items-center bg-[#F7F6F4] font-mono px-6 pt-28 md:pt-32 pb-16 w-full">
+    <div className="flex flex-col flex-1 items-center bg-[#F7F6F4] font-mono px-6 pt-28 md:pt-32 pb-16 w-full relative">
+      <ProjectSidebar items={navItems} backHref="/blog" backLabel="BLOG" />
+
       <div className="max-w-3xl w-full flex flex-col items-center gap-8">
         
-        {/* Back link */}
-        <div className="w-full max-w-2xl flex justify-start">
-          <Link href="/blog" className="text-zinc-500 hover:text-zinc-900 transition-colors inline-flex items-center gap-2 w-fit">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-            Back to blog
-          </Link>
-        </div>
-
         {/* Big Cover Image - wider than written content */}
-        <div className="w-full max-w-3xl h-[340px] sm:h-[400px] md:h-[440px] relative rounded-2xl overflow-hidden border border-zinc-200 shadow-xs">
+        <div id="overview" className="w-full max-w-3xl h-[340px] sm:h-[400px] md:h-[440px] relative rounded-2xl overflow-hidden border border-zinc-200 shadow-xs scroll-mt-32">
           <Image
             src="/post_covers/post1.svg"
             alt="So...Here I Am on the Internet"
@@ -78,7 +82,7 @@ export default function BlogPost() {
             So this blog is basically me building my way out of frustration and documenting everything along the way. Kind of like the iconic energy of Cassie from Blogilates, but in tech form with fewer workouts and more debugging.
           </p>
 
-          <div className="flex flex-col gap-4">
+          <div id="why-this-blog" className="flex flex-col gap-4 scroll-mt-32">
             <h2 className="text-2xl font-bold text-zinc-900 [font-family:var(--font-dm-sans)]">Why this blog exists</h2>
             <p>I have always wanted a space where I could:</p>
             <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-2 text-zinc-600">
@@ -104,7 +108,7 @@ export default function BlogPost() {
             </code>
           </div>
 
-          <div className="flex flex-col gap-4">
+          <div id="hobbies" className="flex flex-col gap-4 scroll-mt-32">
             <h2 className="text-2xl font-bold text-zinc-900 [font-family:var(--font-dm-sans)]">Aside from coding and designing in Figma</h2>
             <p>Here are the things that make up most of my personality / hobbies and favourite things:</p>
             <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-2 text-zinc-600">
@@ -118,7 +122,7 @@ export default function BlogPost() {
             <p className="italic text-zinc-500 mt-2">If you have recommendations, please drop them. I mostly enjoy fantasy with rich world building, structured magic systems, and a tiny bit of romance as a subplot.</p>
           </div>
 
-          <div className="flex flex-col gap-4">
+          <div id="fun-facts" className="flex flex-col gap-4 scroll-mt-32">
             <h2 className="text-2xl font-bold text-zinc-900 [font-family:var(--font-dm-sans)]">Fun facts about me</h2>
             <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-2 text-zinc-600">
               <li>favourite boy band: Enhypen</li>
@@ -131,7 +135,7 @@ export default function BlogPost() {
             </ul>
           </div>
 
-          <div className="flex flex-col gap-4">
+          <div id="what-to-find" className="flex flex-col gap-4 scroll-mt-32">
             <h2 className="text-2xl font-bold text-zinc-900 [font-family:var(--font-dm-sans)]">What you will find here</h2>
             <p>This blog will mostly document:</p>
             <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-2 text-zinc-600">
@@ -151,7 +155,7 @@ export default function BlogPost() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-4 mt-8 pt-8 border-t border-zinc-200">
+          <div id="requests" className="flex flex-col gap-4 mt-8 pt-8 border-t border-zinc-200 scroll-mt-32">
             <h2 className="text-2xl font-bold text-zinc-900 [font-family:var(--font-dm-sans)]">You can request posts too</h2>
             <p>
               If there is something you would like me to write about, explore, or build, feel free to suggest it.

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ShareButton from "@/components/ShareButton";
+import ProjectSidebar from "@/components/ProjectSidebar";
 
 import type { Metadata } from "next";
 
@@ -22,21 +23,27 @@ export const metadata: Metadata = {
   },
 };
 
+const navItems = [
+  { id: "overview", label: "OVERVIEW" },
+  { id: "what-is-commit", label: "WHAT IS A COMMIT" },
+  { id: "cheat-sheet", label: "CHEAT SHEET" },
+  { id: "step-1", label: "INIT REPO" },
+  { id: "step-2", label: "STAGE FILES" },
+  { id: "step-3", label: "COMMIT MESSAGES" },
+  { id: "step-4", label: "PUSH TO GITHUB" },
+  { id: "sync", label: "SYNC WORKFLOW" },
+  { id: "resources", label: "RESOURCES" },
+];
+
 export default function BlogPost() {
   return (
-    <div className="flex flex-col flex-1 items-center bg-[#F7F6F4] font-mono px-6 pt-28 md:pt-32 pb-16 w-full">
+    <div className="flex flex-col flex-1 items-center bg-[#F7F6F4] font-mono px-6 pt-28 md:pt-32 pb-16 w-full relative">
+      <ProjectSidebar items={navItems} backHref="/blog" backLabel="BLOG" />
+
       <div className="max-w-3xl w-full flex flex-col items-center gap-8">
         
-        {/* Back link */}
-        <div className="w-full max-w-2xl flex justify-start">
-          <Link href="/blog" className="text-zinc-500 hover:text-zinc-900 transition-colors inline-flex items-center gap-2 w-fit">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-            Back to blog
-          </Link>
-        </div>
-
         {/* Big Cover Image - wider than written content */}
-        <div className="w-full max-w-3xl h-[340px] sm:h-[400px] md:h-[440px] relative rounded-2xl overflow-hidden border border-zinc-200 shadow-xs">
+        <div id="overview" className="w-full max-w-3xl h-[340px] sm:h-[400px] md:h-[440px] relative rounded-2xl overflow-hidden border border-zinc-200 shadow-xs scroll-mt-32">
           <Image
             src="/post_covers/post4.svg"
             alt="The Art of Committing"
@@ -102,7 +109,7 @@ export default function BlogPost() {
 
           <hr className="border-zinc-200 my-4" />
 
-          <div className="flex flex-col gap-4">
+          <div id="what-is-commit" className="flex flex-col gap-4 scroll-mt-32">
             <h2 className="text-2xl font-bold text-zinc-900 [font-family:var(--font-dm-sans)]">What even is a commit?</h2>
             <p>A <strong>commit</strong> is basically a saved checkpoint of your project.</p>
             <p>Think of it like:</p>
@@ -125,7 +132,7 @@ export default function BlogPost() {
 
           <hr className="border-zinc-200 my-4" />
 
-          <div className="flex flex-col gap-4">
+          <div id="cheat-sheet" className="flex flex-col gap-4 scroll-mt-32">
             <h2 className="text-2xl font-bold text-zinc-900 [font-family:var(--font-dm-sans)]">Basic Commands (tiny cheat sheet)</h2>
             <div className="bg-zinc-100 p-4 rounded-lg border border-zinc-200 text-sm overflow-x-auto">
               <code className="text-blue-600">git init<br/>git add .<br/>git commit -m "message"<br/>git push origin main</code>
@@ -135,7 +142,7 @@ export default function BlogPost() {
 
           <hr className="border-zinc-200 my-4" />
 
-          <div className="flex flex-col gap-4">
+          <div id="step-1" className="flex flex-col gap-4 scroll-mt-32">
             <h2 className="text-2xl font-bold text-zinc-900 [font-family:var(--font-dm-sans)]">Step 1 — Initialize the repository</h2>
             <p>First, I start by initializing the project repository that I’m working on, on my local device.</p>
             <p>This converts a normal project folder into a Git repository so changes can be tracked.</p>
@@ -147,7 +154,7 @@ export default function BlogPost() {
 
           <hr className="border-zinc-200 my-4" />
 
-          <div className="flex flex-col gap-4">
+          <div id="step-2" className="flex flex-col gap-4 scroll-mt-32">
             <h2 className="text-2xl font-bold text-zinc-900 [font-family:var(--font-dm-sans)]">Step 2 — Stage the files</h2>
             <p>Next, I stage the files whose changes I want Git to track.</p>
             <p>Think of staging like selecting which updates you want included in the next checkpoint.</p>
@@ -163,7 +170,7 @@ export default function BlogPost() {
 
           <hr className="border-zinc-200 my-4" />
 
-          <div className="flex flex-col gap-4">
+          <div id="step-3" className="flex flex-col gap-4 scroll-mt-32">
             <h2 className="text-2xl font-bold text-zinc-900 [font-family:var(--font-dm-sans)]">Step 3 — Write meaningful commit messages</h2>
             <p>Now I write a clean, clear, and concise commit message to make a note of what changes I made.</p>
             <p>Good commit messages help both present-you and future-you understand what happened.</p>
@@ -184,7 +191,7 @@ export default function BlogPost() {
 
           <hr className="border-zinc-200 my-4" />
 
-          <div className="flex flex-col gap-4">
+          <div id="step-4" className="flex flex-col gap-4 scroll-mt-32">
             <h2 className="text-2xl font-bold text-zinc-900 [font-family:var(--font-dm-sans)]">Step 4 — Push changes to GitHub</h2>
             <p>After writing a good commit message, I push the changes to the main branch.</p>
             <p>This uploads the local changes to the remote repository (GitHub).</p>
@@ -220,7 +227,7 @@ export default function BlogPost() {
 
           <hr className="border-zinc-200 my-4" />
 
-          <div className="flex flex-col gap-4">
+          <div id="sync" className="flex flex-col gap-4 scroll-mt-32">
             <h2 className="text-2xl font-bold text-zinc-900 [font-family:var(--font-dm-sans)]">Always sync before starting work</h2>
             <p>Before I start working in my local repository, I always make sure to sync and pull changes first.</p>
             <p>Sometimes (almost all the time) when I forget this step, I run into merge conflicts.</p>
@@ -242,7 +249,7 @@ export default function BlogPost() {
 
           <hr className="border-zinc-200 my-4" />
 
-          <div className="flex flex-col gap-4">
+          <div id="resources" className="flex flex-col gap-4 scroll-mt-32">
             <h2 className="text-2xl font-bold text-zinc-900 [font-family:var(--font-dm-sans)]">Helpful learning resources</h2>
             
             <h3 className="text-xl font-bold text-zinc-900 mt-2">Articles / Blogs</h3>

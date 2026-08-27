@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ShareButton from "@/components/ShareButton";
+import ProjectSidebar from "@/components/ProjectSidebar";
 
 import type { Metadata } from "next";
 
@@ -22,21 +23,25 @@ export const metadata: Metadata = {
   },
 };
 
+const navItems = [
+  { id: "overview", label: "OVERVIEW" },
+  { id: "what-is-api", label: "WHAT IS IT" },
+  { id: "step-1", label: "CHOOSE ENDPOINT" },
+  { id: "step-2", label: "GENERATE PAT" },
+  { id: "step-3", label: "POSTMAN TEST" },
+  { id: "example", label: "CREATE REPO" },
+  { id: "why-api", label: "WHY LEARN IT" },
+];
+
 export default function BlogPost() {
   return (
-    <div className="flex flex-col flex-1 items-center bg-[#F7F6F4] font-mono px-6 pt-28 md:pt-32 pb-16 w-full">
+    <div className="flex flex-col flex-1 items-center bg-[#F7F6F4] font-mono px-6 pt-28 md:pt-32 pb-16 w-full relative">
+      <ProjectSidebar items={navItems} backHref="/blog" backLabel="BLOG" />
+
       <div className="max-w-3xl w-full flex flex-col items-center gap-8">
         
-        {/* Back link */}
-        <div className="w-full max-w-2xl flex justify-start">
-          <Link href="/blog" className="text-zinc-500 hover:text-zinc-900 transition-colors inline-flex items-center gap-2 w-fit">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-            Back to blog
-          </Link>
-        </div>
-
         {/* Big Cover Image - wider than written content */}
-        <div className="w-full max-w-3xl h-[340px] sm:h-[400px] md:h-[440px] relative rounded-2xl overflow-hidden border border-zinc-200 shadow-xs">
+        <div id="overview" className="w-full max-w-3xl h-[340px] sm:h-[400px] md:h-[440px] relative rounded-2xl overflow-hidden border border-zinc-200 shadow-xs scroll-mt-32">
           <Image
             src="/post_covers/post5.svg"
             alt="Git Commit Go"
@@ -102,7 +107,7 @@ export default function BlogPost() {
 
           <hr className="border-zinc-200 my-4" />
 
-          <div className="flex flex-col gap-4">
+          <div id="what-is-api" className="flex flex-col gap-4 scroll-mt-32">
             <h2 className="text-2xl font-bold text-zinc-900 [font-family:var(--font-dm-sans)]">What is the GitHub REST API?</h2>
             <p>The GitHub REST API allows developers to communicate with GitHub using HTTP requests.</p>
             <p>Instead of clicking buttons on GitHub’s website, you can send requests like:</p>
@@ -117,7 +122,7 @@ export default function BlogPost() {
 
           <hr className="border-zinc-200 my-4" />
 
-          <div className="flex flex-col gap-4">
+          <div id="step-1" className="flex flex-col gap-4 scroll-mt-32">
             <h2 className="text-2xl font-bold text-zinc-900 [font-family:var(--font-dm-sans)]">Step 1 — Choose an endpoint</h2>
             <p>GitHub provides many API endpoints depending on what you want to do.</p>
             <p>Example endpoint for repositories:</p>
@@ -140,7 +145,7 @@ export default function BlogPost() {
 
           <hr className="border-zinc-200 my-4" />
 
-          <div className="flex flex-col gap-4">
+          <div id="step-2" className="flex flex-col gap-4 scroll-mt-32">
             <h2 className="text-2xl font-bold text-zinc-900 [font-family:var(--font-dm-sans)]">Step 2 — Generate a Personal Access Token (PAT)</h2>
             <p>GitHub requires authentication for most API requests.</p>
             <p>We generate a Personal Access Token.</p>
@@ -164,7 +169,7 @@ export default function BlogPost() {
 
           <hr className="border-zinc-200 my-4" />
 
-          <div className="flex flex-col gap-4">
+          <div id="step-3" className="flex flex-col gap-4 scroll-mt-32">
             <h2 className="text-2xl font-bold text-zinc-900 [font-family:var(--font-dm-sans)]">Step 3 — Send request using Postman</h2>
             <p>Postman helps test API requests easily.</p>
             <p>Example GET request:</p>
@@ -181,7 +186,7 @@ export default function BlogPost() {
 
           <hr className="border-zinc-200 my-4" />
 
-          <div className="flex flex-col gap-4">
+          <div id="example" className="flex flex-col gap-4 scroll-mt-32">
             <h2 className="text-2xl font-bold text-zinc-900 [font-family:var(--font-dm-sans)]">Example — create repository via API</h2>
             <p>POST request:</p>
             <div className="bg-zinc-100 p-4 rounded-lg border border-zinc-200 text-sm overflow-x-auto">
@@ -217,7 +222,7 @@ export default function BlogPost() {
 
           <hr className="border-zinc-200 my-4" />
 
-          <div className="flex flex-col gap-4">
+          <div id="why-api" className="flex flex-col gap-4 scroll-mt-32">
             <h2 className="text-2xl font-bold text-zinc-900 [font-family:var(--font-dm-sans)]">Why learn GitHub API?</h2>
             <p>Understanding the API allows you to:</p>
             <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-2 text-zinc-600">

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ShareButton from "@/components/ShareButton";
+import ProjectSidebar from "@/components/ProjectSidebar";
 
 import type { Metadata } from "next";
 
@@ -22,21 +23,24 @@ export const metadata: Metadata = {
   },
 };
 
+const navItems = [
+  { id: "overview", label: "OVERVIEW" },
+  { id: "minimal-setup", label: "MINIMAL SETUP" },
+  { id: "structure", label: "STRUCTURE" },
+  { id: "statuses", label: "STATUSES" },
+  { id: "capture", label: "CAPTURE IDEAS" },
+  { id: "template", label: "PAGE TEMPLATE" },
+];
+
 export default function BlogPost() {
   return (
-    <div className="flex flex-col flex-1 items-center bg-[#F7F6F4] font-mono px-6 pt-28 md:pt-32 pb-16 w-full">
+    <div className="flex flex-col flex-1 items-center bg-[#F7F6F4] font-mono px-6 pt-28 md:pt-32 pb-16 w-full relative">
+      <ProjectSidebar items={navItems} backHref="/blog" backLabel="BLOG" />
+
       <div className="max-w-3xl w-full flex flex-col items-center gap-8">
         
-        {/* Back link */}
-        <div className="w-full max-w-2xl flex justify-start">
-          <Link href="/blog" className="text-zinc-500 hover:text-zinc-900 transition-colors inline-flex items-center gap-2 w-fit">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-            Back to blog
-          </Link>
-        </div>
-
         {/* Big Cover Image - wider than written content */}
-        <div className="w-full max-w-3xl h-[340px] sm:h-[400px] md:h-[440px] relative rounded-2xl overflow-hidden border border-zinc-200 shadow-xs">
+        <div id="overview" className="w-full max-w-3xl h-[340px] sm:h-[400px] md:h-[440px] relative rounded-2xl overflow-hidden border border-zinc-200 shadow-xs scroll-mt-32">
           <Image
             src="/post_covers/post3.svg"
             alt="the idea ecosystem"
@@ -102,7 +106,7 @@ export default function BlogPost() {
 
           <hr className="border-zinc-200 my-4" />
 
-          <div className="flex flex-col gap-4">
+          <div id="minimal-setup" className="flex flex-col gap-4 scroll-mt-32">
             <h2 className="text-2xl font-bold text-zinc-900 [font-family:var(--font-dm-sans)]">why I keep my setup minimal</h2>
             <p>I don’t like complicated dashboards with 20 databases connected to each other.</p>
             <p>I don’t want to spend more time managing the system than actually building things.</p>
@@ -122,7 +126,7 @@ export default function BlogPost() {
 
           <hr className="border-zinc-200 my-4" />
 
-          <div className="flex flex-col gap-4">
+          <div id="structure" className="flex flex-col gap-4 scroll-mt-32">
             <h2 className="text-2xl font-bold text-zinc-900 [font-family:var(--font-dm-sans)]">my main structure</h2>
             <p>Everything lives inside one main page called:</p>
             <p className="font-bold text-zinc-900">projects</p>
@@ -172,7 +176,7 @@ export default function BlogPost() {
 
           <hr className="border-zinc-200 my-4" />
 
-          <div className="flex flex-col gap-4">
+          <div id="statuses" className="flex flex-col gap-4 scroll-mt-32">
             <h2 className="text-2xl font-bold text-zinc-900 [font-family:var(--font-dm-sans)]">statuses I use</h2>
             <p>I try not to overthink this part.</p>
             
@@ -209,7 +213,7 @@ export default function BlogPost() {
 
           <hr className="border-zinc-200 my-4" />
 
-          <div className="flex flex-col gap-4">
+          <div id="capture" className="flex flex-col gap-4 scroll-mt-32">
             <h2 className="text-2xl font-bold text-zinc-900 [font-family:var(--font-dm-sans)]">how I capture ideas quickly</h2>
             <p>Whenever an idea appears, I create a new page inside the projects database and write:</p>
             <ul style={{ listStyleType: '"+ "' }} className="ml-5 space-y-2 text-zinc-600">
@@ -228,7 +232,7 @@ export default function BlogPost() {
 
           <hr className="border-zinc-200 my-4" />
 
-          <div className="flex flex-col gap-4">
+          <div id="template" className="flex flex-col gap-4 scroll-mt-32">
             <h2 className="text-2xl font-bold text-zinc-900 [font-family:var(--font-dm-sans)]">my project page template</h2>
             <p>Each project page usually contains:</p>
             
