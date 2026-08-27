@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ShareButton from "@/components/ShareButton";
 import ProjectSidebar from "@/components/ProjectSidebar";
+import ReadNextSection from "@/components/ReadNextSection";
 
 import type { Metadata } from "next";
 
@@ -103,6 +104,9 @@ export default function BlogPost() {
           </div>
 
         </article>
+
+        {/* Read Next Section */}
+        <ReadNextSection currentSlug="semantic-email-struggles" />
       </div>
     </div>
   );
