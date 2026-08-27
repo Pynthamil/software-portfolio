@@ -254,10 +254,10 @@ export default function SemanticEmailProjectPage() {
             </p>
 
             {/* Demo Videos */}
-            <div className="flex flex-col gap-8 my-2">
+            <div className="flex flex-col gap-12 my-4">
               {/* Demo 1 */}
-              <div className="flex flex-col gap-3">
-                <div className="w-full aspect-square relative rounded-xl overflow-hidden self-center bg-black/5">
+              <div className="flex flex-col gap-6">
+                <div className="w-full aspect-square relative rounded-3xl overflow-hidden self-center bg-black/5">
                   <video
                     src="/project-assets/semantic/demo1.mov"
                     controls
@@ -265,17 +265,17 @@ export default function SemanticEmailProjectPage() {
                     autoPlay
                     muted
                     loop
-                    className="w-full h-full object-cover rounded-xl block"
+                    className="w-full h-full object-cover rounded-3xl block"
                   />
                 </div>
-                <p>
+                <p className="m-0">
                   As new emails land in the inbox, the background pipeline intercepts incoming messages and parses unstructured text through NLP models to automatically organize priorities and track context in real time.
                 </p>
               </div>
 
               {/* Demo 2 */}
-              <div className="flex flex-col gap-3">
-                <div className="w-full aspect-square relative rounded-xl overflow-hidden self-center bg-black/5">
+              <div className="flex flex-col gap-6">
+                <div className="w-full aspect-square relative rounded-3xl overflow-hidden self-center bg-black/5">
                   <video
                     src="/project-assets/semantic/demo2.mov"
                     controls
@@ -283,17 +283,17 @@ export default function SemanticEmailProjectPage() {
                     autoPlay
                     muted
                     loop
-                    className="w-full h-full object-cover rounded-xl block"
+                    className="w-full h-full object-cover rounded-3xl block"
                   />
                 </div>
-                <p>
+                <p className="m-0">
                   Opening an email reveals a structured breakdown, including automatic summaries, actionable next steps, shared resources, conversation threads, and a communication frequency heatmap, with one-tap access to compose a reply.
                 </p>
               </div>
 
               {/* Demo 3 */}
-              <div className="flex flex-col gap-3">
-                <div className="w-full aspect-square relative rounded-xl overflow-hidden self-center bg-black/5">
+              <div className="flex flex-col gap-6">
+                <div className="w-full aspect-square relative rounded-3xl overflow-hidden self-center bg-black/5">
                   <video
                     src="/project-assets/semantic/demo3.mov"
                     controls
@@ -301,10 +301,10 @@ export default function SemanticEmailProjectPage() {
                     autoPlay
                     muted
                     loop
-                    className="w-full h-full object-cover rounded-xl block"
+                    className="w-full h-full object-cover rounded-3xl block"
                   />
                 </div>
-                <p>
+                <p className="m-0">
                   The copilot automatically interprets the surrounding thread context and intent. Clicking &ldquo;Generate the content&rdquo; instantly produces a natural, tailored draft without requiring manual prompt writing or instructions.
                 </p>
               </div>
