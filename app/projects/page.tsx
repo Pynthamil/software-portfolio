@@ -128,9 +128,6 @@ export default function ProjectsPage() {
               <ProjectHoverCard project={project} />
 
               <div className="flex flex-col gap-1 text-left w-full pt-1">
-                <span className="text-xs uppercase font-mono tracking-widest text-[#8E8E93]">
-                  {project.category} &ndash; {project.date}
-                </span>
                 <Link href={project.link} className="block w-fit">
                   <h2 className="text-2xl sm:text-3xl font-medium text-[#18181B] hover:text-[#5569FF] transition-colors leading-tight">
                     {project.name}
