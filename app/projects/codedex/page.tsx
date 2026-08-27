@@ -6,10 +6,10 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Designing CodeDex for Accessible, On-the-Go Learning | Projects",
-  description: "A playful and engaging learning platform project built for Codédex.",
+  description: "A personal project designing a playful and engaging learning platform for Codédex.",
   openGraph: {
     title: "Designing CodeDex for Accessible, On-the-Go Learning | Projects",
-    description: "A playful and engaging learning platform project built for Codédex.",
+    description: "A personal project designing a playful and engaging learning platform for Codédex.",
     url: "/projects/codedex",
     images: [
       {
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Designing CodeDex for Accessible, On-the-Go Learning | Projects",
-    description: "A playful and engaging learning platform project built for Codédex.",
+    description: "A personal project designing a playful and engaging learning platform for Codédex.",
     images: ["/project-assets/codedex/cover3.svg"],
   },
 };
@@ -56,13 +56,51 @@ export default function CodedexProjectPage() {
           />
         </div>
         <article className="max-w-2xl w-full text-left flex flex-col gap-10">
-          <header className="flex flex-col gap-4">
-            <h1 className="text-3xl sm:text-4xl font-bold text-[#18181B]">
-              Designing CodeDex for Accessible, On-the-Go Learning
-            </h1>
-            <p className="text-lg sm:text-xl text-[#71717A]">
-              A playful and engaging learning platform project built for Codédex.
-            </p>
+          <header className="flex flex-col gap-6">
+            <div className="flex flex-col gap-1">
+              <h1 className="text-3xl sm:text-4xl font-bold text-[#18181B] leading-tight">
+                Designing CodeDex for Accessible, On-the-Go Learning
+              </h1>
+              <p className="text-lg sm:text-xl text-[#71717A]">
+                A personal project designing a playful and engaging learning platform for Codédex.
+              </p>
+            </div>
+
+            {/* Project Metadata Info Card */}
+            <div className="bg-white rounded-md border border-zinc-200/80 p-4 sm:p-5 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 shadow-xs">
+              <div className="flex flex-col gap-1">
+                <span className="text-xs font-bold text-blue-600 tracking-wider uppercase">
+                  Duration
+                </span>
+                <span className="text-sm sm:text-base text-zinc-700 font-medium">
+                  May 2026 &mdash; Present
+                </span>
+              </div>
+              <div className="flex flex-col gap-1">
+                <span className="text-xs font-bold text-blue-600 tracking-wider uppercase">
+                  Role
+                </span>
+                <span className="text-sm sm:text-base text-zinc-700 font-medium">
+                  UX/UI Designer
+                </span>
+              </div>
+              <div className="flex flex-col gap-1">
+                <span className="text-xs font-bold text-blue-600 tracking-wider uppercase">
+                  Team
+                </span>
+                <span className="text-sm sm:text-base text-zinc-700 font-medium">
+                  Solo Project
+                </span>
+              </div>
+              <div className="flex flex-col gap-1">
+                <span className="text-xs font-bold text-blue-600 tracking-wider uppercase">
+                  Tools
+                </span>
+                <span className="text-sm sm:text-base text-zinc-700 font-medium">
+                  Figma
+                </span>
+              </div>
+            </div>
           </header>
 
           <div className="flex flex-col gap-8 w-full">

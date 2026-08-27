@@ -34,7 +34,7 @@ const projects: ProjectItem[] = [
     name: "Designing CodeDex for Accessible, On-the-Go Learning",
     category: "CODÉDEX",
     date: "FALL 2025",
-    description: "A playful and engaging learning platform project built for Codédex.",
+    description: "A personal project designing a playful and engaging learning platform for Codédex.",
     image: "/project-assets/codedex/Iphone 14.svg",
     link: "/projects/codedex",
     bgClass: "bg-[#F7FFE0]",
@@ -70,7 +70,7 @@ function ProjectHoverCard({ project }: { project: ProjectItem }) {
         href={project.link}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className={`w-full relative rounded-3xl overflow-hidden ${project.bgClass} block group aspect-square`}
+        className={`w-full relative rounded-xl overflow-hidden ${project.bgClass} block group aspect-square`}
       >
         <CodedexCover />
       </Link>
@@ -82,7 +82,7 @@ function ProjectHoverCard({ project }: { project: ProjectItem }) {
       href={project.link}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`w-full relative rounded-3xl overflow-hidden ${project.bgClass} block group aspect-square`}
+      className={`w-full relative rounded-xl overflow-hidden ${project.bgClass} block group aspect-square`}
     >
       {/* Cover Image (Default - zoomed to fill card) */}
       <Image
@@ -90,7 +90,7 @@ function ProjectHoverCard({ project }: { project: ProjectItem }) {
         alt={project.name}
         width={1994}
         height={1286}
-        className={`w-full h-full object-contain scale-[1.35] sm:scale-[1.4] origin-center block rounded-3xl transition-opacity duration-300 ${
+        className={`w-full h-full object-contain scale-[1.35] sm:scale-[1.4] origin-center block rounded-xl transition-opacity duration-300 ${
           isHovered && project.video ? "opacity-0" : "opacity-100"
         }`}
         priority
@@ -104,7 +104,7 @@ function ProjectHoverCard({ project }: { project: ProjectItem }) {
           muted
           loop
           playsInline
-          className={`absolute inset-0 w-full h-full object-cover rounded-3xl transition-opacity duration-300 ${
+          className={`absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-300 ${
             isHovered ? "opacity-100" : "opacity-0 pointer-events-none"
           }`}
         />
