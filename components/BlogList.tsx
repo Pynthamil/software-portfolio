@@ -18,34 +18,43 @@ interface BlogListProps {
 }
 
 const POSTS_PER_PAGE = 5;
+const ORDERED_CATEGORIES = ["all", "dev", "design", "insights", "other"];
 
 export default function BlogList({ blogs }: BlogListProps) {
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedCategory, setSelectedCategory] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
 
-  // Extract categories dynamically
+  // Extract categories in preferred order: all, dev, design, insights, other
   const categories = useMemo(() => {
-    const cats = new Set<string>();
+    const presentCats = new Set<string>();
     blogs.forEach((b) => {
-      if (b.category) cats.add(b.category);
+      if (b.category) presentCats.add(b.category.toLowerCase());
     });
-    return ["All", ...Array.from(cats)];
+
+    const result = ORDERED_CATEGORIES.filter(
+      (c) => c === "all" || presentCats.has(c)
+    );
+    presentCats.forEach((c) => {
+      if (!result.includes(c)) result.push(c);
+    });
+    return result;
   }, [blogs]);
 
   // Filter blogs based on category and optional search query
   const filteredBlogs = useMemo(() => {
     return blogs.filter((blog) => {
+      const blogCat = blog.category?.toLowerCase() || "";
       const matchesCategory =
-        selectedCategory === "All" ||
-        blog.category === selectedCategory ||
-        blog.tags?.includes(selectedCategory);
+        selectedCategory === "all" ||
+        blogCat === selectedCategory ||
+        blog.tags?.some((t) => t.toLowerCase() === selectedCategory);
 
       const matchesSearch =
         searchQuery.trim() === "" ||
         blog.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         blog.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        blog.category?.toLowerCase().includes(searchQuery.toLowerCase());
+        blogCat.includes(searchQuery.toLowerCase());
 
       return matchesCategory && matchesSearch;
     });
@@ -74,7 +83,7 @@ export default function BlogList({ blogs }: BlogListProps) {
   const currentBlogs = filteredBlogs.slice(startIndex, startIndex + POSTS_PER_PAGE);
 
   return (
-    <div className="max-w-2xl w-full flex flex-col gap-6">
+    <div className="max-w-3xl w-full flex flex-col gap-6">
       {/* Header Controls: Filters & Search */}
       <div className="flex flex-col gap-4 w-full">
         {/* Search Input */}
@@ -111,10 +120,12 @@ export default function BlogList({ blogs }: BlogListProps) {
           {categories.map((category) => {
             const isActive = selectedCategory === category;
             const count =
-              category === "All"
+              category === "all"
                 ? blogs.length
                 : blogs.filter(
-                    (b) => b.category === category || b.tags?.includes(category)
+                    (b) =>
+                      b.category?.toLowerCase() === category ||
+                      b.tags?.some((t) => t.toLowerCase() === category)
                   ).length;
 
             return (
@@ -157,7 +168,7 @@ export default function BlogList({ blogs }: BlogListProps) {
           <button
             type="button"
             onClick={() => {
-              setSelectedCategory("All");
+              setSelectedCategory("all");
               setSearchQuery("");
             }}
             className="mt-2 text-xs font-mono text-[#5569FF] hover:underline cursor-pointer"
@@ -170,11 +181,11 @@ export default function BlogList({ blogs }: BlogListProps) {
           {currentBlogs.map((blog, index) => (
             <div
               key={startIndex + index}
-              className="flex flex-col sm:flex-row items-center sm:items-start gap-4 p-4 rounded-2xl bg-white border border-zinc-200/90 shadow-sm w-full group hover:border-[#5569FF]/30 transition-all duration-200"
+              className="flex flex-col sm:flex-row items-center sm:items-start gap-5 p-5 rounded-2xl bg-white border border-zinc-200/90 shadow-xs w-full group hover:border-[#5569FF]/30 hover:shadow-sm transition-all duration-200"
             >
               <Link
                 href={blog.link}
-                className="w-full sm:w-[220px] md:w-[230px] shrink-0 aspect-[16/10] relative rounded-xl overflow-hidden bg-[#F0F2FF] block"
+                className="w-full sm:w-[240px] md:w-[260px] shrink-0 aspect-[16/10] relative rounded-xl overflow-hidden bg-[#F0F2FF] block"
               >
                 <Image
                   src={blog.image}
@@ -195,7 +206,7 @@ export default function BlogList({ blogs }: BlogListProps) {
                       {blog.title}
                     </h2>
                   </Link>
-                  <p className="text-[#71717A] text-sm mt-1.5 leading-relaxed [font-family:var(--font-dm-sans)]">
+                  <p className="text-[#71717A] text-sm sm:text-base mt-1.5 leading-relaxed [font-family:var(--font-dm-sans)]">
                     {blog.description}
                   </p>
                 </div>
