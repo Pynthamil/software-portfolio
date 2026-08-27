@@ -122,6 +122,15 @@ export default function SemanticEmailProjectPage() {
               priority
             />
           </div>
+          <div className="-mx-3 sm:-mx-6 md:-mx-10 w-[calc(100%+1.5rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+5rem)] max-w-none relative rounded-lg overflow-hidden self-center">
+            <Image
+              src="/project-assets/semantic/scenario2.svg"
+              alt="The Everyday Problem Scenario"
+              width={1792}
+              height={1234}
+              className="w-full h-auto object-contain block rounded-lg"
+            />
+          </div>
         </section>
 
         {/* Content */}
@@ -215,22 +224,6 @@ export default function SemanticEmailProjectPage() {
             <p>
               From meeting coordination and task assignments to urgent deadline notices, the pipeline automatically detects message urgency and maps unstructured context into structured actions.
             </p>
-
-            {/* Scenario Visuals */}
-            <div className="flex flex-col gap-6 my-2">
-              <h2 className="text-2xl md:text-3xl font-bold text-[#18181B] m-0">
-                The Everyday Problem
-              </h2>
-              <div className="-mx-3 sm:-mx-6 md:-mx-10 w-[calc(100%+1.5rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+5rem)] max-w-none relative rounded-lg overflow-hidden self-center">
-                <Image
-                  src="/project-assets/semantic/scenario2.svg"
-                  alt="Email Scenario 2"
-                  width={1792}
-                  height={1234}
-                  className="w-full h-auto object-contain block rounded-lg"
-                />
-              </div>
-            </div>
           </div>
 
           <hr className="border-zinc-200 my-2" />
