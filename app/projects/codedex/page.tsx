@@ -1,7 +1,6 @@
 import Image from "next/image";
 import ScrollBackToTopSection from "@/components/ScrollBackToTopSection";
 import ProjectSidebar from "@/components/ProjectSidebar";
-import CodedexCover from "@/components/CodedexCover";
 
 import type { Metadata } from "next";
 
@@ -14,9 +13,9 @@ export const metadata: Metadata = {
     url: "/projects/codedex",
     images: [
       {
-        url: "/project-assets/codedex/Iphone 14.svg",
-        width: 561,
-        height: 974,
+        url: "/project-assets/codedex/cover3.svg",
+        width: 1994,
+        height: 1286,
         alt: "Designing CodeDex Cover",
       },
     ],
@@ -26,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Designing CodeDex for Accessible, On-the-Go Learning | Projects",
     description: "A playful and engaging learning platform project built for Codédex.",
-    images: ["/project-assets/codedex/Iphone 14.svg"],
+    images: ["/project-assets/codedex/cover3.svg"],
   },
 };
 
@@ -45,8 +44,16 @@ export default function CodedexProjectPage() {
       <ProjectSidebar items={navItems} />
 
       <div className="w-full flex flex-col items-center gap-8">
-        <div id="overview" className="max-w-5xl w-full relative rounded-md overflow-hidden bg-[#F7FFE0] scroll-mt-32 aspect-[16/10] sm:aspect-[16/9]">
-          <CodedexCover />
+        {/* Big Cover Image */}
+        <div id="overview" className="max-w-5xl w-full relative rounded-md overflow-hidden scroll-mt-32">
+          <Image
+            src="/project-assets/codedex/cover3.svg"
+            alt="Designing CodeDex Cover"
+            width={1994}
+            height={1286}
+            className="w-full h-auto object-contain block rounded-md"
+            priority
+          />
         </div>
         <article className="max-w-2xl w-full text-left flex flex-col gap-10">
           <header className="flex flex-col gap-4">
