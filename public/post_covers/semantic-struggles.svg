@@ -1,0 +1,13 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" fill="#C5C7F7"/>
+  <circle cx="800" cy="500" r="340" fill="#B3B6F4" opacity="0.6"/>
+  <circle cx="800" cy="540" r="260" fill="#FFAEC9"/>
+  <!-- Chill/stressed character face with closed curved eyes and little smile/sigh -->
+  <path d="M700 500C720 480 750 480 770 500" stroke="#7E5265" stroke-width="14" stroke-linecap="round" fill="none"/>
+  <path d="M830 500C850 480 880 480 900 500" stroke="#7E5265" stroke-width="14" stroke-linecap="round" fill="none"/>
+  <path d="M770 570C785 585 815 585 830 570" stroke="#7E5265" stroke-width="14" stroke-linecap="round" fill="none"/>
+  <!-- Floating thought/email icon accent -->
+  <rect x="730" y="320" width="140" height="90" rx="18" fill="#FFFFFF" opacity="0.9"/>
+  <path d="M745 340L800 375L855 340" stroke="#6082FF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <rect x="755" y="380" width="90" height="10" rx="5" fill="#E2E8F0"/>
+</svg>

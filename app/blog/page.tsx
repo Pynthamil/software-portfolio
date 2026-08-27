@@ -51,6 +51,12 @@ const blogs: BlogPost[] = [
     link: "/blog/figma-101",
   },
   {
+    title: "My Struggles Building Semantic Email",
+    description: "what broke, what worked, and what I learned building an AI inbox copilot ✨",
+    image: "/post_covers/semantic-struggles.svg",
+    link: "/blog/semantic-email-struggles",
+  },
+  {
     title: "the idea ecosystem",
     description: "How I use Notion to keep my projects and ideas calm and minimal.",
     image: "/post_covers/post3.svg",

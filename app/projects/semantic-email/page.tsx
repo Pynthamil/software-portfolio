@@ -45,6 +45,28 @@ export default function SemanticEmailProjectPage() {
     <div className="flex flex-col flex-1 items-center bg-[#F7F6F4] [font-family:var(--font-dm-sans)] px-6 pt-28 md:pt-32 pb-16 w-full relative">
       <ProjectSidebar items={navItems} />
 
+      {/* Related Blog Ad Banner (Fixed Right Side) */}
+      <aside className="hidden xl:block fixed right-6 2xl:right-10 top-32 z-30 w-72 2xl:w-80 select-none">
+        <Link
+          href="/blog/semantic-email-struggles"
+          className="block bg-white rounded-none p-3.5 shadow-sm border border-zinc-200/80 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group no-underline"
+        >
+          <div className="flex items-center gap-3.5">
+            <div className="w-24 h-20 shrink-0 rounded-none overflow-hidden relative bg-[#C5C7F7]">
+              <Image
+                src="/post_covers/semantic-struggles.svg"
+                alt="Related Blog - Struggles"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <p className="text-sm font-bold text-[#18181B] group-hover:text-[#5569FF] transition-colors leading-snug m-0 [font-family:var(--font-dm-sans)]">
+              Read the related blog to know more about my struggles
+            </p>
+          </div>
+        </Link>
+      </aside>
+
       <div className="w-full flex flex-col items-center gap-8">
         
         {/* Big Cover Image */}
