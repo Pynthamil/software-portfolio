@@ -83,9 +83,9 @@ export default function BlogList({ blogs }: BlogListProps) {
   const currentBlogs = filteredBlogs.slice(startIndex, startIndex + POSTS_PER_PAGE);
 
   return (
-    <div className="max-w-3xl w-full flex flex-col gap-6">
-      {/* Header Controls: Filters & Search */}
-      <div className="flex flex-col gap-4 w-full">
+    <div className="max-w-3xl w-full flex flex-col items-center gap-6">
+      {/* Header Controls: Filters & Search - Matching navbar width (max-w-2xl) */}
+      <div className="flex flex-col gap-4 w-full max-w-2xl">
         {/* Search Input */}
         <div className="relative w-full">
           <input
@@ -93,7 +93,7 @@ export default function BlogList({ blogs }: BlogListProps) {
             value={searchQuery}
             onChange={handleSearchChange}
             placeholder="Search posts..."
-            className="w-full bg-white border border-zinc-200/90 rounded-xl px-4 py-2.5 pl-10 text-sm font-mono text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-[#5569FF] focus:ring-2 focus:ring-[#5569FF]/10 transition-all shadow-2xs"
+            className="w-full bg-white border border-zinc-200/90 rounded-lg px-4 py-2.5 pl-10 text-sm font-mono text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-[#5569FF] focus:ring-2 focus:ring-[#5569FF]/10 transition-all shadow-2xs"
           />
           <svg
             className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400"
@@ -196,11 +196,6 @@ export default function BlogList({ blogs }: BlogListProps) {
               </Link>
               <div className="flex flex-col justify-between flex-1 py-0.5 text-left w-full h-full">
                 <div>
-                  {blog.category && (
-                    <span className="text-[11px] font-mono font-semibold tracking-wider uppercase text-[#5569FF] bg-[#5569FF]/10 px-2 py-0.5 rounded-md inline-block mb-1.5">
-                      {blog.category}
-                    </span>
-                  )}
                   <Link href={blog.link} className="block w-fit">
                     <h2 className="text-xl sm:text-2xl font-bold text-[#18181B] group-hover:text-[#5569FF] transition-colors leading-tight [font-family:var(--font-dm-sans)]">
                       {blog.title}
