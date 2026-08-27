@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import ShareButton from "@/components/ShareButton";
 
 import type { Metadata } from "next";
 
@@ -24,26 +25,32 @@ export const metadata: Metadata = {
 export default function BlogPost() {
   return (
     <div className="flex flex-col flex-1 items-center bg-[#F7F6F4] font-mono px-6 pt-28 md:pt-32 pb-16 w-full">
-      <article className="max-w-2xl w-full text-left flex flex-col gap-10">
+      <div className="max-w-3xl w-full flex flex-col items-center gap-8">
         
         {/* Back link */}
-        <Link href="/blog" className="text-zinc-500 hover:text-zinc-900 transition-colors inline-flex items-center gap-2 mb-4 w-fit">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-          Back to blog
-        </Link>
+        <div className="w-full max-w-2xl flex justify-start">
+          <Link href="/blog" className="text-zinc-500 hover:text-zinc-900 transition-colors inline-flex items-center gap-2 w-fit">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Back to blog
+          </Link>
+        </div>
 
-        {/* Header */}
-        <header className="flex flex-col gap-6">
-          <div className="w-full h-[350px] relative rounded-lg overflow-hidden border border-zinc-200">
-            <Image
-              src="/post_covers/post5.svg"
-              alt="Git Commit Go"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
-          <div className="flex flex-col gap-4">
+        {/* Big Cover Image - wider than written content */}
+        <div className="w-full max-w-3xl h-[340px] sm:h-[400px] md:h-[440px] relative rounded-2xl overflow-hidden border border-zinc-200 shadow-xs">
+          <Image
+            src="/post_covers/post5.svg"
+            alt="Git Commit Go"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+
+        {/* Main Article Content Container */}
+        <article className="max-w-2xl w-full text-left flex flex-col gap-10">
+          
+          {/* Header */}
+          <header className="flex flex-col gap-4">
             <div className="flex flex-wrap gap-2">
               <span className="px-2 py-1 text-xs font-semibold bg-[#E5D4FF] text-zinc-900 rounded-md">Development</span>
               <span className="px-2 py-1 text-xs font-semibold bg-[#E5D4FF] text-zinc-900 rounded-md">GitHub</span>
@@ -51,7 +58,7 @@ export default function BlogPost() {
             </div>
             
             <div className="flex flex-col gap-1">
-              <h1 className="text-4xl font-bold text-zinc-900 [font-family:var(--font-dm-sans)]">
+              <h1 className="text-3xl sm:text-4xl font-bold text-zinc-900 [font-family:var(--font-dm-sans)] leading-tight">
                 Git Commit Go
               </h1>
               <p className="text-xl text-zinc-600 italic">
@@ -59,13 +66,15 @@ export default function BlogPost() {
               </p>
             </div>
 
-            <div className="flex items-center gap-4 text-sm text-zinc-500 mt-2">
-              <span>July 11, 2026</span>
-              <span aria-hidden="true">&bull;</span>
-              <span>3 min read</span>
+            <div className="flex items-center justify-between w-full text-sm text-zinc-500 pt-1 border-b border-zinc-200/60 pb-3">
+              <div className="flex items-center gap-2">
+                <span>July 11, 2026</span>
+                <span aria-hidden="true">&bull;</span>
+                <span>3 min read</span>
+              </div>
+              <ShareButton title="Git Commit Go" />
             </div>
-          </div>
-        </header>
+          </header>
 
         {/* Content */}
         <div className="prose prose-zinc font-mono text-zinc-700 flex flex-col gap-8 text-lg leading-relaxed">
@@ -254,6 +263,7 @@ export default function BlogPost() {
 
         </div>
       </article>
+      </div>
     </div>
   );
 }
