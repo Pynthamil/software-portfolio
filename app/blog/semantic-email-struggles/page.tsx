@@ -10,14 +10,14 @@ export const metadata: Metadata = {
     title: "My Struggles Building Semantic Email | Blog",
     description: "A candid behind-the-scenes look into the challenges, failures, and lessons learned while building the Semantic Email Copilot.",
     url: "/blog/semantic-email-struggles",
-    images: ["/post_covers/semantic-struggles.svg"],
+    images: ["/post_covers/post1.svg"],
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
     title: "My Struggles Building Semantic Email | Blog",
     description: "A candid behind-the-scenes look into the challenges, failures, and lessons learned while building the Semantic Email Copilot.",
-    images: ["/post_covers/semantic-struggles.svg"],
+    images: ["/post_covers/post1.svg"],
   },
 };
 
@@ -36,7 +36,7 @@ export default function BlogPost() {
         <header className="flex flex-col gap-6">
           <div className="w-full h-[350px] relative rounded-lg overflow-hidden border border-zinc-200">
             <Image
-              src="/post_covers/semantic-struggles.svg"
+              src="/post_covers/post1.svg"
               alt="My Struggles Building Semantic Email"
               fill
               className="object-cover"
