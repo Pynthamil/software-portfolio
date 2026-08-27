@@ -44,11 +44,12 @@ const projects: ProjectItem[] = [
 function ProjectHoverCard({ project }: { project: ProjectItem }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isHovered, setIsHovered] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
 
   const handleMouseEnter = () => {
     if (project.video) {
       setIsHovered(true);
-      if (videoRef.current) {
+      if (!isPaused && videoRef.current) {
         videoRef.current.currentTime = 0;
         videoRef.current.play().catch(() => {});
       }
@@ -61,6 +62,21 @@ function ProjectHoverCard({ project }: { project: ProjectItem }) {
       if (videoRef.current) {
         videoRef.current.pause();
       }
+      setIsPaused(false);
+    }
+  };
+
+  const togglePlayPause = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (!videoRef.current) return;
+
+    if (isPaused || videoRef.current.paused) {
+      videoRef.current.play().catch(() => {});
+      setIsPaused(false);
+    } else {
+      videoRef.current.pause();
+      setIsPaused(true);
     }
   };
 
@@ -98,16 +114,39 @@ function ProjectHoverCard({ project }: { project: ProjectItem }) {
 
       {/* Video (Plays on Hover if available) */}
       {project.video && (
-        <video
-          ref={videoRef}
-          src={project.video}
-          muted
-          loop
-          playsInline
-          className={`absolute inset-0 w-full h-full object-cover rounded-2xl transition-opacity duration-300 ${
-            isHovered ? "opacity-100" : "opacity-0 pointer-events-none"
-          }`}
-        />
+        <>
+          <video
+            ref={videoRef}
+            src={project.video}
+            muted
+            loop
+            playsInline
+            className={`absolute inset-0 w-full h-full object-cover rounded-2xl transition-opacity duration-300 ${
+              isHovered ? "opacity-100" : "opacity-0 pointer-events-none"
+            }`}
+          />
+
+          {/* Pause / Play Button on Hover */}
+          <button
+            type="button"
+            onClick={togglePlayPause}
+            aria-label={isPaused ? "Play video preview" : "Pause video preview"}
+            className={`absolute top-3.5 right-3.5 z-20 w-9 h-9 rounded-full bg-black/60 hover:bg-black/85 active:scale-95 text-white flex items-center justify-center backdrop-blur-md border border-white/20 shadow-lg shadow-black/20 hover:border-white/35 hover:scale-105 transition-all duration-200 cursor-pointer ${
+              isHovered ? "opacity-100 scale-100" : "opacity-0 scale-90 pointer-events-none"
+            }`}
+          >
+            {isPaused ? (
+              <svg width="12" height="13" viewBox="0 0 12 13" fill="currentColor" className="ml-0.5 text-white drop-shadow-xs">
+                <path d="M2.5 1.5C2.5.9 3.2.5 3.7.8l7 4.7c.5.3.5 1 0 1.4l-7 4.7c-.5.3-1.2 0-1.2-.6v-10.2z" />
+              </svg>
+            ) : (
+              <svg width="12" height="13" viewBox="0 0 12 13" fill="none" className="text-white drop-shadow-xs">
+                <rect x="1.5" y="1" width="3" height="11" rx="1.5" fill="currentColor" />
+                <rect x="7.5" y="1" width="3" height="11" rx="1.5" fill="currentColor" />
+              </svg>
+            )}
+          </button>
+        </>
       )}
     </Link>
   );
