@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import CodedexCover from "@/components/CodedexCover";
@@ -11,7 +11,7 @@ interface ProjectItem {
   category: string;
   date: string;
   description: string;
-  image: string;
+  image?: string;
   video?: string;
   link: string;
   bgClass: string;
@@ -30,6 +30,16 @@ const projects: ProjectItem[] = [
     bgClass: "bg-[#FFDFE0]",
   },
   {
+    id: "memories",
+    name: "We can leave things behind, but not always the words we wish we’d said.",
+    category: "MEMORIES",
+    date: "2026",
+    description: "A digital archive capturing moments, visuals, and memories.",
+    video: "/project-assets/memories/demo1.mov",
+    link: "#",
+    bgClass: "bg-[#E5F8E0]",
+  },
+  {
     id: "codedex",
     name: "Designing CodeDex for Accessible, On-the-Go Learning",
     category: "CODÉDEX",
@@ -44,25 +54,28 @@ const projects: ProjectItem[] = [
 function ProjectHoverCard({ project }: { project: ProjectItem }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isHovered, setIsHovered] = useState(false);
-  const [isPaused, setIsPaused] = useState(false);
+  const [isManuallyPaused, setIsManuallyPaused] = useState(false);
+
+  // Auto-play continuously for video-first projects (or projects without a separate image cover)
+  useEffect(() => {
+    if (project.video && !project.image && !isManuallyPaused && videoRef.current) {
+      videoRef.current.play().catch(() => {});
+    }
+  }, [project.video, project.image, isManuallyPaused]);
 
   const handleMouseEnter = () => {
-    if (project.video) {
-      setIsHovered(true);
-      if (!isPaused && videoRef.current) {
-        videoRef.current.currentTime = 0;
-        videoRef.current.play().catch(() => {});
-      }
+    setIsHovered(true);
+    if (project.video && !isManuallyPaused && videoRef.current) {
+      videoRef.current.play().catch(() => {});
     }
   };
 
   const handleMouseLeave = () => {
-    if (project.video) {
-      setIsHovered(false);
-      if (videoRef.current) {
-        videoRef.current.pause();
-      }
-      setIsPaused(false);
+    setIsHovered(false);
+    // If project has an image cover, pause video on unhover (unless user explicitly paused)
+    // If project has no image cover (video-first), keep playing continuously
+    if (project.image && project.video && !isManuallyPaused && videoRef.current) {
+      videoRef.current.pause();
     }
   };
 
@@ -71,14 +84,77 @@ function ProjectHoverCard({ project }: { project: ProjectItem }) {
     e.stopPropagation();
     if (!videoRef.current) return;
 
-    if (isPaused || videoRef.current.paused) {
+    if (isManuallyPaused || videoRef.current.paused) {
       videoRef.current.play().catch(() => {});
-      setIsPaused(false);
+      setIsManuallyPaused(false);
     } else {
       videoRef.current.pause();
-      setIsPaused(true);
+      setIsManuallyPaused(true);
     }
   };
+
+  const cardContent = (
+    <>
+      {/* Cover Image if available */}
+      {project.image && (
+        <Image
+          src={project.image}
+          alt={project.name}
+          width={1994}
+          height={1286}
+          className={`w-full h-full object-contain scale-[1.35] sm:scale-[1.4] origin-center block rounded-2xl transition-opacity duration-300 ${
+            (isHovered || isManuallyPaused) && project.video ? "opacity-0" : "opacity-100"
+          }`}
+          priority
+        />
+      )}
+
+      {/* Video (Plays continuously or on hover for image covers) */}
+      {project.video && (
+        <>
+          <video
+            ref={videoRef}
+            src={project.video}
+            autoPlay={!project.image}
+            muted
+            loop
+            playsInline
+            preload="auto"
+            className={`absolute inset-0 w-full h-full object-cover rounded-2xl transition-opacity duration-300 ${
+              project.image
+                ? isHovered || isManuallyPaused
+                  ? "opacity-100"
+                  : "opacity-0 pointer-events-none"
+                : "opacity-100"
+            }`}
+          />
+
+          {/* Pause / Play Button */}
+          <button
+            type="button"
+            onClick={togglePlayPause}
+            aria-label={isManuallyPaused ? "Play video preview" : "Pause video preview"}
+            className={`absolute top-3.5 right-3.5 z-20 w-9 h-9 rounded-full bg-black/60 hover:bg-black/85 active:scale-95 text-white flex items-center justify-center backdrop-blur-md border border-white/20 hover:border-white/35 hover:scale-105 transition-all duration-200 cursor-pointer ${
+              isHovered || isManuallyPaused
+                ? "opacity-100 scale-100 pointer-events-auto"
+                : "opacity-0 scale-90 pointer-events-none"
+            }`}
+          >
+            {isManuallyPaused ? (
+              <svg width="12" height="13" viewBox="0 0 12 13" fill="currentColor" className="ml-0.5 text-white">
+                <path d="M2.5 1.5C2.5.9 3.2.5 3.7.8l7 4.7c.5.3.5 1 0 1.4l-7 4.7c-.5.3-1.2 0-1.2-.6v-10.2z" />
+              </svg>
+            ) : (
+              <svg width="12" height="13" viewBox="0 0 12 13" fill="none" className="text-white">
+                <rect x="1.5" y="1" width="3" height="11" rx="1.5" fill="currentColor" />
+                <rect x="7.5" y="1" width="3" height="11" rx="1.5" fill="currentColor" />
+              </svg>
+            )}
+          </button>
+        </>
+      )}
+    </>
+  );
 
   if (project.id === "codedex") {
     return (
@@ -93,6 +169,18 @@ function ProjectHoverCard({ project }: { project: ProjectItem }) {
     );
   }
 
+  if (!project.link || project.link === "#") {
+    return (
+      <div
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        className={`w-full relative rounded-2xl overflow-hidden ${project.bgClass} block group aspect-square select-none`}
+      >
+        {cardContent}
+      </div>
+    );
+  }
+
   return (
     <Link
       href={project.link}
@@ -100,54 +188,7 @@ function ProjectHoverCard({ project }: { project: ProjectItem }) {
       onMouseLeave={handleMouseLeave}
       className={`w-full relative rounded-2xl overflow-hidden ${project.bgClass} block group aspect-square`}
     >
-      {/* Cover Image (Default - zoomed to fill card) */}
-      <Image
-        src={project.image}
-        alt={project.name}
-        width={1994}
-        height={1286}
-        className={`w-full h-full object-contain scale-[1.35] sm:scale-[1.4] origin-center block rounded-2xl transition-opacity duration-300 ${
-          isHovered && project.video ? "opacity-0" : "opacity-100"
-        }`}
-        priority
-      />
-
-      {/* Video (Plays on Hover if available) */}
-      {project.video && (
-        <>
-          <video
-            ref={videoRef}
-            src={project.video}
-            muted
-            loop
-            playsInline
-            className={`absolute inset-0 w-full h-full object-cover rounded-2xl transition-opacity duration-300 ${
-              isHovered ? "opacity-100" : "opacity-0 pointer-events-none"
-            }`}
-          />
-
-          {/* Pause / Play Button on Hover */}
-          <button
-            type="button"
-            onClick={togglePlayPause}
-            aria-label={isPaused ? "Play video preview" : "Pause video preview"}
-            className={`absolute top-3.5 right-3.5 z-20 w-9 h-9 rounded-full bg-black/60 hover:bg-black/85 active:scale-95 text-white flex items-center justify-center backdrop-blur-md border border-white/20 hover:border-white/35 hover:scale-105 transition-all duration-200 cursor-pointer ${
-              isHovered ? "opacity-100 scale-100" : "opacity-0 scale-90 pointer-events-none"
-            }`}
-          >
-            {isPaused ? (
-              <svg width="12" height="13" viewBox="0 0 12 13" fill="currentColor" className="ml-0.5 text-white">
-                <path d="M2.5 1.5C2.5.9 3.2.5 3.7.8l7 4.7c.5.3.5 1 0 1.4l-7 4.7c-.5.3-1.2 0-1.2-.6v-10.2z" />
-              </svg>
-            ) : (
-              <svg width="12" height="13" viewBox="0 0 12 13" fill="none" className="text-white">
-                <rect x="1.5" y="1" width="3" height="11" rx="1.5" fill="currentColor" />
-                <rect x="7.5" y="1" width="3" height="11" rx="1.5" fill="currentColor" />
-              </svg>
-            )}
-          </button>
-        </>
-      )}
+      {cardContent}
     </Link>
   );
 }
@@ -161,17 +202,25 @@ export default function ProjectsPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 sm:gap-x-8 lg:gap-x-10 gap-y-12 w-full">
           {projects.map((project) => (
             <div
-              key={project.link}
+              key={project.id}
               className="flex flex-col gap-3 w-full text-left"
             >
               <ProjectHoverCard project={project} />
 
               <div className="flex flex-col gap-1 text-left w-full pt-1">
-                <Link href={project.link} className="block w-fit">
-                  <h2 className="text-2xl sm:text-3xl font-medium text-[#18181B] hover:text-[#5569FF] transition-colors leading-tight">
-                    {project.name}
-                  </h2>
-                </Link>
+                {project.link && project.link !== "#" ? (
+                  <Link href={project.link} className="block w-fit">
+                    <h2 className="text-2xl sm:text-3xl font-medium text-[#18181B] hover:text-[#5569FF] transition-colors leading-tight">
+                      {project.name}
+                    </h2>
+                  </Link>
+                ) : (
+                  <div className="block w-fit">
+                    <h2 className="text-2xl sm:text-3xl font-medium text-[#18181B] leading-tight">
+                      {project.name}
+                    </h2>
+                  </div>
+                )}
               </div>
             </div>
           ))}
