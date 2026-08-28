@@ -3,6 +3,7 @@ import Link from "next/link";
 import UserPersonaCarousel from "@/components/UserPersonaCarousel";
 import ScrollBackToTopSection from "@/components/ScrollBackToTopSection";
 import ProjectSidebar from "@/components/ProjectSidebar";
+import StampBlogAd from "@/components/StampBlogAd";
 
 import type { Metadata } from "next";
 
@@ -66,24 +67,12 @@ export default function SemanticEmailProjectPage() {
           <header className="flex flex-col gap-6 relative">
             {/* Related Blog Ad Banner (Positioned on the right, aligned with header title) */}
             <aside className="hidden xl:block absolute left-[calc(100%+2rem)] 2xl:left-[calc(100%+3.5rem)] top-0 w-80 2xl:w-[350px] select-none">
-              <Link
+              <StampBlogAd
                 href="/blog/semantic-email-struggles"
-                className="block bg-white rounded-none p-4 shadow-xs border border-zinc-200 hover:shadow-md hover:border-zinc-300 transition-all duration-200 group no-underline"
-              >
-                <div className="flex items-center gap-3.5">
-                  <div className="w-28 h-20 shrink-0 rounded-none overflow-hidden relative bg-[#C5C7F7]">
-                    <Image
-                      src="/post_covers/post1.svg"
-                      alt="Related Blog - Struggles"
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                  <p className="text-sm sm:text-base font-semibold text-[#18181B] group-hover:text-[#5569FF] transition-colors leading-snug m-0 [font-family:var(--font-dm-sans)]">
-                    Read the related blog to know more about my struggles
-                  </p>
-                </div>
-              </Link>
+                imageSrc="/post_covers/post1.svg"
+                imageAlt="Related Blog - Struggles"
+                text="Read the related blog to know more about my struggles"
+              />
             </aside>
 
             <div className="flex flex-col gap-1">

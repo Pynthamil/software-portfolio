@@ -11,43 +11,50 @@ interface ProjectItem {
   category: string;
   date: string;
   description: string;
+  shortDescription?: string;
   image?: string;
   video?: string;
   link: string;
   bgClass: string;
+  status: "building" | "completed";
 }
 
 const projects: ProjectItem[] = [
   {
     id: "semantic",
     name: "Our inboxes store information, but fail to turn it into meaningful action.",
-    category: "SEMANTIC EMAIL COPILOT",
+    category: "Semantic Email Copilot",
     date: "SPRING 2026",
     description: "An intelligent email copilot that transforms noisy inboxes into structured action items, deadlines, and Notion tasks using semantic NLP parsing.",
-    image: "/project-assets/semantic/cover2.svg",
-    video: "/project-assets/semantic/demo1.mov",
+    shortDescription: "Companion copilot for busy inboxes / shipped Spring 2026",
+    video: "/project-assets/semantic/demo1_gradient.mov",
     link: "/projects/semantic-email",
-    bgClass: "bg-[#FFDFE0]",
+    bgClass: "bg-gradient-to-br from-[#EDE7DD] to-[#F6F3EC] shadow-[0_4px_24px_rgba(0,0,0,0.035)]",
+    status: "completed",
   },
   {
     id: "memories",
     name: "We can leave things behind, but not always the words we wish we’d said.",
-    category: "MEMORIES",
+    category: "Memories",
     date: "2026",
     description: "A digital archive capturing moments, visuals, and memories.",
-    video: "/project-assets/memories/demo1.mov",
+    shortDescription: "A digital archive for personal memories & visual moments",
+    video: "/project-assets/memories/demo1_gradient.mov",
     link: "https://x.com/pynwrites/status/2093377832898670830",
-    bgClass: "bg-[#E5F8E0]",
+    bgClass: "bg-gradient-to-br from-[#FDE2E4] to-[#FEF3C7]",
+    status: "building",
   },
   {
     id: "codedex",
     name: "Designing CodeDex for Accessible, On-the-Go Learning",
-    category: "CODÉDEX",
+    category: "Codédex App",
     date: "FALL 2025",
     description: "A personal project designing a playful and engaging learning platform for Codédex.",
+    shortDescription: "Playful mobile learning app for Codédex",
     image: "/project-assets/codedex/Iphone 14.svg",
     link: "/projects/codedex",
     bgClass: "bg-[#F7FFE0]",
+    status: "completed",
   },
 ];
 
@@ -232,11 +239,10 @@ export default function ProjectsPage() {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block w-fit group/title"
+                      className="block w-fit"
                     >
-                      <h2 className="text-2xl sm:text-3xl font-medium text-[#18181B] group-hover/title:text-[#5569FF] transition-colors leading-tight inline-flex items-baseline gap-1.5">
-                        <span>{project.name}</span>
-                        <span className="text-xl sm:text-2xl text-zinc-400 group-hover/title:text-[#5569FF] group-hover/title:translate-x-0.5 group-hover/title:-translate-y-0.5 transition-all" aria-hidden="true">↗</span>
+                      <h2 className="text-2xl sm:text-3xl font-medium text-[#18181B] hover:text-[#5569FF] transition-colors leading-tight">
+                        {project.name}
                       </h2>
                     </a>
                   ) : project.link && project.link !== "#" ? (
