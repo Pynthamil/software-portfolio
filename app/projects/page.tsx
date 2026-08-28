@@ -36,7 +36,7 @@ const projects: ProjectItem[] = [
     date: "2026",
     description: "A digital archive capturing moments, visuals, and memories.",
     video: "/project-assets/memories/demo1.mov",
-    link: "#",
+    link: "https://x.com/pynwrites/status/2093377832898670830",
     bgClass: "bg-[#E5F8E0]",
   },
   {
@@ -55,6 +55,7 @@ function ProjectHoverCard({ project }: { project: ProjectItem }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isHovered, setIsHovered] = useState(false);
   const [isManuallyPaused, setIsManuallyPaused] = useState(false);
+  const isExternal = project.link?.startsWith("http");
 
   // Auto-play continuously for video-first projects (or projects without a separate image cover)
   useEffect(() => {
@@ -169,6 +170,21 @@ function ProjectHoverCard({ project }: { project: ProjectItem }) {
     );
   }
 
+  if (isExternal) {
+    return (
+      <a
+        href={project.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        className={`w-full relative rounded-2xl overflow-hidden ${project.bgClass} block group aspect-square cursor-pointer`}
+      >
+        {cardContent}
+      </a>
+    );
+  }
+
   if (!project.link || project.link === "#") {
     return (
       <div
@@ -200,30 +216,46 @@ export default function ProjectsPage() {
         
         {/* Project Cards Grid (Side by side 2 col - Full Width) */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 sm:gap-x-8 lg:gap-x-10 gap-y-12 w-full">
-          {projects.map((project) => (
-            <div
-              key={project.id}
-              className="flex flex-col gap-3 w-full text-left"
-            >
-              <ProjectHoverCard project={project} />
+          {projects.map((project) => {
+            const isExternal = project.link?.startsWith("http");
 
-              <div className="flex flex-col gap-1 text-left w-full pt-1">
-                {project.link && project.link !== "#" ? (
-                  <Link href={project.link} className="block w-fit">
-                    <h2 className="text-2xl sm:text-3xl font-medium text-[#18181B] hover:text-[#5569FF] transition-colors leading-tight">
-                      {project.name}
-                    </h2>
-                  </Link>
-                ) : (
-                  <div className="block w-fit">
-                    <h2 className="text-2xl sm:text-3xl font-medium text-[#18181B] leading-tight">
-                      {project.name}
-                    </h2>
-                  </div>
-                )}
+            return (
+              <div
+                key={project.id}
+                className="flex flex-col gap-3 w-full text-left"
+              >
+                <ProjectHoverCard project={project} />
+
+                <div className="flex flex-col gap-1 text-left w-full pt-1">
+                  {isExternal ? (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-fit group/title"
+                    >
+                      <h2 className="text-2xl sm:text-3xl font-medium text-[#18181B] group-hover/title:text-[#5569FF] transition-colors leading-tight inline-flex items-baseline gap-1.5">
+                        <span>{project.name}</span>
+                        <span className="text-xl sm:text-2xl text-zinc-400 group-hover/title:text-[#5569FF] group-hover/title:translate-x-0.5 group-hover/title:-translate-y-0.5 transition-all" aria-hidden="true">↗</span>
+                      </h2>
+                    </a>
+                  ) : project.link && project.link !== "#" ? (
+                    <Link href={project.link} className="block w-fit">
+                      <h2 className="text-2xl sm:text-3xl font-medium text-[#18181B] hover:text-[#5569FF] transition-colors leading-tight">
+                        {project.name}
+                      </h2>
+                    </Link>
+                  ) : (
+                    <div className="block w-fit">
+                      <h2 className="text-2xl sm:text-3xl font-medium text-[#18181B] leading-tight">
+                        {project.name}
+                      </h2>
+                    </div>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
       </div>
