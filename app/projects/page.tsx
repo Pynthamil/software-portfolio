@@ -29,7 +29,7 @@ const projects: ProjectItem[] = [
     shortDescription: "Companion copilot for busy inboxes / shipped Spring 2026",
     video: "/project-assets/semantic/demo1_gradient.mov",
     link: "/projects/semantic-email",
-    bgClass: "bg-gradient-to-br from-[#EDE7DD] to-[#F6F3EC] shadow-[0_4px_24px_rgba(0,0,0,0.035)]",
+    bgClass: "bg-gradient-to-br from-[#EDE7DD] to-[#F6F3EC]",
     status: "completed",
   },
   {
