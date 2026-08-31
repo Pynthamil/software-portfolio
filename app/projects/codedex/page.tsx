@@ -205,7 +205,13 @@ export default function CodedexProjectPage() {
           </div>
 
           {/* Scroll Back to Top & Thanks for Reading */}
-          <ScrollBackToTopSection />
+          <ScrollBackToTopSection
+            nextProjectAd={{
+              href: "/projects/semantic-email",
+              image: "/semantic_ad.svg",
+              alt: "Semantic Email Copilot",
+            }}
+          />
         </article>
       </div>
     </div>

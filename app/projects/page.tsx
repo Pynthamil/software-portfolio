@@ -19,8 +19,6 @@ interface ProjectItem {
   bgClass: string;
   status: "building" | "completed";
   hoverColorClass?: string;
-  hasBorder?: boolean;
-  borderColorClass?: string;
 }
 
 const projects: ProjectItem[] = [
@@ -31,12 +29,10 @@ const projects: ProjectItem[] = [
     date: "SPRING 2026",
     description: "An intelligent email copilot that transforms noisy inboxes into structured action items, deadlines, and Notion tasks using semantic NLP parsing.",
     shortDescription: "Companion copilot for busy inboxes / shipped Spring 2026",
-    video: "/project-assets/semantic/demo1_gradient.mov",
+    video: "/project-assets/semantic/demo1.mov",
     link: "/projects/semantic-email",
-    bgClass: "bg-gradient-to-br from-[#EDE7DD] to-[#F6F3EC]",
+    bgClass: "bg-[#FFDFE0]",
     status: "completed",
-    hasBorder: true,
-    borderColorClass: "border-[#E2DDD4]",
   },
   {
     id: "orca",
@@ -46,7 +42,7 @@ const projects: ProjectItem[] = [
     description: "An AI research assistant and conversational intelligence interface designed for marine science exploration.",
     shortDescription: "Marine science AI intelligence platform / currently developing",
     image: "/orca_ai/orca_ai.svg",
-    link: "#",
+    link: "/projects/orca",
     bgClass: "bg-gradient-to-b from-[#095F76] to-[#74B1C3]",
     status: "building",
     hoverColorClass: "hover:text-[#095F76]",
@@ -180,15 +176,6 @@ function ProjectHoverCard({ project }: { project: ProjectItem }) {
             )}
           </button>
         </>
-      )}
-
-      {/* Subtle border overlay */}
-      {project.hasBorder && (
-        <div
-          className={`absolute inset-0 rounded-2xl border ${
-            project.borderColorClass || "border-[#E2DDD4]"
-          } pointer-events-none z-10`}
-        />
       )}
     </>
   );

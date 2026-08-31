@@ -68,6 +68,8 @@ export default function ProjectSidebar({
     }
   };
 
+  const [isAdDismissed, setIsAdDismissed] = useState(false);
+
   return (
     <>
       {/* Desktop Fixed Left Sidebar */}

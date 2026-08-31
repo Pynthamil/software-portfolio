@@ -362,7 +362,13 @@ export default function SemanticEmailProjectPage() {
           </div>
 
           {/* Scroll Back to Top & Thanks for Reading */}
-          <ScrollBackToTopSection />
+          <ScrollBackToTopSection
+            nextProjectAd={{
+              href: "/projects/orca",
+              image: "/orca_ad.svg",
+              alt: "Orca.ai Marine Biology Platform",
+            }}
+          />
 
         </div>
       </article>

@@ -1,12 +1,18 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 interface ScrollBackToTopSectionProps {
   imageSrc?: string;
   imageAlt?: string;
   imageWidth?: number;
   imageHeight?: number;
+  nextProjectAd?: {
+    href: string;
+    image: string;
+    alt: string;
+  };
 }
 
 export default function ScrollBackToTopSection({
@@ -14,6 +20,7 @@ export default function ScrollBackToTopSection({
   imageAlt = "Thanks for reading illustration",
   imageWidth = 407,
   imageHeight = 330,
+  nextProjectAd,
 }: ScrollBackToTopSectionProps) {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -53,6 +60,75 @@ export default function ScrollBackToTopSection({
 
       {/* Bottom Accent Divider */}
       <div className="w-12 h-1 bg-zinc-800 rounded-full mt-2" />
+
+      {/* Next Project Ad - anchored to the right side of the bottom section (does not move on scroll) */}
+      {nextProjectAd && (
+        <div className="hidden xl:block absolute right-6 xl:right-10 2xl:right-16 bottom-12 sm:bottom-16 w-52 sm:w-56 2xl:w-60 select-none text-left z-20">
+          <Link
+            href={nextProjectAd.href}
+            className="group relative block rounded-2xl overflow-hidden shadow-xl transition-all duration-200 hover:opacity-95 text-left"
+          >
+            {/* Slanted Arrow in Top Right */}
+            <div className="absolute top-3.5 right-3.5 z-20 pointer-events-none text-white/80 group-hover:text-white transition-colors">
+              <svg
+                className="w-4 h-4"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <line x1="7" y1="17" x2="17" y2="7" />
+                <polyline points="7 7 17 7 17 17" />
+              </svg>
+            </div>
+
+            <Image
+              src={nextProjectAd.image}
+              alt={nextProjectAd.alt}
+              width={413}
+              height={507}
+              className="w-full h-auto object-contain block rounded-2xl"
+              unoptimized
+            />
+          </Link>
+        </div>
+      )}
+
+      {/* Mobile/Tablet Next Project Ad below */}
+      {nextProjectAd && (
+        <div className="xl:hidden mt-8 w-52 sm:w-56 select-none text-left">
+          <Link
+            href={nextProjectAd.href}
+            className="group relative block rounded-2xl overflow-hidden shadow-xl text-left"
+          >
+            <div className="absolute top-3.5 right-3.5 z-20 pointer-events-none text-white/80">
+              <svg
+                className="w-4 h-4"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <line x1="7" y1="17" x2="17" y2="7" />
+                <polyline points="7 7 17 7 17 17" />
+              </svg>
+            </div>
+
+            <Image
+              src={nextProjectAd.image}
+              alt={nextProjectAd.alt}
+              width={413}
+              height={507}
+              className="w-full h-auto object-contain block rounded-2xl"
+              unoptimized
+            />
+          </Link>
+        </div>
+      )}
     </div>
   );
 }
