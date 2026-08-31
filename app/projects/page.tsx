@@ -18,6 +18,9 @@ interface ProjectItem {
   link: string;
   bgClass: string;
   status: "building" | "completed";
+  hoverColorClass?: string;
+  hasBorder?: boolean;
+  borderColorClass?: string;
 }
 
 const projects: ProjectItem[] = [
@@ -32,6 +35,8 @@ const projects: ProjectItem[] = [
     link: "/projects/semantic-email",
     bgClass: "bg-gradient-to-br from-[#EDE7DD] to-[#F6F3EC]",
     status: "completed",
+    hasBorder: true,
+    borderColorClass: "border-[#E2DDD4]",
   },
   {
     id: "orca",
@@ -44,6 +49,7 @@ const projects: ProjectItem[] = [
     link: "#",
     bgClass: "bg-gradient-to-b from-[#095F76] to-[#74B1C3]",
     status: "building",
+    hoverColorClass: "hover:text-[#095F76]",
   },
   {
     id: "memories",
@@ -56,6 +62,7 @@ const projects: ProjectItem[] = [
     link: "https://x.com/pynwrites/status/2093377832898670830",
     bgClass: "bg-gradient-to-br from-[#FDE2E4] to-[#FEF3C7]",
     status: "building",
+    hoverColorClass: "hover:text-[#4C114B]",
   },
   {
     id: "codedex",
@@ -173,6 +180,15 @@ function ProjectHoverCard({ project }: { project: ProjectItem }) {
             )}
           </button>
         </>
+      )}
+
+      {/* Subtle border overlay */}
+      {project.hasBorder && (
+        <div
+          className={`absolute inset-0 rounded-2xl border ${
+            project.borderColorClass || "border-[#E2DDD4]"
+          } pointer-events-none z-10`}
+        />
       )}
     </>
   );
@@ -294,19 +310,19 @@ export default function ProjectsPage() {
                       rel="noopener noreferrer"
                       className="block w-fit"
                     >
-                      <h2 className="text-2xl sm:text-3xl font-medium text-[#18181B] hover:text-[#5569FF] transition-colors leading-tight">
+                      <h2 className={`text-2xl sm:text-3xl font-medium text-[#18181B] ${project.hoverColorClass || "hover:text-[#5569FF]"} transition-colors duration-200 leading-tight`}>
                         {project.name}
                       </h2>
                     </a>
                   ) : project.link && project.link !== "#" ? (
                     <Link href={project.link} className="block w-fit">
-                      <h2 className="text-2xl sm:text-3xl font-medium text-[#18181B] hover:text-[#5569FF] transition-colors leading-tight">
+                      <h2 className={`text-2xl sm:text-3xl font-medium text-[#18181B] ${project.hoverColorClass || "hover:text-[#5569FF]"} transition-colors duration-200 leading-tight`}>
                         {project.name}
                       </h2>
                     </Link>
                   ) : (
                     <div className="block w-fit">
-                      <h2 className="text-2xl sm:text-3xl font-medium text-[#18181B] leading-tight">
+                      <h2 className={`text-2xl sm:text-3xl font-medium text-[#18181B] ${project.hoverColorClass || "hover:text-[#095F76]"} transition-colors duration-200 leading-tight cursor-pointer`}>
                         {project.name}
                       </h2>
                     </div>
