@@ -4,6 +4,7 @@ import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import CodedexCover from "@/components/CodedexCover";
+import OrcaCover from "@/components/OrcaCover";
 
 interface ProjectItem {
   id: string;
@@ -31,6 +32,18 @@ const projects: ProjectItem[] = [
     link: "/projects/semantic-email",
     bgClass: "bg-gradient-to-br from-[#EDE7DD] to-[#F6F3EC]",
     status: "completed",
+  },
+  {
+    id: "orca",
+    name: "Marine science is full of information, but finding the right answers shouldn't feel like searching an ocean.",
+    category: "orca.ai",
+    date: "2026",
+    description: "An AI research assistant and conversational intelligence interface designed for marine science exploration.",
+    shortDescription: "Marine science AI intelligence platform / currently developing",
+    image: "/orca_ai/orca_ai.svg",
+    link: "#",
+    bgClass: "bg-gradient-to-b from-[#095F76] to-[#74B1C3]",
+    status: "building",
   },
   {
     id: "memories",
@@ -174,6 +187,46 @@ function ProjectHoverCard({ project }: { project: ProjectItem }) {
       >
         <CodedexCover />
       </Link>
+    );
+  }
+
+  if (project.id === "orca") {
+    if (isExternal) {
+      return (
+        <a
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          className={`w-full relative rounded-2xl overflow-hidden ${project.bgClass} block group aspect-square cursor-pointer`}
+        >
+          <OrcaCover />
+        </a>
+      );
+    }
+
+    if (project.link && project.link !== "#") {
+      return (
+        <Link
+          href={project.link}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          className={`w-full relative rounded-2xl overflow-hidden ${project.bgClass} block group aspect-square`}
+        >
+          <OrcaCover />
+        </Link>
+      );
+    }
+
+    return (
+      <div
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        className={`w-full relative rounded-2xl overflow-hidden ${project.bgClass} block group aspect-square select-none`}
+      >
+        <OrcaCover />
+      </div>
     );
   }
 
