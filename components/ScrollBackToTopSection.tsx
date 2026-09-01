@@ -12,6 +12,7 @@ interface ScrollBackToTopSectionProps {
     href: string;
     image: string;
     alt: string;
+    arrowColor?: string;
   };
 }
 
@@ -69,7 +70,7 @@ export default function ScrollBackToTopSection({
             className="group relative block rounded-2xl overflow-hidden shadow-xl transition-all duration-200 hover:opacity-95 text-left"
           >
             {/* Slanted Arrow in Top Right */}
-            <div className="absolute top-3.5 right-3.5 z-20 pointer-events-none text-white/80 group-hover:text-white transition-colors">
+            <div className={`absolute top-3.5 right-3.5 z-20 pointer-events-none transition-colors ${nextProjectAd.arrowColor || "text-white/80 group-hover:text-white"}`}>
               <svg
                 className="w-4 h-4"
                 viewBox="0 0 24 24"
@@ -103,7 +104,7 @@ export default function ScrollBackToTopSection({
             href={nextProjectAd.href}
             className="group relative block rounded-2xl overflow-hidden shadow-xl text-left"
           >
-            <div className="absolute top-3.5 right-3.5 z-20 pointer-events-none text-white/80">
+            <div className={`absolute top-3.5 right-3.5 z-20 pointer-events-none transition-colors ${nextProjectAd.arrowColor || "text-white/80 group-hover:text-white"}`}>
               <svg
                 className="w-4 h-4"
                 viewBox="0 0 24 24"

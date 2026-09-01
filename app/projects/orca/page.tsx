@@ -321,9 +321,10 @@ export default function OrcaProjectPage() {
           {/* Scroll Back to Top & Next Project Ad */}
           <ScrollBackToTopSection
             nextProjectAd={{
-              href: "/projects/semantic-email",
-              image: "/semantic_ad.svg",
-              alt: "Semantic Email Copilot",
+              href: "/projects/codedex",
+              image: "/codedex_ad.svg",
+              alt: "Designing CodeDex for Accessible, On-the-Go Learning",
+              arrowColor: "text-zinc-600/80 group-hover:text-zinc-900",
             }}
           />
         </article>
