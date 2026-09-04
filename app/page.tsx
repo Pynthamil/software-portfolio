@@ -145,21 +145,21 @@ export default function Home() {
       </aside>
 
       {/* Content wrapper */}
-      <div className="flex flex-col items-center px-4 sm:px-8 md:px-12 pt-16 md:pt-24 lg:pt-32 pb-8 md:pb-16 lg:pb-20 gap-12 w-full min-h-[85vh]">
-        {/* Text content wrapper */}
-        <div className="max-w-[840px] w-full text-left flex flex-col gap-12 text-2xl">
+      <div className="flex flex-col items-center px-12 pt-16 md:pt-24 lg:pt-32 pb-8 md:pb-16 lg:pb-20 gap-12 w-full min-h-[85vh]">
+        {/* Text content wrapper - standard width (max-w-3xl) */}
+        <div className="max-w-3xl w-full text-left flex flex-col gap-12 text-2xl">
           {currentPage === 1 ? (
             /* ============================================================ */
             /* PAGE 1: PRIMARY / IMPORTANT DETAILS                           */
             /* ============================================================ */
             <>
               {/* Intro */}
-              <div className="w-full max-w-2xl mx-auto flex flex-col items-center text-center px-4">
-                <HiThisIsPynthamil className="w-full max-w-[390px] h-auto text-[#6082FF] mx-auto" />
-                <p className="mt-4 text-zinc-700 text-justify">
+              <div className="max-w-xl pl-6 sm:pl-10">
+                <HiThisIsPynthamil className="w-full max-w-[390px] h-auto text-[#6082FF]" />
+                <p className="mt-4 text-zinc-700">
                   I am a curious being who loves bringing the crazy ideas existing in my mind into reality through the sheer power of code.
                 </p>
-                <div className="mt-6 flex flex-wrap justify-center gap-4">
+                <div className="mt-6 flex flex-wrap gap-4">
                   <a
                     href="https://github.com/Pynthamil"
                     className="text-blue-600 hover:underline"
